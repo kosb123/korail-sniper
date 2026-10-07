@@ -1,0 +1,62 @@
+DIV    id=wrap                     href=                                         | 본문 바로가기 주메뉴 바로가기 한국철도 승차권예매 기차
+DIV    id=accessibility            href=                                         | 본문 바로가기 주메뉴 바로가기
+A      id=                         href=#container                               | 본문 바로가기
+A      id=                         href=#header                                  | 주메뉴 바로가기
+DIV    id=                         href=                                         | 한국철도 승차권예매 기차여행 로그인 장바구니 마이페이지
+LI     id=                         href=                                         | 한국철도
+A      id=                         href=https://info.korail.com/info/index.do    | 한국철도
+LI     id=                         href=                                         | 승차권예매
+A      id=                         href=/ticket/main                             | 승차권예매
+LI     id=                         href=                                         | 기차여행
+A      id=                         href=/tour/main                               | 기차여행
+LI     id=                         href=                                         | 로그인
+A      id=                         href=/ticket/login                            | 로그인
+LI     id=                         href=                                         | 장바구니
+A      id=                         href=/ticket/mypage/cart                      | 장바구니
+LI     id=                         href=                                         | 마이페이지
+A      id=                         href=/ticket/mypage/mykorail                  | 마이페이지
+LI     id=                         href=                                         | 고객센터
+A      id=                         href=/ticket/guest/csc                        | 고객센터
+LI     id=                         href=                                         | 기업전용
+A      id=                         href=/biz/main                                | 기업전용
+LI     id=                         href=                                         | Language
+DIV    id=                         href=                                         | Language
+BUTTON id=langChangeButton         href=                                         | Language
+LI     id=                         href=                                         | 팝업열기
+A      id=                         href=#none                                    | 팝업열기
+DIV    id=                         href=                                         | 승차권 철도역·열차 고객서비스 철도회원 전체 메뉴 열기
+LI     id=                         href=                                         | 승차권
+A      id=                         href=/ticket/myticket/list                    | 승차권
+LI     id=                         href=                                         | 철도역·열차
+A      id=                         href=/ticket/train/stationGuide/station       | 철도역·열차
+LI     id=                         href=                                         | 고객서비스
+A      id=                         href=/ticket/guest/notice                     | 고객서비스
+LI     id=                         href=                                         | 철도회원
+A      id=                         href=/ticket/membership/report                | 철도회원
+LI     id=                         href=                                         | 전체 메뉴 열기
+BUTTON id=                         href=                                         | 전체 메뉴 열기
+SPAN   id=                         href=                                         | 전체 메뉴 열기
+DIV    id=                         href=                                         | 이용약관 여객운송약관 및 부속약관 개인정보처리방침 이메
+LI     id=                         href=                                         | 이용약관
+A      id=                         href=/ticket/guide/contract01                 | 이용약관
+LI     id=                         href=                                         | 여객운송약관 및 부속약관
+A      id=                         href=https://info.korail.com/mbs/www/subview. | 여객운송약관 및 부속약관
+LI     id=                         href=                                         | 개인정보처리방침
+A      id=                         href=https://info.korail.com/info/contents.do | 개인정보처리방침
+LI     id=                         href=                                         | 이메일무단수집거부
+A      id=                         href=/ticket/guide/contract08                 | 이메일무단수집거부
+LI     id=                         href=                                         | 저작권정책
+A      id=                         href=https://info.korail.com/mbs/www/subview. | 저작권정책
+LI     id=                         href=                                         | 지원 브라우저 안내
+A      id=                         href=/ticket/guideBrowser                     | 지원 브라우저 안내
+DIV    id=                         href=                                         | 상호 : 한국철도공사사업자등록 : 314-82-1002
+SPAN   id=                         href=                                         | 상호 : 한국철도공사
+SPAN   id=                         href=                                         | 사업자등록 : 314-82-10024
+SPAN   id=                         href=                                         | 통신판매업신고 : 대전 동구 - 0233호
+DIV    id=                         href=                                         | 34618 대전광역시 동구 중앙로 240대표전화 : 1
+SPAN   id=                         href=                                         | 34618 대전광역시 동구 중앙로 240
+SPAN   id=                         href=                                         | 대표전화 : 1588-7788
+SPAN   id=                         href=                                         | 팩스번호 02-361-8385
+DIV    id=                         href=                                         | 관련 사이트
+BUTTON id=relatedSiteButton        href=                                         | 관련 사이트
+captured: 12

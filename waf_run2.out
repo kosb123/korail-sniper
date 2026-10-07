@@ -1,0 +1,15 @@
+LOOP done ok= 45 fail= 0 rAF after loop= function XHR after= function
+DBG host globals: rAF= function window= object document= object XHR= function
+CHK: window.requestAnimationFrame= function sandbox.requestAnimationFrame= function ctx rAF= function ctx window= object
+XHR open GET https://cdn.korail.com/dyna/CQhpAS4W5rbU79Vhz4TklqkMvr0gmom6.js headers: {}
+XHR saved payload https://cdn.korail.com/dyna/CQhpAS4W5rbU79Vhz4TklqkMvr0gmom6.js len 339050
+TypeError: Cannot read properties of undefined (reading 'type')
+    at t9 (eval at A.V.<computed> (dynaPath.js:1:6218), <anonymous>:3:177150)
+    at eval (eval at A.V.<computed> (dynaPath.js:1:6218), <anonymous>:3:233611)
+    at eval (eval at A.V.<computed> (dynaPath.js:1:6218), <anonymous>:3:339048)
+    at A.V.<computed> [as onload] (dynaPath.js:1:6267)
+    at C:\Users\jun\projects\korail-sniper\waf_run2.js:42:102
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+elapsed 15066 ms
+COOKIES: {}
+cookie count 0

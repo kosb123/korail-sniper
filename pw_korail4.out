@@ -1,0 +1,59 @@
+btn found: True
+url after click: https://www.korail.com/ticket/search/list
+title: 열차 목록>승차권 예매>예매>승차권
+SEARCH PAGE FIELDS: 17
+  {'id': '', 'name': '', 'type': '', 'tag': 'A', 'ph': '', 'val': '', 'txt': '로그인'}
+  {'id': '', 'name': None, 'type': '', 'tag': 'LI', 'ph': '', 'val': '', 'txt': '팝업열기'}
+  {'id': '', 'name': None, 'type': '', 'tag': 'LI', 'ph': '', 'val': '', 'txt': '전체 메뉴 열기'}
+  {'id': '', 'name': '', 'type': 'button', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '전체 메뉴 열기'}
+  {'id': 'dateinput__prev', 'name': '', 'type': '', 'tag': 'A', 'ph': '', 'val': '', 'txt': '이전날'}
+  {'id': 'dateinput__input-wrapper', 'name': '', 'type': '', 'tag': 'A', 'ph': '', 'val': '', 'txt': '2026-10-07(수) 11:00'}
+  {'id': 'dateinput__next', 'name': '', 'type': '', 'tag': 'A', 'ph': '', 'val': '', 'txt': '다음날'}
+  {'id': '', 'name': '', 'type': '', 'tag': 'A', 'ph': '', 'val': '', 'txt': '서울'}
+  {'id': '', 'name': None, 'type': '', 'tag': 'DIV', 'ph': '', 'val': '', 'txt': '출발지/도착지 전환'}
+  {'id': '', 'name': '', 'type': 'button', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '출발지/도착지 전환'}
+  {'id': '', 'name': '', 'type': '', 'tag': 'A', 'ph': '', 'val': '', 'txt': '부산'}
+  {'id': '', 'name': '', 'type': '', 'tag': 'A', 'ph': '', 'val': '', 'txt': '인원 선택 총 1명'}
+  {'id': 'rtYn', 'name': 'rtYn', 'type': 'checkbox', 'tag': 'INPUT', 'ph': '', 'val': 'on', 'txt': ''}
+  {'id': 'adjStnScdlOfrFlg', 'name': 'adjStnScdlOfrFlg', 'type': 'checkbox', 'tag': 'INPUT', 'ph': '', 'val': 'on', 'txt': ''}
+  {'id': 'adjStnScdlOfrFlg2', 'name': 'adjStnScdlOfrFlg2', 'type': 'checkbox', 'tag': 'INPUT', 'ph': '', 'val': 'on', 'txt': ''}
+  {'id': '', 'name': None, 'type': '', 'tag': 'UL', 'ph': '', 'val': '', 'txt': '더보기 다음날 (26년10월08일) 조회'}
+  {'id': '', 'name': '', 'type': 'button', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '다음날 (26년10월08일) 조회'}
+body head: 본문 바로가기 | 주메뉴 바로가기 | 한국철도 | 승차권예매 | 기차여행 | 로그인 | 장바구니 | 마이페이지 | 고객센터 | 기업전용 | Language | 팝업열기 | 승차권 | 철도역·열차 | 고객서비스 | 철도회원 | 전체 메뉴 열기 | 승차권 예매 | 홈 | 예매승차권 예매 | 인쇄 | 이전날 | 2026-10-07(수) 11:00 | 다음날 | 출발역 | 서울 | 출발지/도착지 전환 | 도착역 | 부산 | 인원 선택 총 1명 | 일반석 | 직통 | 왕복 | 인접역 보기 | 서울·용산 - 수서 함께 보기 | 전체 | KTX/KTX-산천 | 새마을호/ITX-새마을 | 무궁화호/누리로 | ITX-청춘 |  | 해당 스케줄에 운행하는 열차가 없습니다. |  | 더보기 | 다음날 | (26년10월08일) | 조회 | 이용약관 | 여객운송약관 및 부속약관 | 개인정보처리방침 | 이메일무단수집거부 | 저작권정책 | 지원 브라우저 안내 |  |  | 상호 : 한국철도공사사업자등록 : 314-82-10024통신판매업신고 : 대전 동구 - 0233호 | 34618 대전광역시 동구 중앙로 240대표전화 : 1588-7788팩스번호 02-361-8385 |  | COPYRIGHT(C) KOREA RAILROAD. ALL RIGHTS RESERVED. |  | 관련 사이트
+captured: 36
+GET 200 https://www.korail.com/ticket/main
+GET 200 https://www.korail.com/dynaPath.do
+POST  https://www.korail.com/dynaPath/ZaLT2eSBHZadQcRKDOZB0KMEJb2ZGUKMBM0EZ49NaQQV9ZHd3M/FMOGLEHJSHTKHOSAIkuV
+GET 200 https://www.korail.com/ebizweb/common/devIpCheck
+GET 200 https://www.korail.com/file/cubedata/CACHE/ticketMiddleSlide.cache?t=29855651
+GET 200 https://www.korail.com/file/cubedata/CACHE/ticketMainSlide.cache?t=29855651
+GET 200 https://www.korail.com/file/cubedata/CACHE/ticketNotice.cache?t=29855651
+GET 200 https://www.korail.com/file/cubedata/CACHE/ticketTopNotice.cache?t=29855651
+GET 200 https://www.korail.com/file/cubedata/CACHE/ticketMainBanner.cache?t=29855651
+GET 200 https://www.korail.com/com/macro.do?Device=BH&Version=999999999
+GET 200 https://www.korail.com/ebizweb/common/loginCheck?Device=BH&Version=999999999
+POST 200 https://www.korail.com/dynaPath/ZaLT2eSBHZadQcRKDOZB0KMEJb2ZGUKMBM0EZ49NaQQV9ZHd3M/FMOGLEHJSHTKHOSAIkuV
+GET 200 https://www.korail.com/public/st_info/station_data.json?t=1791339117706
+GET 200 https://www.korail.com/file/cubedata/ticket_jsonData.json?t=29855651
+GET 200 https://www.korail.com/bundle/ticketMain.bundle.8b80aa77ce9ffc35b055.js?v=1.0.221
+GET 200 https://www.korail.com/bundle/ticketMain~tourMain.bundle.25246ec2b072815c7638.js?v=1.0.221
+GET 200 https://www.korail.com/com/userSaleproduct.do?mode=list&Device=BH&Version=999999999
+GET 200 https://www.korail.com/com/userMainEmerNotice.do?siteCode=ticket&Device=BH&Version=999999999
+GET 200 https://www.korail.com/file/cubedata/CACHE/kor_multiLingual.cache?t=29855651
+GET 200 https://www.korail.com/ebizweb/common/loginCheck?Device=BH&Version=999999999
+GET 200 https://www.korail.com/bundle/PageTicketInquire.bundle.5ff04619aaf17168388f.js?v=1.0.221
+POST  https://www.korail.com/ebizweb/biz/loginCheck
+POST  https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt
+GET 200 https://www.korail.com/public/st_info/st.json?t=1791339121798
+GET 200 https://www.korail.com/public/st_info/bt-www.json?t=1791339121799
+POST  https://www.korail.com/classes/com.korail.mobile.schedule.runDt
+POST 200 https://www.korail.com/ebizweb/biz/loginCheck
+GET 200 https://www.korail.com/public/st_info/st.json?t=1791339121803
+POST 200 https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt
+POST 200 https://www.korail.com/classes/com.korail.mobile.schedule.runDt
+GET 200 https://www.korail.com/public/st_info/st.json?t=1791339121866
+GET 200 https://nf.letskorail.com/ts.wseq?opcode=5101&sid=service_1&aid=act_7
+POST  https://www.korail.com/web_s/ZaLT2eSBHZadQcRKDOZB0KMEJb2ZGUKMBM0EZ49NaQQV9ZHd3M/GVCGGBGGFGQA99Ie0jk?_gx=bhldfelidihgbibjlikjaekeli
+POST 500 https://www.korail.com/web_s/ZaLT2eSBHZadQcRKDOZB0KMEJb2ZGUKMBM0EZ49NaQQV9ZHd3M/GVCGGBGGFGQA99Ie0jk?_gx=bhldfelidihgbibjlikjaekeli
+POST  https://www.korail.com/ebizweb/biz/loginCheck
+POST 200 https://www.korail.com/ebizweb/biz/loginCheck

@@ -1,0 +1,5 @@
+{
+  "h_msg_cd" : "WRG000001",
+  "strResult" : "FAIL",
+  "h_msg_txt" : "필수입력항목에러"
+}

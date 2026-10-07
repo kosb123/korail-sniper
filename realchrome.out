@@ -1,0 +1,13 @@
+ScheduleView st: 500
+date: 2026-10-09(금) 00:00
+RESULT: 전체 메뉴 열기 | 승차권 예매 | 홈 | 예매승차권 예매 | 인쇄 | 이전날 | 2026-10-09(금) 00:00 | 다음날 | 출발역 | 서울 | 출발지/도착지 전환 | 도착역 | 부산 | 인원 선택 총 1명 | 일반석 | 직통 | 왕복 | 인접역 보기 | 서울·용산 - 수서 함께 보기 | 전체 | KTX/KTX-산천 | 새마을호/ITX-새마을 | 무궁화호/누리로 | ITX-청춘 |  | 해당 스케줄에 운행하는 열차가 없습니다. |  | 더보기 | 다음날 | (26년10월10일) | 조회 | 이용약관 | 여객운송약관 및 부속약관 | 개인정보처리방침 | 이메일무단수집거부 | 저작권정책 | 지원 브라우저 안내 |  |  | 상호 : 한국철도공사사업자등록 : 314-82-10024통신판매업신고 : 대전 동구 - 0233호 | 34618 대전광역시 동구 중앙로 240대표전화 : 1588-7788팩스번호 02-361-8385 |  | COPYRIGHT(C) KOREA RAILROAD. ALL RIGHTS RESERVED. |  | 관련 사이트
+KTX count: 2 | 좌석 mentions: 0
+=== endpoints ===
+200 https://www.korail.com/classes/com.korail.mobile.schedule.runDt len= 12365 json= True {"h_msg_cd":"API.I00000","runningCalendar":[{"oTrnOpFlg":"N","bizDdStgCd":"2","xTrnOpFlg":"N","dTrnOpFlg":"N","hldyDvCd":"","runDt":"20261007","sTrnOp
+500 https://www.korail.com/web_s/YdNRA7LB9Ye6M93RERZHNRMLNZ6a7PQ7CQUVZZKSVLJa5ZBF3Y/FMIHOSHTSGGIHTK8V2Nt len= 1822 json= False <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.
+200 https://www.korail.com/classes/com.korail.mobile.schedule.runDt len= 12365 json= True {"h_msg_cd":"API.I00000","runningCalendar":[{"oTrnOpFlg":"N","bizDdStgCd":"2","xTrnOpFlg":"N","dTrnOpFlg":"N","hldyDvCd":"","runDt":"20261007","sTrnOp
+500 https://www.korail.com/web_s/YdNRA7LB9Ye6M93RERZHNRMLNZ6a7PQ7CQUVZZKSVLJa5ZBF3Y/GGGHETHETHA99Buf3Lv? len= 1822 json= False <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.
+200 https://www.korail.com/classes/com.korail.mobile.schedule.runDt len= 12365 json= True {"h_msg_cd":"API.I00000","runningCalendar":[{"oTrnOpFlg":"N","bizDdStgCd":"2","xTrnOpFlg":"N","dTrnOpFlg":"N","hldyDvCd":"","runDt":"20261007","sTrnOp
+500 https://www.korail.com/web_s/YdNRA7LB9Ye6M93RERZHNRMLNZ6a7PQ7CQUVZZKSVLJa5ZBF3Y/FMJGBHGLBHESGUVovuXU len= 1822 json= False <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.
+200 https://www.korail.com/classes/com.korail.mobile.schedule.runDt len= 12365 json= True {"h_msg_cd":"API.I00000","runningCalendar":[{"oTrnOpFlg":"N","bizDdStgCd":"2","xTrnOpFlg":"N","dTrnOpFlg":"N","hldyDvCd":"","runDt":"20261007","sTrnOp
+500 https://www.korail.com/web_s/YdNRA7LB9Ye6M93RERZHNRMLNZ6a7PQ7CQUVZZKSVLJa5ZBF3Y/FMIHEQGLEHJRHEU8WgG3 len= 1822 json= False <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.

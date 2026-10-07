@@ -1,0 +1,12 @@
+/classes/com.korail.mobile.seatMovie.ScheduleView -> 500 text/html;charset=UTF-8 | <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.
+
+/classes/com.korail.mobile.research.mergeSeatsC.do -> 200 application/json | {"trn_infos":null,"midStnList":null,"msgCd":"ERR299907","msgTxt":"사용불가한 창구/Device입니다.","strResult":"FAIL","h_msg_cd":"ERR299907","h_msg_txt":"사용불가한 창구
+
+/classes/com.korail.mobile.trn.fresScar.do -> 200 application/json | {"fresScarNo":null,"fresCont":null,"msgCd":"ERR299907","msgTxt":"사용불가한 창구/Device입니다.","strResult":"FAIL","h_msg_cd":"ERR299907","h_msg_txt":"사용불가한 창구/
+
+/classes/com.korail.mobile.research.TrainResearch -> 200 text/html;charset=utf-8 | {   "h_msg_cd" : "ERR299907",   "strResult" : "FAIL",   "h_msg_txt" : "사용불가한 창구/Device입니다." } 
+
+/classes/com.korail.mobile.research.TResidualSeatsResearch.do -> 200 application/json | {"h_msg_cd":"ERR299907","h_msg_txt":"사용불가한 창구/Device입니다.","strResult":"FAIL"}
+
+/ebizcross/getUUID.do -> 200 application/json | {"strResult":"SUCC","mutMrkVrfCd":"202610071032500028O4gCUZnsha1N"}
+

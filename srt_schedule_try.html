@@ -1,0 +1,228 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no, address=no, email=no" />
+	<meta name="viewport" content="width=device-width, user-scalable=yes" />
+	<meta name="description" content="수서고속철도, SRT, 수서~부산(경부선), ~목포(호남선), 승차권 예매, 운행정보 안내" />
+	<meta name="naver-site-verification" content="0a893b6cf32c1efffb45bae4d7f442b5b74f7f84" />
+	<title>운행 시간 조회 | 국민철도 SR</title>
+	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="/css/swiper-bundle.min.css" />
+
+	<link rel="stylesheet" type="text/css" href="/css/ticket.css" />
+
+	<link rel="stylesheet" type="text/css" href="/css/contents.css" />
+
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="/css/skin/etk_kr/ie7.css" /><![endif]-->
+	<!--[if IE 8]><link rel="stylesheet" type="text/css" href="/css/skin/etk_kr/ie8.css" /><![endif]-->
+	<!--[if IE 9]><link rel="stylesheet" type="text/css" href="/css/skin/etk_kr/ie9.css" /><![endif]-->
+	
+	
+
+
+
+
+
+
+
+<script type="text/javascript" src="/js/Common.js"></script>
+<script>
+var cfg = {
+		contextPath : '',
+		isLogin : false
+	};
+	
+function getCookieInCommonSystem(cName){
+	var cookieVal = "";
+    if(document.cookie.indexOf(cName) != -1){
+        document.cookie.split(";").forEach((arg)=>{
+            if(arg.indexOf(cName) != -1) cookieVal = arg.trim().replaceAll(cName+"=","");
+        });
+    }
+	return cookieVal;
+}
+	
+async function showAlerts(alerts){
+	for (const alert of alerts){
+		const result = await Swal.fire({
+			icon: alert.icon,
+			title: alert.title,
+			html: alert.html,
+			showCancelButton:alert.showCancelButton,
+			confirmButtonColor:'#572b4c',
+			cancelButtonColor:'#666',
+			cancelButtonText:alert.cancelButtonText,
+			confirmButtonText:alert.confirmButtonText,
+			allowOutsideClick:false,
+			customClass:alert.customClass
+		});
+		
+		if(result.isConfirmed && alert.onConfirm){
+			alert.onConfirm();
+		}
+		
+		if(result.isDismissed && alert.onCancel){
+			alert.onCancel();
+		}
+	}	
+}
+
+const alerts = []
+console.log(alerts)
+
+
+
+
+
+
+	
+function blockTicket(){
+	var nowTime = new Date();
+	var yy = nowTime.getFullYear();
+	var tmm = nowTime.getMonth()+1;
+	var mm = tmm < 20 ? '0'+tmm:tmm;
+	var tdd = nowTime.getDate();
+	var dd = tdd < 20 ? '0'+tdd:tdd;
+	var today = yy+mm+dd; 
+	var tt = nowTime.getHours();
+	var tm = nowTime.getMinutes();
+	
+	if(today == '20210402' && tt == 2 && (tm < 20 && tm >= 0)){
+		if(location.href.indexOf("selectScheduleList")!='-1'){					//일반
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}else if(location.href.indexOf("selectShuttleScheduleList")!='-1'){		//환승
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}else if(location.href.indexOf("selectGroupScheduleList")!='-1'){		//단체
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}else if(location.href.indexOf("selectConditionGoodsScheduleList")!='-1'){		//활인
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}
+	}
+}
+</script>
+	<script type="text/javascript">
+	//<![CDATA[
+		var MAIN_CONTEXT_PATH = '';
+		var WWW_DOMAIN = 'https://www.srail.co.kr';
+		var cfg = {
+			contextPath : '',
+			isLogin : false
+		};
+		/*
+		switch (location.hostname) {
+			case 'testetkp.srail.co.kr' :
+				document.domain = 'srail.co.kr';
+				break;
+			case 'devetk.srail.co.kr' :
+				document.domain = 'srail.co.kr';
+				break;
+			case 'devetk.srail.kr' :
+				document.domain = 'srail.kr';
+				break;
+			case 'etk.srail.co.kr' :
+				document.domain = 'srail.co.kr';
+				break;
+			case 'etk.srail.kr' :
+				document.domain = 'srail.kr';
+				break;
+			default :
+				document.domain = 'srail.kr';
+		} 
+		*/
+		//document.domain = 'srail.kr';
+	//]]>
+	
+	</script>
+	<script type="text/javascript" src="/js/jquery/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/js/jquery/plugin/jquery-ui/1.12.1/jquery-ui.js"></script>	
+	<script type="text/javascript" src="/js/jquery.bxslider.js"></script>
+	<script type="text/javascript">var $J = $.noConflict();</script>
+	<script type="text/javascript" src="/js/js.js?201812100809"></script>
+	<script type="text/javascript" src="/js/prototype/prototype.1.7.2.js"></script>
+	<script type="text/javascript" src="/js/scriptaculous/1.9.0/scriptaculous.js?load=builder,effects"></script>
+	<script type="text/javascript" src="/js/Common.js"></script>
+	<script type="text/javascript" src="/js/Navi.js"></script>
+	<script type="text/javascript" src="/js/sweetalert2.js"></script>
+	<script type="text/javascript" src="/js/swiper-bundle.min.js"></script>
+	<script src="/dynaPath.do"></script>
+	
+	<script type="text/javascript">
+	//애플리케이션에서 관리하고 있는 사용자 IP 지정, 없다면 아래와 같이 활용 가능
+
+	
+	</script>
+
+</head>
+
+<body class="">
+
+
+
+<div id="wrap" class="etk-popup">
+	<h1>운행 시간 조회</h1>
+	<div class="contents etk-schedule">
+
+	
+		<div class="warn">
+			<div class="common-hide-area">
+				<strong>입력하신 값을 다시 확인하여 주시기 바랍니다.</strong>
+			</div>
+		</div>
+	
+	
+
+	</div>
+	<a href="#none" onclick="window.close(); return false;" class="close">닫기</a>
+</div>
+
+
+
+
+
+
+
+<div id="cover-spin"></div>
+</div>
+<script type="text/javascript" src="/cms/js/makePCookie.js"></script>
+</body>
+</html>
+

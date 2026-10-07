@@ -1,0 +1,27 @@
+on search page: https://www.korail.com/ticket/search/list
+== pick departure 평택지제 ==
+  [pick 평택지제] {"hasInput": true, "inpId": "", "inpPh": "역 이름 또는 초성 검색(서울 : ㅅㅇ)", "popCls": "btn_pop btn_end btn_pop-openStationPop", "popHtml": "<a href=\"#none\" class=\"btn_pop btn_end btn_pop-openStationPop\" title=\"출발역 선택\"><span class=\"blind\">서울</span></a>"}
+  [click]  {'clicked': '평택지제', 'n': 2}
+  [confirm] 인원 선택 총 1명
+== pick arrival 증평 ==
+  [pick 증평] {"hasInput": true, "inpId": "", "inpPh": "역 이름 또는 초성 검색(서울 : ㅅㅇ)", "popCls": "btn_pop btn_end btn_pop-openStationPop", "popHtml": "<a href=\"#none\" class=\"btn_pop btn_end btn_pop-openStationPop\" title=\"출발역 선택\"><span class=\"blind\">평택지제</span></a>"}
+  [click]  {'clicked': '증평', 'n': 1}
+  [confirm] 인원 선택 총 1명
+date now: 2026-10-08(목) 00:00
+final url: https://www.korail.com/ticket/search/list
+train mentions: ['KTX', '새마을', '무궁화', 'ITX']
+body mid: 024통신판매업신고 : 대전 동구 - 0233호 | 34618 대전광역시 동구 중앙로 240대표전화 : 1588-7788팩스번호 02-361-8385 |  | COPYRIGHT(C) KOREA RAILROAD. ALL RIGHTS RESERVED. |  | 관련 사이트
+captured: 100
+RES GET 200 https://www.korail.com/dynaPath.do
+REQ POST None https://www.korail.com/dynaPath/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/FMJGGDGUWHJWGUTrnSlg
+RES POST 200 https://www.korail.com/dynaPath/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/FMJGGDGUWHJWGUTrnSlg
+REQ POST None https://www.korail.com/web_s/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/FMLHEWHTRGBDHJOMubLo?_gx=ejjch
+RES POST 500 https://www.korail.com/web_s/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/FMLHEWHTRGBDHJOMubLo?_gx=ejjch
+REQ POST None https://www.korail.com/web_s/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/GL7GUWHJWHJSHJSee09h?_gx=leckc
+RES POST 500 https://www.korail.com/web_s/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/GL7GUWHJWHJSHJSee09h?_gx=leckc
+REQ POST None https://www.korail.com/web_s/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/GV8GUTGBHHJR8T3eRcS?_gx=lbigdi
+RES POST 500 https://www.korail.com/web_s/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/GV8GUTGBHHJR8T3eRcS?_gx=lbigdi
+REQ POST None https://www.korail.com/web_s/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/FMOGGBHERGQ8GQ88hTmw?_gx=bhbjb
+RES POST 500 https://www.korail.com/web_s/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/FMOGGBHERGQ8GQ88hTmw?_gx=bhbjb
+REQ POST None https://www.korail.com/web_s/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/HERGQ7GG9HTN8VQMui7?_gx=eecelc
+RES POST 500 https://www.korail.com/web_s/ZNQRA6KX3a24NBZMPWZAdJW3QI7Za4QcTKQ2ZZILIXPRVZ5S4E/HERGQ7GG9HTN8VQMui7?_gx=eecelc

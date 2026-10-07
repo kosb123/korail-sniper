@@ -1,0 +1,20 @@
+date: 2026-10-08(목) 00:00
+PICKER: <div class="date_wrap" style="margin-bottom: 40px;"><div class="tab-tck dtbox clear"><a href="#none" id="dateinput__prev" class="btn-arrow btn_bf fl-l " tabindex="0"><span class="blind">이전날</span></a><div id="dateinput__wrapper" class="tck_box01"><div id="dateinput__container" class="tck_content"><div class="sectionWrap"><div class="selectAreaWrap"><div id="dateinput__box" class="start clear"><div class="writeWrap day_type"><input id="startDate" type="text" class="data" name="startDate" readonly="" title="날짜" tabindex="-1" value="2026-10-08(목) 00:00"><a href="#none" title="날짜 선택" id="dateinput__input-wrapper" class="btn_pop
+                        
+                        btn_d-day"><span class="blind">2026-10-08(목) 00:00</span></a></div></div></div></div></div></div><a href="#none" id="dateinput__next" class="btn-arrow btn_nt fl-r " tabindex="0"><span class="blind">다음날</span></a></div><div class=""></div></div>
+RESULT: 전체 메뉴 열기 | 승차권 예매 | 홈 | 예매승차권 예매 | 인쇄 | 이전날 | 2026-10-08(목) 00:00 | 다음날 | 출발역 | 서울 | 출발지/도착지 전환 | 도착역 | 부산 | 인원 선택 총 1명 | 일반석 | 직통 | 왕복 | 인접역 보기 | 서울·용산 - 수서 함께 보기 | 전체 | KTX/KTX-산천 | 새마을호/ITX-새마을 | 무궁화호/누리로 | ITX-청춘 |  | 해당 스케줄에 운행하는 열차가 없습니다. |  | 더보기 | 다음날 | (26년10월09일) | 조회 | 이용약관 | 여객운송약관 및 부속약관 | 개인정보처리방침 | 이메일무단수집거부 | 저작권정책 | 지원 브라우저 안내 |  |  | 상호 : 한국철도공사사업자등록 : 314-82-10024통신판매업신고 : 대전 동구 - 0233호 | 34618 대전광역시 동구 중앙로 240대표전화 : 1588-7788팩스번호 02-361-8385 |  | COPYRIGHT(C) KOREA RAILROAD. ALL RIGHTS RESERVED. |  | 관련 사이트
+=== web_s/classes responses ===
+200 https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt application/json len= 66
+200 https://www.korail.com/classes/com.korail.mobile.schedule.runDt application/json len= 12365
+500 https://www.korail.com/web_s/ZGYSCVP9ba72JW6JNHZ4VM2TT0ZZUHK3TRX1ZNKQJWK7HZHY3N/GGCGV8HTQG text/html;charset=UTF-8 len= 1822
+200 https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt application/json len= 66
+200 https://www.korail.com/classes/com.korail.mobile.schedule.runDt application/json len= 12365
+500 https://www.korail.com/web_s/ZGYSCVP9ba72JW6JNHZ4VM2TT0ZZUHK3TRX1ZNKQJWK7HZHY3N/FMIHJSHEVH text/html;charset=UTF-8 len= 1822
+200 https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt application/json len= 66
+200 https://www.korail.com/classes/com.korail.mobile.schedule.runDt application/json len= 12365
+500 https://www.korail.com/web_s/ZGYSCVP9ba72JW6JNHZ4VM2TT0ZZUHK3TRX1ZNKQJWK7HZHY3N/FMPGL7GUWG text/html;charset=UTF-8 len= 1822
+200 https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt application/json len= 66
+200 https://www.korail.com/classes/com.korail.mobile.schedule.runDt application/json len= 12365
+500 https://www.korail.com/web_s/ZGYSCVP9ba72JW6JNHZ4VM2TT0ZZUHK3TRX1ZNKQJWK7HZHY3N/FMIHTSGGEH text/html;charset=UTF-8 len= 1822
+JSON FOUND in: https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt
+{"h_msg_cd":"API.I00000","h_msg_txt":"Success","strResult":"SUCC"}

@@ -1,0 +1,27 @@
+=== TRAIN_SEARCH_RESULT_LIST def ===
+@ 38835 : TRAIN_SEARCH_RESULT_LIST:{url:"/classes/com.korail.mobile.seatMovie.ScheduleView",method:r.POST,successCode:a.OK},TRAIN_RESEARCH:{url:"/classes/com.korail.mobile.research.TrainResearch",method:r.POST,successCode:a.OK},SE
+
+=== SCHEDULE_VIEW def (context) ===
+@ -1 : !function(t){function e(e){for(var n,a,i=e[0],o=e[1],l=0,c=[];l<i.length;l++)a=i[l],Object.prototype.hasOwnProperty.call(r,a)&&r[a]&&c.push(r[a][0]),r[a]=0;for(n in o)Object.prototype.hasOwnProperty.call(o,n)&&(t[n]=o[n]);for(s&&s(e);c.length;)c.shift()()}var n={},r={81:0};function a(e){if(n[e])return n[e].exports;var r=n[e]={i:e,l:!1,exports:{}};return t[e].call(r.exports,r,r.exports,a),r.l=!0,r
+
+=== axios create / baseURL ===
+@ 2739810 : 692),o=n(1906),l=n(1909),s=n(1910),c=n(696);t.exports=function(t){return new Promise((function(e,p){var u=t.data,d=t.headers;r.isFormData(u)&&delete d["Content-Type"];var b=new XMLHttpRequest;if(t.auth){var m=t.auth.username||"",f=t.auth.password||"";d.Authorization="Basic "+btoa(m+":"+f)}var h=o(t.baseURL,t.url);if(b.open(t.method.toUpperCase(),i(h,t.params,t.paramsSerializer),!0),b.timeout=t.timeout,b.onreadystatec
+
+@ 2741590 : void 0===u&&(u=null),b.send(u)}))}},function(t,e,n){"use strict";var r=n(1905);t.exports=function(t,e,n,a,i){var o=new Error(t);return r(o,e,n,a,i)}},function(t,e,n){"use strict";var r=n(77);t.exports=function(t,e){e=e||{};var n={},a=["url","method","params","data"],i=["headers","auth","proxy"],o=["baseURL","url","transformRequest","transformResponse","paramsSerializer","timeout","withCredentials","adapter","response
+
+=== station list fetch (recoverStationData / getStationList) ===
+--- recoverStationData @ 205400 ---
+tice:un,globalMainNotice:mn,bizMainNotice:An,tourMainPopupCall:me,setTourMainPopupCall:fe,getCalendar:function(t){return t===c.a.GENERAL?In.general:t===c.a.REGULAR?In.regular:t===c.a.REGULAR_FREE?In.regularFree:t===c.a.HOLIDAY?In.holiday:In.general},recoverStationData:function(){return x(void 0,void 0,void 0,(function(){return k(this,(function(t){switch(t.label){case 0:return console.log("[GlobalStore] Recovering station data..."),ge.current=!1,[4,function(){return x(void 0,void 0,void 0,(function(){var t,e,n,r,a,i,o,l,s,c,p,u,d,b;return k(this,(function(m){switch(m.label){case 0:return m.trys.push([0,2,,3]),ge.current=!0,console.log("[Statio
+
+--- recoverStationData @ 1327696 ---
+useState)([]),S=C[0],T=C[1],L=Object(a.useState)(!1),B=L[0],R=L[1],I=Object(a.useState)(0),P=I[0],D=I[1],j=Object(a.useState)(0),U=(j[0],j[1]),F=i.a.useRef(null),H=i.a.useRef(null),Y=Object(a.useContext)(l.a),G=Y.stationList,Q=Y.majorStationList,X=Y.recoverStationData,K=i.a.useState(0),V=K[0],J=K[1],Z=function(){return p(void 0,void 0,void 0,(function(){var t;return u(this,(function(e){switch(e.label){case 0:if(P>=3)return console.log("[PopStation] Maximum recovery attempts reached, stopping..."),[2];e.label=1;case 1:return e.trys.push([1,3,4,5]),console.log("[PopStation] Attempting to recover station data... (attempt "+(P+1)+"/3)"),R(!0),D((
+
+--- st_list @ 325362 ---
+t.keys(A[a])[0];n.month=i,n.day=A[a][i][0]}else"month"===r&&(n.day=A[n.year][a][0]);return t[e]=n,Ge(t)}))};return s.a.createElement(s.a.Fragment,null,s.a.createElement("div",{className:"write_wrap birst_wrap"},s.a.createElement("div",{className:"birst_list"},s.a.createElement("select",{name:"day",value:l.day,disabled:u,onChange:function(t){return _(t,a)}},null===(e=A[l.year][l.month])||void 0===e?void 0:e.map((function(t,e){return s.a.createElement("option",{key:e,value:t},Number(t))}))),s.a.createElement("select",{name:"month",value:l.month,disabled:u,onChange:function(t){return _(t,a)}},null===(n=Object.keys(A[l.year]))||void 0===n?void 0:
+
+--- st_list @ 326716 ---
+=t.firstUseDate,r=t.index,a=t.changeFirstUseDate,i=t.saveFirstUseDate,o=t.pass,l=t.getLang;return s.a.createElement(s.a.Fragment,null,s.a.createElement("div",{className:"write_wrap birst_wrap "+(e&&"inactive")},s.a.createElement("div",{className:"birst_list"},e?s.a.createElement(s.a.Fragment,null,s.a.createElement("select",{disabled:!0},s.a.createElement("option",null,n[r].selEnDate)),s.a.createElement("select",{disabled:!0},s.a.createElement("option",null,n[r].selEnMonth)),s.a.createElement("select",{disabled:!0},s.a.createElement("option",null,n[r].txtEnYear))):s.a.createElement(s.a.Fragment,null,s.a.createElement("select",{name:"selEnDate_
+
+--- st_list @ 436392 ---
+eElement("span",{className:"data"},w),")건"),s.a.createElement(y.b,{to:kc.FAQ,className:"btn_more fl-r"},"더보기")),s.a.createElement("div",{className:"sch_board-cont"},s.a.createElement("div",{className:"post_wrap"},s.a.createElement("ul",{className:"post_list"},0===r.length?s.a.createElement("li",null,"검색 결과가 없습니다."):r.map((function(t){var e;return s.a.createElement("li",{key:t.mcIdx},s.a.createElement("a",{href:null===(e=t.menuSiteurl)||void 0===e?void 0:e.replace("/^www./","http://www.")},s.a.createElement("p",{className:"tit"},t.menuName),s.a.createElement("div",{className:"step_wrap"},s.a.createElement("span",null,t.menuPfullname.substring(
+

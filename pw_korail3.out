@@ -1,0 +1,27 @@
+url: https://www.korail.com/ticket/main | title: 코레일 승차권예매
+FIELDS: 16
+  {'id': 'langChangeButton', 'name': '', 'type': 'submit', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': 'Language', 'cls': 'dropdown-button'}
+  {'id': '', 'name': '', 'type': 'button', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '전체 메뉴 열기', 'cls': 'btn-allmenu'}
+  {'id': '', 'name': '', 'type': 'button', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': 'Previous', 'cls': 'slick-arrow slick-prev'}
+  {'id': '', 'name': '', 'type': 'button', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': 'Next', 'cls': 'slick-arrow slick-next'}
+  {'id': '', 'name': '', 'type': 'submit', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '1', 'cls': ''}
+  {'id': '', 'name': '', 'type': 'submit', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '2', 'cls': ''}
+  {'id': '', 'name': '', 'type': 'button', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '정지', 'cls': 'btn-pause'}
+  {'id': 'labelstart', 'name': '', 'type': 'text', 'tag': 'INPUT', 'ph': '', 'val': '서울', 'txt': '', 'cls': ''}
+  {'id': 'labelend', 'name': '', 'type': 'text', 'tag': 'INPUT', 'ph': '', 'val': '부산', 'txt': '', 'cls': ''}
+  {'id': 'labelday', 'name': '', 'type': 'text', 'tag': 'INPUT', 'ph': '', 'val': '2026-10-07(수) 11:00', 'txt': '', 'cls': ''}
+  {'id': 'labelple', 'name': '', 'type': 'text', 'tag': 'INPUT', 'ph': '', 'val': '총 1명', 'txt': '', 'cls': ''}
+  {'id': '', 'name': '', 'type': 'button', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '열차 조회하기', 'cls': 'btn_lookup'}
+  {'id': '', 'name': '', 'type': 'button', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': 'Previous', 'cls': 'slick-arrow slick-prev'}
+  {'id': '', 'name': '', 'type': 'button', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': 'Next', 'cls': 'slick-arrow slick-next'}
+  {'id': 'relatedSiteButton', 'name': '', 'type': 'submit', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '관련 사이트', 'cls': 'dropdown-button'}
+  {'id': '', 'name': '', 'type': 'submit', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '', 'cls': ''}
+LINKS:
+  {'txt': '승차권예매', 'href': '/ticket/main', 'id': ''}
+  {'txt': '철도역·열차', 'href': '/ticket/train/stationGuide/station', 'id': ''}
+  {'txt': '승차권 예매', 'href': '/ticket/search/general', 'id': ''}
+  {'txt': '예약승차권 조회/취소', 'href': '/ticket/reservation/list', 'id': ''}
+  {'txt': '열차 내 물품 휴대 기준', 'href': '/ticket/train/trainGuide/etiquette', 'id': ''}
+  {'txt': '열차 조회하기', 'href': '', 'id': ''}
+  {'txt': '열차운임/ 시간표', 'href': '/ticket/reserve/train-timeTable', 'id': ''}
+body head: 본문 바로가기 | 주메뉴 바로가기 | 한국철도 | 승차권예매 | 기차여행 | 로그인 | 장바구니 | 마이페이지 | 고객센터 | 기업전용 | Language | 팝업열기 | 승차권 | 철도역·열차 | 고객서비스 | 철도회원 | 전체 메뉴 열기 | Previous | Next | 1 | 2 | 정지 | 승차권 예매 | 승차권 확인 | 예약승차권 조회/취소 | 고객센터 | 자주찾는 질문(FAQ) | 승차권 환불 위약금 | 열차 내 물품 휴대 기준 | 예약보관금 반환접수 | 통합회원 전환(SR회원) | 출발역 | 출발역 선택 | 도착역 | 도착역 선택 | 출발일 | 출발일 선택 | 인원 | 인원 선택 | 열차 조회하기 | 코레일은 다양한 할인상품으로 고객에게 다가가고 있습니다. | Previous | 힘내라 청춘 | 청소년 드림 | 영업할인 공통안내 | 4인동반석 | N카드(KTX,새마을) | 온라인 특가 | 공공할인 | 다자녀 행복 | 맘편한 코레일 | 힘내라 청춘 | 청소년 드림 | 영업할인 공통안내 | 4인동반석 | N카드(KTX,새마을) | 온라인 특가 | 공공할인 | 다자녀 행복 | 맘편한 코레일 | 힘내라 청춘 | 청소년 드림 | 영업할인 공통안내 | 4인동반석 | N카드(KTX,새마을) | Next | 종합이용 가이드 | 승차권 | 이용안내 | 광명역 | 도심공항터미널 | 할인제도 | 유실물 | 승차권 | 제휴할인 | 열차운임/ | 시간표 | 공지사항 | 더보기 |  | 승차권 판매일 조정 알림 |  | 2026-10-02 |  | KTX삼성카드 운영 알림 |  | 2026-09-30 |  | (토스페이원클릭) 10월 결제 프로모션 알림 |  | 2026-09-30 |  | (Npay 머니) 10월 결제 프로모션 알림 |  | 2026-09-30 |  | (카카오페이머니) 10월 결제 프로모션 알림 |  | 2026-09-30 |  | 환승승차권 발권 가능 시간 조정 알림 |  | 2026-09-29 | 이용약관 | 여객운송약관 및 부속약관 | 개인정보처리방침 | 이메일무단수

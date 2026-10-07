@@ -1,0 +1,3941 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no, address=no, email=no" />
+    <meta name="viewport" content="width=device-width, user-scalable=yes" />
+    <meta name="description" content="수서고속철도, SRT, 수서~부산(경부선), ~목포(호남선), 승차권 예매, 운행정보 안내" />
+    <meta name="naver-site-verification" content="0a893b6cf32c1efffb45bae4d7f442b5b74f7f84" />
+    <title>승차권 예약/발매 - 국민철도 SR</title>
+    <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+	<!-- 251218_폰트 CDN 주석처리_INDEX_KHD -->
+    <!-- <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" /> -->
+    <link href="/resources/css/plugin/swiper-bundle.min.css" type="text/css" rel="stylesheet" />
+
+    <link href="/resources/css/component/output.css" type="text/css" rel="stylesheet" />
+    <link href="/resources/css/pattern/p_layout.css" type="text/css" rel="stylesheet" />
+    <link href="/resources/css/pattern/p_content.css" type="text/css" rel="stylesheet" />
+
+    <!-- script -->
+    <!-- <script defer src="../resources/js/plugin/swiper-bundle.min.js"></script> -->
+    <script defer src="/resources/js/component/ui-script.js"></script>
+    <script defer src="/resources/js/pattern/pattern.js"></script>
+
+	
+	
+
+
+
+
+
+
+
+<script type="text/javascript" src="/js/Common.js"></script>
+<script>
+var cfg = {
+		contextPath : '',
+		isLogin : false
+	};
+	
+function getCookieInCommonSystem(cName){
+	var cookieVal = "";
+    if(document.cookie.indexOf(cName) != -1){
+        document.cookie.split(";").forEach((arg)=>{
+            if(arg.indexOf(cName) != -1) cookieVal = arg.trim().replaceAll(cName+"=","");
+        });
+    }
+	return cookieVal;
+}
+	
+async function showAlerts(alerts){
+	for (const alert of alerts){
+		const result = await Swal.fire({
+			icon: alert.icon,
+			title: alert.title,
+			html: alert.html,
+			showCancelButton:alert.showCancelButton,
+			confirmButtonColor:'#572b4c',
+			cancelButtonColor:'#666',
+			cancelButtonText:alert.cancelButtonText,
+			confirmButtonText:alert.confirmButtonText,
+			allowOutsideClick:false,
+			customClass:alert.customClass
+		});
+		
+		if(result.isConfirmed && alert.onConfirm){
+			alert.onConfirm();
+		}
+		
+		if(result.isDismissed && alert.onCancel){
+			alert.onCancel();
+		}
+	}	
+}
+
+const alerts = []
+console.log(alerts)
+
+
+
+
+
+
+	
+function blockTicket(){
+	var nowTime = new Date();
+	var yy = nowTime.getFullYear();
+	var tmm = nowTime.getMonth()+1;
+	var mm = tmm < 20 ? '0'+tmm:tmm;
+	var tdd = nowTime.getDate();
+	var dd = tdd < 20 ? '0'+tdd:tdd;
+	var today = yy+mm+dd; 
+	var tt = nowTime.getHours();
+	var tm = nowTime.getMinutes();
+	
+	if(today == '20210402' && tt == 2 && (tm < 20 && tm >= 0)){
+		if(location.href.indexOf("selectScheduleList")!='-1'){					//일반
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}else if(location.href.indexOf("selectShuttleScheduleList")!='-1'){		//환승
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}else if(location.href.indexOf("selectGroupScheduleList")!='-1'){		//단체
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}else if(location.href.indexOf("selectConditionGoodsScheduleList")!='-1'){		//활인
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}
+	}
+}
+</script>
+	<script type="text/javascript" src="/js/jquery/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/js/jquery/plugin/jquery-ui/1.12.1/jquery-ui.js"></script>	
+	<script type="text/javascript" src="/js/jquery.bxslider.js"></script>
+	<script type="text/javascript">var $J = $.noConflict();</script>
+	<script type="text/javascript" src="/js/js.js?20251127"></script>
+	<script type="text/javascript" src="/js/prototype/prototype.1.7.2.js"></script>
+	<script type="text/javascript" src="/js/scriptaculous/1.9.0/scriptaculous.js?load=builder,effects"></script>
+	<script type="text/javascript" src="/js/Common.js"></script>
+	<script type="text/javascript" src="/js/Navi.js"></script>
+	<script type="text/javascript" src="/js/sweetalert2.js"></script>
+	<script type="text/javascript" src="/js/swiper-bundle.min.js"></script>
+	<script src="/dynaPath.do"></script>
+	
+		<script type="text/javascript" src="/js/IFrame.js"></script>
+	
+		<script type="text/javascript" src="/js/netfunnel/netfunnel-pr.1.0.js"></script>
+	
+		<script type="text/javascript" src="/js/netfunnel/skin/sr.1.0.js"></script>
+	
+<!--  
+
+
+	<script type="text/javascript" src="/js/IFrame.js"></script>
+
+	<script type="text/javascript" src="/js/netfunnel/netfunnel-pr.1.0.js"></script>
+
+	<script type="text/javascript" src="/js/netfunnel/skin/sr.1.0.js"></script>
+
+-->
+<style>
+      @font-face {
+        font-family: "Pretendard";
+        src: url("/resources/fonts/Pretendard/Pretendard-Light.woff2") format("woff2");
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Pretendard";
+        src: url("/resources/fonts/Pretendard/Pretendard-Regular.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Pretendard";
+        src: url("/resources/fonts/Pretendard/Pretendard-Medium.woff2") format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Pretendard";
+        src: url("/resources/fonts/Pretendard/Pretendard-Bold.woff2") format("woff2");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      body {
+        font-family: "Pretendard", "맑은 고딕", sans-serif;
+      }
+</style>
+
+</head>
+
+
+
+
+
+<body>
+<div id="wrap" style="min-width : 1200px">
+
+
+
+	 <!-- 건너뛰기 링크 -->
+	<div id="krds-skip-link">
+	  <!-- 251218 이상희 수정_INDEX_KHD start -->
+	  <a href="#container">본문 바로가기</a>
+	  <a href="#gnb">대메뉴 바로가기</a>
+	  <!-- 251218 이상희 수정_INDEX_KHD end -->
+	</div>
+	<!-- //건너뛰기 링크 -->
+
+	<!-- header -->
+	<header id="krds-header">
+		<!-- 헤더 컨텐츠 영역  -->
+		<div class="header-in">
+			<!-- 헤더 상단 기타메뉴 -->
+          	<div class="header-container">
+            	<div class="inner">
+              		<div class="header-utility">
+                		<ul class="utility-list">
+                  			<li>
+                    			<a href="https://www.srail.co.kr/main.do" class="krds-btn small text" target="_blank" title="새 창 열기">
+                     	 		회사소개
+                      				<i class="svg-icon ico-go"></i>
+                    			</a>
+                  			</li>
+
+                  			<li>
+                    			<!-- 언어설정: 언어전환 -->
+                    			<div class="krds-drop-wrap krds-language">
+                      				<button type="button" class="krds-btn small text drop-btn">
+                        				<i class="svg-icon ico-global"></i>
+                        				Language
+                        				<i class="svg-icon ico-toggle"></i>
+                      				</button>
+                      				<div class="drop-menu">
+                        				<div class="drop-in">
+                          					<ul class="drop-list">
+                            					<li>
+                              						<a href="/main.do" class="item-link active" lang="ko">한국어</a>
+                            					</li>
+                            					<li>
+                              						<a href="https://www.korail.com/global/eng/main" class="item-link" lang="en">English (영어)</a>
+                            					</li>
+                            					<li>
+                              						<a href="https://www.korail.com/global/chn/main" class="item-link" lang="cn">中文(简) (중국어 간체)</a>
+                            					</li>
+                            					<li>
+                              						<a href="https://www.korail.com/global/tw/main" class="item-link" lang="tw">中文(繁) (중국어 번체)</a>
+                            					</li>
+                            					<li>
+                              						<a href="https://www.korail.com/global/jpn/main" class="item-link" lang="fr">日本語 (일본어)</a>
+                            					</li>
+                          					</ul>
+                        				</div>
+                      				</div>
+                    			</div>
+                    			<!-- 언어설정: 언어전환 -->
+                  			</li>
+                  			<li>
+                    			<div class="krds-drop-wrap krds-resize">
+                      				<button type="button" class="krds-btn small text drop-btn">
+                        				<i class="svg-icon ico-view-mode"></i>
+                       	 				글자·화면 설정
+                        				<i class="svg-icon ico-toggle"></i>
+                      				</button>
+                      				<div class="drop-menu">
+                        				<div class="drop-in">
+                          					<ul class="drop-list">
+                            					<li>
+                              						<button type="button" class="item-link sm">작게</button>
+                            					</li>
+                            					<li>
+                              						<button type="button" class="item-link md active">보통</button>
+                            					</li>
+                            					<li>
+                              						<button type="button" class="item-link lg">조금 크게</button>
+                            					</li>
+                            					<li>
+                              						<button type="button" class="item-link xlg">크게</button>
+                            					</li>
+                            					<li>
+                              						<button type="button" class="item-link xxlg">가장 크게</button>
+                            					</li>
+                          					</ul>
+<!--                           					<div class="drop-bottom">
+                            					<button type="button" class="krds-btn medium text">
+                              						<i class="svg-icon ico-reset"></i>
+                              						초기화
+                            					</button>
+                          					</div> -->
+                        				</div>
+                      				</div>
+                    			</div>
+                  			</li>
+                		</ul>
+              		</div>
+              		<div class="header-branding">
+                		<h2 class="logo">
+                  			<a href="/main.do">
+                    			<span class="sr-only">SRT - Super Rapid Train</span>
+                  			</a>
+                		</h2>
+                		<div class="header-actions">
+		                  <!-- <button
+		                    type="button"
+		                    class="btn-navi sch"
+		                    title="통합검색 레이어"
+		                  >
+		                    	통합검색
+		                  </button> -->
+		            		
+								
+									<a href="/cmc/01/selectLoginForm.do?pageId=TK0701000000" class="btn-navi login">로그인</a>
+		                  			
+	                  			
+	                  			
+                  			
+                  			
+                  			<!--  <button type="button" class="btn-navi all" aria-controls="mobile-nav">전체메뉴</button>-->
+                		</div>
+              		</div>
+            	</div>
+			</div>
+		
+			<!-- 메인메뉴 : 데스크탑 -->
+			<nav class="krds-main-menu">
+        		<div class="inner">
+        			<ul class="gnb-menu">
+        				<!-- 대메뉴 -->    
+						
+							
+								<li>
+									<button type="button" class="gnb-main-trigger" data-trigger="gnb"  id="gnb" title="대메뉴 시작지점">승차권</button>
+									<div class="gnb-toggle-wrap">
+										<div class="gnb-main-list" data-has-submenu="true">
+											
+												<ul>
+													<!-- 중메뉴 -->
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">승차권예약</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		승차권예약
+																			<a href="/hpg/hra/01/selectScheduleList.do?pageId=TK0101010000" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																			<ul>
+																				<!-- 소메뉴 -->
+																				
+																					
+														                                <li>
+														                                  <a href="/hpg/hra/01/selectScheduleList.do?pageId=TK0101010000">일반승차권 조회</a></li>
+														                                </li>
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																			</ul>
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">발권ㆍ취소ㆍ변경</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		발권ㆍ취소ㆍ변경
+																			<a href="/hpg/hra/02/selectReservationList.do?pageId=TK0102010000" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																			<ul>
+																				<!-- 소메뉴 -->
+																				
+																					
+														                                <li>
+														                                  <a href="/hpg/hra/02/selectReservationList.do?pageId=TK0102010000">발권/취소</a></li>
+														                                </li>
+																					
+																				
+																					
+														                                <li>
+														                                  <a href="/hpg/hta/03/selectBreakdownList.do?pageId=TK0102030100">이용내역/영수증</a></li>
+														                                </li>
+																					
+																				
+																					
+														                                <li>
+														                                  <a href="/hpg/hta/03/selectBreakdownList2File.do?pageId=TK0102050000">이용내역 내려받기</a></li>
+														                                </li>
+																					
+																				
+																			</ul>
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+												</ul>
+											
+										</div>
+									</div>
+								</li>
+							
+						
+							
+								<li>
+									<button type="button" class="gnb-main-trigger" data-trigger="gnb" >고객안내</button>
+									<div class="gnb-toggle-wrap">
+										<div class="gnb-main-list" data-has-submenu="true">
+											
+												<ul>
+													<!-- 중메뉴 -->
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">공지사항</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		공지사항
+																			<a href="/cms/article/list.do?pageId=TK0502000000" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">고객의 소리</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		고객의 소리
+																			<a href="/sss/scb/01/auth.do?pageId=TK0405030000" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																			<ul>
+																				<!-- 소메뉴 -->
+																				
+																					
+																				
+																			</ul>
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">고객센터</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		고객센터
+																			<a href="/cms/archive.do?pageId=TK0406010000" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																			<ul>
+																				<!-- 소메뉴 -->
+																				
+																					
+																				
+																			</ul>
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">유실물안내</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		유실물안내
+																			<a href="/cms/archive.do?pageId=TK0404010000" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																			<ul>
+																				<!-- 소메뉴 -->
+																				
+																					
+																				
+																			</ul>
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">여객운송약관</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		여객운송약관
+																			<a href="/cms/archive.do?pageId=TK0501020000" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+												</ul>
+											
+										</div>
+									</div>
+								</li>
+							
+						
+							
+								<li>
+									<button type="button" class="gnb-main-trigger" data-trigger="gnb" >이용안내</button>
+									<div class="gnb-toggle-wrap">
+										<div class="gnb-main-list" data-has-submenu="true">
+											
+												<ul>
+													<!-- 중메뉴 -->
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">승차권 이용안내</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		승차권 이용안내
+																			<a href="/cms/archive.do?pageId=TK0402140000" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																			<ul>
+																				<!-- 소메뉴 -->
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																			</ul>
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">정차역 이용안내</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		정차역 이용안내
+																			<a href="/cms/archive.do?pageId=TK0403010100" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																			<ul>
+																				<!-- 소메뉴 -->
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																			</ul>
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">운행구간</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		운행구간
+																			<a href="https://info.korail.com/info/contents.do?key=857&amp;pageId=TK0403020001" target="_blank" title="새창 열기" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">부대사업안내</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		부대사업안내
+																			<a href="/cms/archive.do?pageId=TK0407010800" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																			<ul>
+																				<!-- 소메뉴 -->
+																				
+																					
+																				
+																			</ul>
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+													
+														
+													
+												</ul>
+											
+										</div>
+									</div>
+								</li>
+							
+						
+							
+								<li>
+									<button type="button" class="gnb-main-trigger" data-trigger="gnb" >회원서비스</button>
+									<div class="gnb-toggle-wrap">
+										<div class="gnb-main-list" data-has-submenu="true">
+											
+												<ul>
+													<!-- 중메뉴 -->
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">미등록고객 예매</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		미등록고객 예매
+																			<a href="/hpg/hma/04/selectAuthUserForm.do?pageId=TK0104040000" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																			<ul>
+																				<!-- 소메뉴 -->
+																				
+																					
+														                                <li>
+														                                  <a href="/hpg/hma/04/selectAuthUserForm.do?pageId=TK0104040000">미등록고객 이용내역</a></li>
+														                                </li>
+																					
+																				
+																					
+														                                <li>
+														                                  <a href="/hpg/hma/04/selectReceiptForm.do?pageId=TK0104050000">비회원 승차권 영수증</a></li>
+														                                </li>
+																					
+																				
+																					
+																				
+																					
+																				
+																					
+																				
+																			</ul>
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">자가발권이용실적</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		자가발권이용실적
+																			<a href="/cms/archive.do?pageId=TK0503030000" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+															<li>
+																<button type="button" class="gnb-sub-trigger" data-trigger="gnb">회원탈퇴안내</button>
+																<div class="gnb-sub-list">
+										                        	<div class="gnb-sub-content">
+										                            	<h2 class="sub-title">
+										                            		회원탈퇴안내
+																			<a href="/cmc/03/selectWithdrawInfo.do?pageId=TK0503050000" class="krds-btn link basic small">
+											                                  	<span class="underline">바로가기</span>
+											                                  	<i class="svg-icon ico-angle right"></i>																			
+																			</a>
+										                              	</h2>
+										                              
+																		
+																	</div>
+																</div>
+															</li>
+														
+													
+														
+													
+														
+													
+														
+													
+														
+													
+														
+													
+												</ul>
+											
+										</div>
+									</div>
+								</li>
+							
+						
+							
+						
+							
+						
+							
+						
+							
+						
+				                
+								 <!--   260612 이상희 추가(통합회원 전환 버튼) -->
+	                               <li class="right-menu">
+						                  <button
+						                    type="button"
+						                    id="openTicketModal"
+						                    onclick="openTicketModal()"
+						                    class="krds-btn large premary end"
+						                    onclick=""
+						                    style="height: 44px; margin: 5px 0 5px 16px; border: 2px solid var(--color-primary-gold)"
+						                    target="_blank"
+						                  >
+						                    <i class="svg-icon ico-member"></i>
+						                    통합회원 전환
+						                  </button>
+								</li>
+					              <!--   260612 이상희 추가(통합회원 전환 버튼) -->
+					      
+								
+								
+								
+								
+								
+					</ul>
+				</div>
+			</nav>
+		<!-- //메인메뉴 : 데스크탑 -->
+		</div>
+	<!-- //헤더 컨텐츠 영역  -->
+	</header>
+        
+<script type="text/javascript">
+var MAIN_CONTEXT_PATH = '';
+var WWW_DOMAIN = 'https://www.srail.co.kr';
+var cfg = {
+	contextPath : '',
+	isLogin : false
+};
+
+
+
+var ptkNm = encodeURIComponent("");
+var regUserId = "";
+function goToHpg(obj,link){
+	if(!cfg.isLogin){
+		if (confirm('로그인 후 이용이 가능합니다.\n\n로그인 페이지로 이동하시겠습니까?')) {
+			if(obj == '1'){
+				location.href = 'http://etk.srail.kr/cmc/01/selectLoginForm.do?pageId=TK0701000000&goUrl=' + encodeURIComponentEx(link);
+			}else{
+				location.href = 'http://etk.srail.kr/cmc/01/selectLoginForm.do?pageId=TK0701000000';
+			}
+			
+		}
+	}else{
+		if(obj == '1'){
+			location.href = link+'?ptkNm='+ptkNm+'&regUserId='+regUserId;
+		}else{
+			location.href = link;
+		}
+	}   
+}
+
+/*
+function chgLang(arg){
+	$J('.topmovebtn').attr('href',arg.value);
+}
+*/
+
+function fnc(){
+	
+var data = {MB_CRD_NO : "",
+		  CUST_NM : "",
+		  MBL_PHONE :"",
+		  BTDT:"",
+		  CUST_MG_NO:""
+		};
+
+	return data;
+}		
+
+window.onload = function(){
+					blockTicket();
+					console.log('','','','');
+					showAlerts(alerts);
+				}
+</script>
+
+
+
+
+	
+	
+
+<script type="text/javascript">
+$J(document).ready(function(){
+	// 2026-07-13 오세희 cms에서 메인 호출 시  mbrIntegCommon의 함수 호출 (통합회원 함수 호출)
+	const params = new URLSearchParams(location.search);
+	if(params.get("action") === "openTicketModal"){
+		openTicketModal();
+	}
+// etk_kr main slider ***************************************	
+	var sl1Li = $J('.slider_wrap > .slider > li');
+	var sl1Len = sl1Li.length - 1;
+	var sl1TimeList = [
+		   				
+							4000
+							
+						
+						];
+	var nowPlay = 1 ;
+	var sl1Num = 0;
+	var sl1Timer;
+	for(var i = 0; i <= sl1Len; i++){
+		$J('.slider_point').append('<a href="javascript:void(0);" class="sl_circle"><img src="/images/btn_slide_li.png" alt="' + i + '번째 이미지" /></a>');
+	}
+	$J('.slider_wrap .left').on('click',function(){
+		sl1GoLeft();
+		nowPlay = 0;
+		playBtnSet();
+	});
+	$J('.slider_wrap .right').on('click',function(){
+		sl1GoRight();
+		nowPlay = 0;
+		playBtnSet();
+	});
+	$J('.slider_wrap .play').on('click',function(){
+		sl1Play();
+		playBtnSet();
+	});
+	$J('.slider_wrap .hold').on('click',function(){
+		sl1Hold();
+		nowPlay = 0;
+		playBtnSet();
+	});
+	$J('.sl_circle').on('click',function(){
+		sl1Num = $J(this).index()-2;
+		sl1Hold();
+		nowPlay = 0;
+		sl1Run();
+	});
+	sl1Play();
+	circleBtnSet();
+	function sl1GoLeft(){
+		if(sl1Num == 0) {
+			sl1Num = sl1Len;
+		}else {
+			sl1Num--;
+		}
+		sl1Hold();
+		sl1Run();
+	}
+	function sl1GoRight(){
+		if(sl1Num == sl1Len) {
+			sl1Num = 0;
+		}else {
+			sl1Num ++;
+		}
+		sl1Hold();
+		sl1Run();		
+	}	
+	function sl1Play(){
+		if (sl1TimeList.length > 1) {
+			sl1Timer = setInterval(sl1TimerWrap, 3000); // 로드시 첫 시간
+			nowPlay = 1;
+		}
+	}
+	function sl1Hold(){
+		clearInterval(sl1Timer);
+	}
+	function sl1Run(){
+		sl1Li.hide();
+		sl1Li.eq(sl1Num).fadeIn('fast');
+		$J('.test > span').text(','+sl1TimeList[sl1Num]);	$J('.test > i').text(', nowPlay='+nowPlay);	
+		circleBtnSet();
+		playBtnSet();
+	}	
+	function sl1TimerWrap() {
+		var sl1TimeList = new Array(
+			
+				4000
+				
+			
+			);		
+		sl1GoRight();
+		clearInterval(sl1Timer);
+		sl1Timer = setInterval(sl1TimerWrap, sl1TimeList[sl1Num]);
+	}
+	function playBtnSet() {
+		if(nowPlay){
+			$J('.hold').show();
+			$J('.play').hide();
+		}else{
+			$J('.hold').hide();
+			$J('.play').show();
+		}
+	}
+	function circleBtnSet(){
+		$J('.sl_circle').each(function(){
+			$J(this).children().attr('src','/images/btn_slide_li.png');
+		}).eq(sl1Num).children().attr('src','/images/btn_slide_now.png');
+	}
+});
+</script>
+
+<!-- 20251218_웹 접근성 2차 조치_INDEX_KHD -->
+<div id="container" style="min-width : 1200px" aria-label="본문 시작지점">
+	<div>
+		<!-- 입력창 -->
+		<div class="main-sect bg" style="margin-top: 0">
+      	<div class="inner">
+			<form name="search-form" id="search-form" action="/hpg/hra/01/selectScheduleList.do?pageId=TK0101010000" onsubmit="return false;" method="post" style="margin-left:10px;">
+		        <fieldset>
+					<legend>잔여석조회영역</legend>
+					<input type="hidden" name="stlbTrnClsfCd" value="05" />
+					<input type="hidden" name="trnGpCd" value="109" />
+					<input type="hidden" name="psgNum" value="" />
+					<input type="hidden" name="seatAttCd" value="015" />
+					<input type="hidden" name="isRequest" value="Y" />
+					<input type="hidden" name="key" value="" />
+					<input type="hidden" name="psgInfoPerPrnb1" value="" />
+					<input type="hidden" name="psgInfoPerPrnb5" value="" />
+					<input type="hidden" name="srchDvNm" value="" />
+					
+		        	<div class="fieldset">				
+		          		<div class="input-group" style="align-items: end">
+		            	<!-- 폼그룹 -->
+		            		<div class="form-group">
+								
+								
+		              			<div class="form-tit">
+		                			<label for="dptRsStnCd" title="출발역 선택">출발지</label>
+		              			</div>
+		              			<div class="form-conts btn-ico-wrap">
+		                			<div class="input-group m-column">
+		                  				<select class="krds-form-select" name="dptRsStnCd" id="dptRsStnCd" aria-label="출발역 선택">
+											<option value='' selected>출발역</option>
+											
+												<option value='0508' >경주</option>
+											
+												<option value='0049' >곡성</option>
+											
+												<option value='0514' >공주</option>
+											
+												<option value='0036' >광주송정</option>
+											
+												<option value='0501' >광명</option>
+											
+												<option value='0050' >구례구</option>
+											
+												<option value='0507' >김천구미</option>
+											
+												<option value='0037' >나주</option>
+											
+												<option value='0048' >남원</option>
+											
+												<option value='0010' >대전</option>
+											
+												<option value='0015' >동대구</option>
+											
+												<option value='0552' >동탄</option>
+											
+												<option value='0059' >마산</option>
+											
+												<option value='0041' >목포</option>
+											
+												<option value='0017' >밀양</option>
+											
+												<option value='0019' >구포</option>
+											
+												<option value='0224' >물금</option>
+											
+												<option value='0020' >부산</option>
+											
+												<option value='0506' >서대구</option>
+											
+												<option value='0001' >서울</option>
+											
+												<option value='0551' >수서</option>
+											
+												<option value='0051' >순천</option>
+											
+												<option value='0053' >여수EXPO</option>
+											
+												<option value='0139' >여천</option>
+											
+												<option value='0297' >오송</option>
+											
+												<option value='0509' >울산(통도사)</option>
+											
+												<option value='0030' >익산</option>
+											
+												<option value='0045' >전주</option>
+											
+												<option value='0033' >정읍</option>
+											
+												<option value='0056' >진영</option>
+											
+												<option value='0063' >진주</option>
+											
+												<option value='0057' >창원</option>
+											
+												<option value='0512' >창원중앙</option>
+											
+												<option value='0502' >천안아산</option>
+											
+												<option value='0553' >평택지제</option>
+											
+												<option value='0515' >포항</option>
+											
+		
+				                        </select>
+				                 	</div>
+								</div>
+				        	</div>
+				         	<!-- 폼그룹 -->
+			              	<button type="button" class="krds-btn large tertiary" id="switchBtn">
+			                	<span class="sr-only">출발지 도착지 바꾸기</span>
+			                	<i class="svg-icon ico-switch"></i>
+			              	</button>		         	
+		
+		                  	<!-- 폼그룹 -->
+		                  	<div class="form-group">
+								
+								
+		                    	<div class="form-tit">
+		                      		<label for="arvRsStnCd" title="도착역 선택">도착지</label>
+		                    	</div>
+		                    	<div class="form-conts btn-ico-wrap">
+		                      		<div class="input-group m-column">
+		                        		<select class="krds-form-select" name="arvRsStnCd" id="arvRsStnCd" aria-label="도착역 선택">
+											<option value='' selected>도착역</option>
+											
+												<option value='0508' >경주</option>
+											
+												<option value='0049' >곡성</option>
+											
+												<option value='0514' >공주</option>
+											
+												<option value='0036' >광주송정</option>
+											
+												<option value='0501' >광명</option>
+											
+												<option value='0050' >구례구</option>
+											
+												<option value='0507' >김천구미</option>
+											
+												<option value='0037' >나주</option>
+											
+												<option value='0048' >남원</option>
+											
+												<option value='0010' >대전</option>
+											
+												<option value='0015' >동대구</option>
+											
+												<option value='0552' >동탄</option>
+											
+												<option value='0059' >마산</option>
+											
+												<option value='0041' >목포</option>
+											
+												<option value='0017' >밀양</option>
+											
+												<option value='0019' >구포</option>
+											
+												<option value='0224' >물금</option>
+											
+												<option value='0020' >부산</option>
+											
+												<option value='0506' >서대구</option>
+											
+												<option value='0001' >서울</option>
+											
+												<option value='0551' >수서</option>
+											
+												<option value='0051' >순천</option>
+											
+												<option value='0053' >여수EXPO</option>
+											
+												<option value='0139' >여천</option>
+											
+												<option value='0297' >오송</option>
+											
+												<option value='0509' >울산(통도사)</option>
+											
+												<option value='0030' >익산</option>
+											
+												<option value='0045' >전주</option>
+											
+												<option value='0033' >정읍</option>
+											
+												<option value='0056' >진영</option>
+											
+												<option value='0063' >진주</option>
+											
+												<option value='0057' >창원</option>
+											
+												<option value='0512' >창원중앙</option>
+											
+												<option value='0502' >천안아산</option>
+											
+												<option value='0553' >평택지제</option>
+											
+												<option value='0515' >포항</option>
+											
+		                        		</select>
+		                      		</div>
+		                    	</div>
+		                  	</div>
+							<div class="form-group">
+								<div class="form-tit">
+									<label for="cal">출발일</label>
+								</div>
+								<div class="form-conts">
+							    	<div class="form-conts calendar-conts">
+							      		<div class="calendar-input">
+							        		<!-- <input type="text" class="krds-input datepicker cal" name="dptDt" value="2026.10.07" placeholder="2026.10.07" id="cal" /> --> <!-- ★ 금일날짜 표기하기 -->
+							        		<input type="text" class="krds-input datepicker cal" name="dptDt" value="2026.10.07" id="cal" readonly/>
+							       			<button type="button" class="krds-btn medium icon form-btn-datepicker" aria-expanded="false" onclick="selectCalendarInfo(this.form.dptDt);">
+							         				<span class="sr-only">달력 열기</span>
+							         				<i class="svg-icon ico-calendar"></i>
+							       			</button>
+							      		</div>
+										
+										
+							      	</div>
+								</div>
+							</div>
+		
+							<!-- 시간선택 -->
+							<div class="form-group">
+								<div class="form-tit">
+									<label for="dptTm">시간</label>
+								</div>
+								<div class="form-conts btn-ico-wrap">
+									<em class="blind">10시 이후</em>
+									<select name="dptTm" id="dptTm" class="krds-form-select" title="출발시각 선택">
+										
+											<option value="000000">00시 이후</option>
+										
+											
+										
+											<option value="020000">02시 이후</option>
+										
+											
+										
+											<option value="040000">04시 이후</option>
+										
+											
+										
+											<option value="060000">06시 이후</option>
+										
+											
+										
+											<option value="080000">08시 이후</option>
+										
+											
+										
+											<option value="100000" selected="selected">10시 이후</option>
+										
+											
+										
+											<option value="120000">12시 이후</option>
+										
+											
+										
+											<option value="140000">14시 이후</option>
+										
+											
+										
+											<option value="160000">16시 이후</option>
+										
+											
+										
+											<option value="180000">18시 이후</option>
+										
+											
+										
+											<option value="200000">20시 이후</option>
+										
+											
+										
+											<option value="220000">22시 이후</option>
+										
+											
+										
+									</select>
+								</div>
+							</div>
+							<!-- //시간선택 -->
+							<!-- 인원선택 -->
+							<div class="form-group">
+								<div class="form-tit">
+									<label for="passenger">인원선택</label>
+								</div>
+								<div class="form-conts passenger-conts">
+									<div class="passenger-input">
+										<input type="number" class="krds-input datepicker" placeholder="총 1명" id="passenger" readonly/>
+										<button type="button" class="krds-btn medium icon form-btn-datepicker" onclick="passengerBettonOnclick('1');" aria-expanded="false">
+											<span class="sr-only">인원선택 열기</span>
+											<i class="svg-icon ico-my"></i>
+										</button>
+									</div>
+		                      
+		                      
+									<!-- 인원 Layer -->
+									<div class="krds-passenger-area" id="passengerAreaLayer">
+										<div class="passenger-wrap" aria-label="인원 선택창" tabindex="0">
+											<div class="passenger-head">
+												<div>
+													<h3 class="tit">인원선택</h3>
+													<span class="desc">1~9명까지 선택 가능합니다.</span>
+												</div>
+												<button type="button" class="krds-btn midium icon btn-close close-modal" onclick="passengerBettonOnclick('2');">
+													<span class="sr-only">닫기</span>
+													<i class="svg-icon ico-popup-close"></i>
+												</button>
+											</div>
+											<div class="passenger-body">
+												<ul>
+													<li class="passenger-btn-wrap">
+														<div class="label">
+															<div class="main">어른<span class="txt psgInfoPerPrnbzTxt1" data-value="1">1</span>명
+															</div>
+																<span class="desc">13세 이상</span>
+														</div>
+														<div class="counter">
+															<button type="button" class="btn-cal-minus" aria-selected="false" id="psg1MinusBtn" onclick="passengerPulsAMinus(this);"><span class="sr-only">어른 인원 빼기</span></button>
+															<span class="psgInfoPerPrnbzTxt1" data-value="1">1</span>
+															<button type="button" class="btn-cal-plus" aria-selected="false" id="psg1PlusBtn" onclick="passengerPulsAMinus(this);"><span class="sr-only">어른 인원 더하기</span></button>
+														</div>
+													</li>
+													<li class="passenger-btn-wrap">
+														<div class="label">
+															<div class="main">어린이<span class="txt psgInfoPerPrnbzTxt5" data-value="0">0</span>명
+															</div>
+															<span class="desc">6세 ~ 12세</span>
+														</div>
+														
+														<div class="counter">
+															<button type="button" class="btn-cal-minus" aria-selected="false" id="psg5MinusBtn" onclick="passengerPulsAMinus(this);"><span class="sr-only">어린이 인원 빼기</span></button>
+															<span class="psgInfoPerPrnbzTxt5" data-value="0">0</span>
+															<button type="button" class="btn-cal-plus" aria-selected="false" id="psg5PlusBtn" onclick="passengerPulsAMinus(this);"><span class="sr-only">어린이 인원 더하기</span></button>
+														</div>
+													</li>
+		 <!--                              
+		 											<li class="passenger-btn-wrap">
+														<div class="label">
+															<div class="main">유아<span>0</span>명
+															</div>
+															<span class="desc">만 6세 미만</span>
+														</div>
+														<div class="counter">
+															<button type="button" class="btn-cal-minus" aria-selected="false"><span class="sr-only">어른 인원 빼기</span></button>
+															<span class="  ">0</span>
+															<button type="button" class="btn-cal-plus" aria-selected="false"><span class="sr-only">어른 인원 더하기</span></button>
+														</div>
+													</li>
+													<li class="passenger-btn-wrap">
+														<div class="label">
+															<div class="main">경로<span>0</span>명
+															</div>
+															<span class="desc">만 65세 이상</span>
+														</div>
+														<div class="counter">
+															<button type="button" class="btn-cal-minus" aria-selected="false"><span class="sr-only">어른 인원 빼기</span></button>
+															<span class="  ">0</span>
+															<button type="button" class="btn-cal-plus" aria-selected="false"><span class="sr-only">어른 인원 더하기</span></button>
+														</div>
+													</li>
+													<li class="passenger-btn-wrap">
+														<div class="label">
+															<div class="main">중증장애인<span>0</span>명
+		                                  					</div>
+															<span class="desc">장애 1 ~ 3급</span>
+														</div>
+														<div class="counter">
+															<button type="button" class="btn-cal-minus" aria-selected="false"><span class="sr-only">어른 인원 빼기</span></button>
+															<span class="  ">0</span>
+															<button type="button" class="btn-cal-plus" aria-selected="false"><span class="sr-only">어른 인원 더하기</span></button>
+														</div>
+													</li>
+													<li class="passenger-btn-wrap">
+														<div class="label">
+															<div class="main">경증장애인<span>0</span>명
+															</div>
+															<span class="desc">장애 4 ~ 6급</span>
+														</div>
+														<div class="counter">
+															<button type="button" class="btn-cal-minus" aria-selected="false"><span class="sr-only">어른 인원 빼기</span></button>
+															<span class="  ">0</span>
+															<button type="button" class="btn-cal-plus" aria-selected="false"><span class="sr-only">어른 인원 더하기</span></button>
+														</div>
+													</li> 
+		-->
+												</ul>
+											</div>
+		
+											<div class="passenger-footer">
+												<div class="passenger-btn-wrap">
+													<button type="button" class="krds-btn small primary" id="passengerOkBtn" onclick="passengerOkOnclick();">어른 1명 적용</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+		                  <!-- //인원선택 END-->
+		
+		
+							<button type="button" class="krds-btn large premary end" onclick="selectScheduleList(); return false;">조회<i class="svg-icon ico-sch"></i></button>
+						</div>
+					</div>
+				
+				
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	<!-- //입력창 -->
+</div>
+
+<!-- section : 공지사항 -->
+	<div class="main-sect">
+		<div class="inner">
+			<div class="main-box-responsive">
+			
+				<div class="d-fix">
+					<div class="in">
+						<div id="d-ban-house" class="main-d-ban-swiper align-start bg">
+							<div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+								<ul class="swiper-wrapper" id="swiper-wrapper-86435e4f27333392" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-362px, 0px, 0px); transition-delay: 0ms">
+								
+								
+								
+								
+								
+								
+								
+									
+										
+											
+											
+												<li class="swiper-slide" role="group" aria-label="1 / 1" data-swiper-slide-index="0" style="width: 346px; margin-right: 16px">
+													<div class="im">
+														
+															<a href="https://etk.srail.kr/cms/article/view.do?postNo=931&pageId=TK0502000000" target="_blank" title="새창 열기">
+																<img style="max-width:100%" src="https://www.srail.co.kr//banner/2026/09/30/20260930161227188.927253.png" alt="고속철도 통합 운영에 따른 기존 SR쿠폰 이용방법 안내, 자세히보기" />
+															</a>
+														
+														
+													</div>
+												</li>
+											
+										
+									
+								
+								
+								</ul>
+								<span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+							</div>
+							<div class="swiper-indicator">
+								<div class="swiper-pagination swiper-pagination-fraction swiper-pagination-horizontal">
+									<span class="swiper-pagination-current">1</span>
+									/
+									<span class="swiper-pagination-total">2</span>
+								</div>
+								<div class="swiper-controller">
+									<button type="button" class="swiper-button-play" style="display: none">
+										<span class="sr-only">슬라이드 재생</span>
+									</button>
+									<button type="button" class="swiper-button-stop">
+										<span class="sr-only">슬라이드 멈춤</span>
+									</button>
+								</div>
+								<div class="swiper-navigation">
+									<button type="button" class="swiper-button-prev" tabindex="0" aria-label="Previous slide" aria-controls="swiper-wrapper-86435e4f27333392">
+										<span class="sr-only">이전</span>
+									</button>
+									<button type="button" class="swiper-button-next" tabindex="0" aria-label="Next slide" aria-controls="swiper-wrapper-86435e4f27333392">
+										<span class="sr-only">다음</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!-- //section : 공지사항 -->
+				<div class="d-auto">
+					<div class="in outline">
+						<div class="main-tit-wrap">
+							<h3 class="tit">공지사항</h3>
+							<a href="/cms/article/list.do?pageId=TK0502000000" class="krds-btn medium text">더보기
+								<i class="svg-icon ico-plus"></i>
+							</a>
+						</div>
+						
+						
+						
+							
+							
+								<ul class="news-tbl-list">
+									
+										<li>
+											<a href="/cms/article/view.do?postNo=933&pageId=TK0502000000">SRT 앱·홈페이지 비회원 예매 승차권 확인 방법 안내</a>
+												<span>26.09.30</span>
+										</li>
+									
+										<li>
+											<a href="/cms/article/view.do?postNo=932&pageId=TK0502000000">KTX 및 일반열차 운행조정 알림</a>
+												<span>26.09.29</span>
+										</li>
+									
+										<li>
+											<a href="/cms/article/view.do?postNo=931&pageId=TK0502000000">고속철도 통합 운영에 따른 기존 SR쿠폰 이용방법 안내</a>
+												<span>26.09.23</span>
+										</li>
+									
+										<li>
+											<a href="/cms/article/view.do?postNo=926&pageId=TK0502000000">고속철도 기관 통합에 따른 2026년 3분기 SR 회원 등급조회 및 혜택 안내</a>
+												<span>26.09.01</span>
+										</li>
+									
+										<li>
+											<a href="/cms/article/view.do?postNo=923&pageId=TK0502000000">고속철도 통합에 따른 고객센터 운영 변경 알림</a>
+												<span>26.08.26</span>
+										</li>
+									
+								</ul>
+							
+						
+					</div>
+				</div>
+				<!-- //section : 공지사항 END -->
+			</div>
+		</div>
+	</div>
+	
+	
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    /************publisher zone START************/
+    var gvTxtpsgokBtn = "";
+    var gvTxtpsgInfoTxt1 = "";
+    var gvTxtpsgInfoTxt2 = "";
+
+	// Placeholder 스타일 처리 (값이 비어 있을 때 흐리게)
+	function applyPlaceholderStyle(sel) {
+	  sel.classList.toggle("placeholder", sel.value === "");
+	}
+	const depSel = document.getElementById("dptRsStnCd");
+	const arrSel = document.getElementById("arvRsStnCd");
+	[depSel, arrSel].forEach((s) => {
+	  applyPlaceholderStyle(s);
+	  s.addEventListener("change", () => applyPlaceholderStyle(s));
+	});
+	
+	// 스왑 로직
+	document.getElementById("switchBtn").addEventListener("click", () => {
+	  // 회전 효과
+	  const icon = document.querySelector("#switchBtn .ico-switch");
+	  icon.classList.remove("spin");
+	  void icon.offsetWidth; // reflow to restart animation
+	  icon.classList.add("spin");
+	
+	  // 값 교환
+	  const tmp = depSel.value;
+	  depSel.value = arrSel.value;
+	  arrSel.value = tmp;
+	
+	  applyPlaceholderStyle(depSel);
+	  applyPlaceholderStyle(arrSel);
+	
+	  // 접근성 라이브 리전 공지
+	  const msg = `false ↔ false 로 전환되었습니다.`;
+	  const live = document.getElementById("swapLive");
+	  live.textContent = msg;
+	
+	  // 포커스 이동(모바일 사용성): 버튼 눌러도 포커스 유지
+	  document.getElementById("switchBtn").focus();
+	});
+	
+	
+	
+	/*************퍼블소스 2차***********************/
+    //메인배너
+    let licnt = $J("#d-ban-house .swiper-slide").length;
+	let v_loop = licnt >=1 ? false : true;
+    const dBanHouseSwiper = new Swiper("#d-ban-house .swiper", {
+      slidesPerView: 1,
+      spaceBetween: 16,
+      speed: 400,
+      loop: v_loop,	/* 20260115_대수송_메인 배너 슬라이드 정지 */
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      navigation: {
+        nextEl: "#d-ban-house .swiper-button-next",
+        prevEl: "#d-ban-house .swiper-button-prev",
+      },
+      pagination: {
+        el: "#d-ban-house .swiper-pagination",
+        type: "fraction",
+      },
+    });
+    const $dBanHouseSwiperPlay = document.querySelector("#d-ban-house .swiper-button-play");
+    const $dBanHouseSwiperStop = document.querySelector("#d-ban-house .swiper-button-stop");
+    $dBanHouseSwiperPlay.style.display = "none";
+    $dBanHouseSwiperPlay.addEventListener("click", () => {
+      dBanHouseSwiper.autoplay.start();
+      $dBanHouseSwiperStop.style.display = "";
+      $dBanHouseSwiperPlay.style.display = "none";
+    });
+    $dBanHouseSwiperStop.addEventListener("click", () => {
+      dBanHouseSwiper.autoplay.stop();
+      $dBanHouseSwiperStop.style.display = "none";
+      $dBanHouseSwiperPlay.style.display = "";
+    });
+    //재생정지버튼
+    function setupSwiperControls(swiperInstance, playSelector, stopSelector) {
+      const $playButton = document.querySelector(playSelector);
+      const $stopButton = document.querySelector(stopSelector);
+      $playButton.style.display = "none";
+      $playButton.addEventListener("click", () => {
+        swiperInstance.autoplay.start();
+        $stopButton.style.display = "";
+        $playButton.style.display = "none";
+      });
+      $stopButton.addEventListener("click", () => {
+        swiperInstance.autoplay.stop();
+        $stopButton.style.display = "none";
+        $playButton.style.display = "";
+      });
+    }
+    //비주얼 배너
+    const vbSwiper = new Swiper(".vb-swiper .swiper", {
+      on: {
+        init: function () {
+          setupSwiperControls(this, ".vb-swiper .swiper-button-play", ".vb-swiper .swiper-button-stop");
+        },
+      },
+      slidesPerView: 1,
+      spaceBetween: 0,
+      speed: 400,
+      loop: true,
+      navigation: {
+        nextEl: ".vb-swiper .swiper-button-next",
+        prevEl: ".vb-swiper .swiper-button-prev",
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      pagination: {
+        el: ".vb-swiper .swiper-pagination",
+        clickable: true,
+      },
+    });
+    /*************퍼블소스 2차***********************/
+	
+    
+    /*인원 선택 layout 열기/닫기 버튼 선택 */
+	function passengerBettonOnclick(flag) {
+		
+    	/* [flag] 1:layout열기/ 2:layoute닫기 */
+		if(flag == '1'){
+			/*버튼 텍스트 글로벌 함수에 담기
+			레이아웃을 열었을때, "적용"이 아닌, 닫기 버튼 선택 시 리셋을 위함
+			*/
+			gvTxtpsgokBtn = document.getElementById('passengerOkBtn').textContent;
+			gvTxtpsgInfoTxt1 = $J('.psgInfoPerPrnbzTxt1').eq(0).text();
+			gvTxtpsgInfoTxt5 = $J('.psgInfoPerPrnbzTxt5').eq(0).text();
+    		
+			document.getElementById('passengerAreaLayer').classList.add('active');
+		} else {
+			/*글로벌 함수의 텍스트를 각 영역에 삽입
+			레이아웃을 닫을때, 저장이 아니므로, 글로벌 함수의 카운터를 가져와서 리셋
+			*/
+			document.getElementById('passengerOkBtn').textContent = gvTxtpsgokBtn;
+			$J('.psgInfoPerPrnbzTxt1').text(gvTxtpsgInfoTxt1);
+			$J('.psgInfoPerPrnbzTxt5').text(gvTxtpsgInfoTxt5);
+			
+			document.getElementById('passengerAreaLayer').classList.remove('active');
+		}
+	}
+	
+    /*인원 증가 및 감소 이벤트 호출*/
+	function passengerPulsAMinus(obj){
+		/* 1:어른 / 2:어린이*/
+ 		var objId = obj.id;
+		var parseIntIdNum = objId.replace(/[^0-9]/g, "");
+		var objSpanText = $J('.psgInfoPerPrnbzTxt'+parseIntIdNum).eq(0).text();
+		var objSpanTextInt = parseInt(objSpanText);
+		var okBtnTxt = "";
+		
+		if(objId.indexOf("Minus") !== -1 ){
+			$J('.psgInfoPerPrnbzTxt'+parseIntIdNum).text(objSpanTextInt -1);
+		}else if(objId.indexOf("Plus") !== -1){
+			$J('.psgInfoPerPrnbzTxt'+parseIntIdNum).text(objSpanTextInt +1);
+		}
+		
+ 		if($J('.psgInfoPerPrnbzTxt1').eq(0).text() == 0 && $J('.psgInfoPerPrnbzTxt5').eq(0).text() == 0){
+			$J('.psgInfoPerPrnbzTxt'+parseIntIdNum).text('1');
+		}
+		
+		if($J('.psgInfoPerPrnbzTxt'+parseIntIdNum).eq(0).text() < 0){
+			$J('.psgInfoPerPrnbzTxt'+parseIntIdNum).text('0');
+		}
+		if($J('.psgInfoPerPrnbzTxt'+parseIntIdNum).eq(0).text() > 9){
+			$J('.psgInfoPerPrnbzTxt'+parseIntIdNum).text('9');
+		}
+		
+		var psgTxt1 = '어른 '  + $J('.psgInfoPerPrnbzTxt1').eq(0).text() + '명';
+		var psgTxt2 = '어린이 ' + $J('.psgInfoPerPrnbzTxt5').eq(0).text()  + '명';
+		
+		if($J('.psgInfoPerPrnbzTxt1').eq(0).text() != 0){
+			okBtnTxt += psgTxt1;
+		}
+		if($J('.psgInfoPerPrnbzTxt5').eq(0).text() != 0){
+			if($J('.psgInfoPerPrnbzTxt1').eq(0).text() != 0){
+				okBtnTxt += ' / ';
+			}
+			okBtnTxt += psgTxt2;
+		}
+		
+		document.getElementById('passengerOkBtn').textContent = okBtnTxt + ' 적용';
+		//document.getElementById('passenger').placeholder = okBtnTxt + ' 적용';
+	}
+    
+    /*인원 적용 시 이벤트*/
+	function passengerOkOnclick(){
+		/*data-value값에 실제 값 세팅*/
+    	$J('.psgInfoPerPrnbzTxt1').attr('data-value', $J('.psgInfoPerPrnbzTxt1').eq(0).text());
+		$J('.psgInfoPerPrnbzTxt5').attr('data-value', $J('.psgInfoPerPrnbzTxt5').eq(0).text());
+		
+		var okBtnTxt = parseInt($J('.psgInfoPerPrnbzTxt1').attr('data-value')) + parseInt($J('.psgInfoPerPrnbzTxt5').attr('data-value'));
+
+		document.getElementById('passenger').placeholder = '총 '+okBtnTxt+'명';
+		
+		document.getElementById('passengerAreaLayer').classList.remove('active');
+	}
+	/************publisher zone END************/       
+           
+	var Visual = {
+		size : 0,
+		selected : 0,
+		unit : 610,
+		timer : 3,
+		isPause : false,
+		isPauseOld : false,
+
+		init : function () {
+			this.size = $$('.visual .screen ul li').length;
+
+			if (this.size > 0) {
+				$$('.visual .screen ul')[0].setStyle({width : (this.size * this.unit) + 'px'});
+			}
+		},
+
+		change : function (selected) {
+			this.selected = selected;
+			this.isPauseOld = this.isPause;
+			this.isPause = true;
+
+			new Effect.Move('visual-area', {
+				x : this.unit * (selected - 1) * -1,
+				y : 0,
+				duration : 0.3,
+				mode : 'absolute',
+				transition : Effect.Transitions.sinoidal,
+				afterFinish : function () {
+					$$('.visual .navi')[0].getElementsBySelector('li').each(function (s, i) {
+						s.removeClassName('on');
+
+						if (i + 1 == selected) {
+							s.addClassName('on');
+						}
+					}.bind(this));
+
+					this.isPause = this.isPauseOld;
+				}.bind(this)
+			});
+		},
+
+		play : function () {
+			if (this.selected >= this.size) {
+				this.change(1);
+				return;
+			}
+
+			this.change(this.selected + 1);
+		},
+
+		pause : function () {
+			this.isPause = true;
+		},
+
+		start : function () {
+			this.isPause = false;
+		}
+	};
+
+	var Banner = {
+		size : 0,
+		selected : 0,
+		unit : 300,
+		timer : 3,
+		isPause : false,
+		isPauseOld : false,
+
+		init : function () {
+			this.size = $$('.events .screen ul li').length;
+
+			if (this.size > 0) {
+				$$('.events .screen ul')[0].setStyle({width : (this.size * this.unit) + 'px'});
+			}
+		},
+
+		change : function (selected) {
+			this.selected = selected;
+			this.isPauseOld = this.isPause;
+			this.isPause = true;
+
+			new Effect.Move('events-area', {
+				x : this.unit * (selected - 1) * -1,
+				y : 0,
+				duration : 0.3,
+				mode : 'absolute',
+				transition : Effect.Transitions.sinoidal,
+				afterFinish : function () {
+					$$('.events .navi')[0].getElementsBySelector('li').each(function (s, i) {
+						s.removeClassName('on');
+
+						if (i + 1 == selected) {
+							s.addClassName('on');
+						}
+					}.bind(this));
+
+					this.isPause = this.isPauseOld;
+				}.bind(this)
+			});
+		},
+
+		play : function () {
+			if (this.selected >= this.size) {
+				this.change(1);
+				return;
+			}
+
+			this.change(this.selected + 1);
+		},
+
+		pause : function () {
+			this.isPause = true;
+		},
+
+		start : function () {
+			this.isPause = false;
+		}
+	};
+
+	function selectMapInfo(obj, target) {
+		var other = '';
+		var srt = ['0508', '0049', '0514', '0036', '0501', '0050', '0507', '0037', '0048', '0010', '0015', '0552', '0059', '0041', '0017', '0019', '0224', '0020', '0506', '0001', '0551', '0051', '0053', '0139', '0297', '0509', '0030', '0045', '0033', '0056', '0063', '0057', '0512', '0502', '0553', '0515'];
+
+		if (!Common.inArray($$('input[name="dptRsStnCd"]')[0].value, srt) || !Common.inArray($$('input[name="arvRsStnCd"]')[0].value, srt)) {
+			other = 'KORAIL';
+		}
+		
+		var pcYn = 'Y';
+		var iframeTitle = "";
+		
+		if(target == 'dpt') {
+			iframeTitle = "출발역 노선선택";
+		}
+		
+		if(target == 'arv') {
+			iframeTitle = "도착역 노선선택";
+		}
+
+		(new IFrame(520, 733, '/hpg/hra/01/selectMapInfo.do?isMain=Y&isAll=Y&other=' + other + '&target=' + target, cfg.contextPath, 'N', pcYn, iframeTitle)).open((function () {
+			try { $(obj).focus(); } catch (e) {}
+		}));
+	}
+
+	function selectCalendarInfo(obj) {
+		var pcYn = 'Y';
+		var iframeTitle = "운행일자 선택";
+		Common.openWin('/hpg/hra/01/selectCalendarInfo.do?isMain=Y&pageId=TK0000000000',iframeTitle, 600, 390, 'yes');
+		/*
+		(new IFrame(600, 390, '/hpg/hra/01/selectCalendarInfo.do?isMain=Y&pageId=TK0000000000', cfg.contextPath, 'N', pcYn, iframeTitle)).open((function () {
+			try { 
+				$(obj).focus();
+				//$J(".dropDownNoJqueryUi").selectmenu("refresh", true);
+				//$J(".dropDownNoJqueryUi").selectmenu().selectmenu( "menuWidget" ).addClass( "overflow" );			
+			} catch (e) {}
+		}));
+		*/
+	}
+
+	function selectScheduleList() {
+		var o = $('search-form');
+		var e = Common.checkForm(o);
+
+		if (e != '') {
+			window.alert(e);
+			return false;
+		}
+		
+		var srt3 = ['0551', '0552', '0553', '0502', '0297', '0010', '0507', '0506', '0015', '0508', '0509', '0020'];	//경부
+		var srt6 = ['0514', '0030', '0033', '0036', '0037', '0041'];//호남
+		
+		//var o = $('search-form');
+		
+		var dptDt =  o.dptDt.value.replace(/\./gi, '');
+		
+		
+		var srtBlock = ['0010'];	//안내문구 열차
+		if(parseInt(dptDt) >= 20250806 && parseInt(dptDt) <= 20250817){
+			if (Common.inArray(o.dptRsStnCd.value, srtBlock)||Common.inArray(o.arvRsStnCd.value, srtBlock)) {//출발
+				alert('[대전역 인근 중앙로 일원 교통통제 안내]\n대전광역시에서 개최하는 “2025 대전 0시 축제” 행사 관계로\n2025. 8. 6.(수) 05:00 ~ 8. 17.(일) 24:00까지\n중앙로(대전역~옛 충남도청 구간) 일원 차량 통행이 전면 통제됩니다.\n열차이용에 참고하시기 바랍니다. (대전도시철도 정상 운행)');
+			}
+		}
+		
+		if(dptDt == '20220701'){
+			if (Common.inArray(o.dptRsStnCd.value, srt3)||Common.inArray(o.arvRsStnCd.value, srt3)) {//출발
+				//alert('[SRT 궤도이탈에 따른 열차 운휴안내]\n\n2022년 7월 1일 (금) 15시경\n대전 인근에서 SRT열차 궤도이탈에 따라,\n금일 358열차, 362열차, 377열차는\n운행하지 않을 예정입니다.\n이에 따라, 해당열차 이용객 여러분께서는\n후속열차 또는 타교통수단을 이용해주시기 바라며,\n추후 열차운행정보 및 이용객 보상안내 방안등에 대해\n지속적으로 안내하겠습니다.\n\n에스알은 사고조치 및 SRT의 안전운행에\n최선을 다하겠습니다.\n\n-주식회사 에스알 드림-');
+				alert('[SRT 궤도이탈에 따른 열차 운휴안내]\n\n현재 운휴대상 열차 : 358, 362, 373, 377\n\n추후 열차운행정보 및 이용객 보상안내 방안 등에 대해\n지속적으로 안내하겠습니다.\n\n이용에 불편을 드려 대단히 죄송합니다.');
+			}
+		}
+		
+		/*else if (Navi.isLoading()) {
+			return;
+		}*/
+
+		//-- 출발역 또는 도착역 코드가 없을 때
+		/* if (o.dptRsStnCd.value == '') {
+			if (!selectStnCdInfo('dptRsStnCd', 'dptRsStnCdNm')) {
+				window.alert('출발역을 확인하십시오.');
+				o.dptRsStnCdNm.focus();
+				return;
+			}
+		}
+
+		if (o.arvRsStnCd.value == '') {
+			if (!selectStnCdInfo('arvRsStnCd', 'arvRsStnCdNm')) {
+				window.alert('도착역을 확인하십시오.');
+				o.arvRsStnCdNm.focus();
+				return;
+			}
+		} */
+		//--
+		
+		if (o.dptRsStnCd.value == '') {
+			window.alert('출발역을 선택하여 주십시요.');
+			return false;
+		}
+
+		if (o.arvRsStnCd.value == '') {
+			window.alert('도착역을 선택하여 주십시요.');
+			return false;
+		}
+
+
+		if (o.dptRsStnCd.value == o.arvRsStnCd.value) {
+			window.alert('출발역과 도착역이 동일합니다.');
+			return false;
+		}
+
+		//-- 출/도착역이 SRT 구간이 아닐 경우
+		var srt = ['0508', '0049', '0514', '0036', '0501', '0050', '0507', '0037', '0048', '0010', '0015', '0552', '0059', '0041', '0017', '0019', '0224', '0020', '0506', '0001', '0551', '0051', '0053', '0139', '0297', '0509', '0030', '0045', '0033', '0056', '0063', '0057', '0512', '0502', '0553', '0515'];
+
+/* 		if (!Common.inArray(o.dptRsStnCd.value, srt) || !Common.inArray(o.arvRsStnCd.value, srt)) {
+			if (Common.radio(o.chtnDvCd, 1) == '3') {
+				window.alert('왕복승차권은 SRT 운행구간만 예약이 가능합니다.');
+
+				return;
+			}
+		} */
+		//--
+
+		o.psgNum.value = parseInt($J('.psgInfoPerPrnbzTxt1').attr('data-value'))
+/* 			+ parseInt(o.psgInfoPerPrnb2.options[o.psgInfoPerPrnb2.selectedIndex].value)
+			+ parseInt(o.psgInfoPerPrnb3.options[o.psgInfoPerPrnb3.selectedIndex].value)
+			+ parseInt(o.psgInfoPerPrnb4.options[o.psgInfoPerPrnb4.selectedIndex].value) */
+			+ parseInt($J('.psgInfoPerPrnbzTxt5').attr('data-value'));
+		
+		/*★신규추가*/
+		o.psgInfoPerPrnb1.value = parseInt(document.getElementsByClassName('psgInfoPerPrnbzTxt1')[0].dataset.value);
+		o.psgInfoPerPrnb5.value = parseInt(document.getElementsByClassName('psgInfoPerPrnbzTxt5')[0].dataset.value);
+
+		if (parseInt(o.psgNum.value) <= 0) {
+			window.alert('승객 인원을 1명 이상 선택하십시오.');
+			return;
+		} else if (parseInt(o.psgNum.value) > 9) {
+			window.alert('승객 인원은 9명까지 가능합니다.');
+			return;
+		}
+
+		//if (Navi.showLoading('', true)) { // 넷퍼넬을 사용하지 않을 경우 Navi.showLoading()으로 변경
+			//20241010 뒤로가기 시, 날짜 선택 안됨. 오류 조치
+			if(o.dptTm.selectedIndex == -1){
+				o.dptTm.selectedIndex == 0;
+			}
+			
+			if (Common.ymd() == o.dptDt.value.replace(/\./gi, '') && (new Date()).getHours() >= parseInt(o.dptTm.options[o.dptTm.selectedIndex].value.substr(0, 2), 10)) {
+				//20241010 뒤로가기 시, 날짜 선택 안됨. 오류 조치
+				var tempDate = (new Date()).getHours();
+				tempDate = tempDate % 2 == 0 ? tempDate : tempDate - 1;
+				
+				o.dptTm.value = tempDate+'0000';
+								
+				//o.dptTm.options[o.dptTm.options.length] = new Option((tempDate < 10 ? '0' : '') + tempDate + '시 이후', (tempDate < 10 ? '0' : '') + tempDate + ((new Date()).getMinutes() < 10 ? '0' : '') + (new Date()).getMinutes() + '00');
+				//o.dptTm.selectedIndex = o.dptTm.options.length - 1;
+
+				//changeByOptionText(o.dptTm);
+			}
+			
+			o.dptDt.value = o.dptDt.value.replace(/\./gi, '');
+			
+			//o.action = cfg.contextPath + '/hpg/hra/01/' + (Common.radio(o.chtnDvCd, 1) == '3' ? 'selectShuttleScheduleList.do' : 'selectScheduleList.do') + '?pageId=TK0101010000';
+			/*dynapath 적용 20251223*/
+			//o.action = cfg.contextPath + '/hpg/hra/01/selectScheduleList.do?pageId=TK0101010000';
+			/*dynapath 적용 20251223*/
+			o.action = cfg.contextPath + '/hpg/hra/01/selectScheduleList.do?pageId=TK0101011000';
+			
+			
+			
+			
+			if(location.href.indexOf('test') != '-1'){
+				/*dynapath 적용 20251223*/
+				//o.submit();
+				typeof dp !== 'undefined' ? dp.submit(o) : o.submit();
+			}else{
+				NetFunnel_Action({}, function(ev, ret) {
+					//$J('#cover-spin').show();
+					o.key.value = ret.data.key; 
+					/*dynapath 적용 20251223*/
+					//o.submit();
+					typeof dp !== 'undefined' ? dp.submit(o) : o.submit();
+				}.bind(this));
+			}
+			/*
+			NetFunnel_Action({},{
+				success:function(ev, ret){
+					o.key.value = ret.data.key; 
+					o.submit(); 
+				}
+			}.bind(this));
+			*/
+			//o.submit();
+		//}
+	}
+
+	function setAutoComplete(v, l) {
+		jQuery(l).autocomplete({
+			source : function (request, response) {
+				jQuery.ajax({
+					async : true,
+					type : 'post',
+					url : cfg.contextPath + '/hpg/hra/01/selectStnCdInfo.do',
+					dataType : 'json',
+					data : {query : request.term},
+					success : function(data) {
+						response(
+							jQuery.map(data, function(item) {
+								return {
+									label : item.label,
+									value : item.value
+								}
+							})
+						);
+					}
+				});
+			},
+			focus : function(event, ui) {
+				event.preventDefault();
+
+				jQuery(l).val(ui.item.label);
+				jQuery(v).val(ui.item.value);
+			},
+			select : function(event, ui) {
+				event.preventDefault();
+
+				jQuery(l).val(ui.item.label);
+				jQuery(v).val(ui.item.value);
+			},
+			minLength : 2
+		});
+	}
+
+	function selectStnCdInfo(v, l) {
+		var completed = true;
+
+		new Ajax.Request(cfg.contextPath + '/hpg/hra/01/selectStnCdInfo.do', {
+			asynchronous : false,
+			parameters : {query : $(l).value},
+			onSuccess : function (transport) {
+				if (!transport.responseText.isJSON()) {
+					window.alert('데이터를 동기화하는데 실패하였습니다.');
+					return;
+				}
+
+				var response = transport.responseText.evalJSON();
+
+				if (response.error) {
+					window.alert(response.error);
+					return;
+				} else if (response.length <= 0) {
+					completed = false;
+					return;
+				}
+
+				$(v).value = response[0].value;
+			}.bind()
+		});
+
+		return completed;
+	}
+
+	function changeByOptionText(s) {
+		$(s).previous().update(s.options[s.selectedIndex].text);
+		//$J( ".dropDownNoJqueryUi" ).selectmenu("refresh");
+	}
+
+	Event.observe(window, 'load', function () {
+	
+		if (Common.cookie('CMS_POPUP_637') != 'Y') {
+			window.open('/cms/popup/view.do?popwNo=637', 'CMS_POPUP_637', 'left=0, top=0, scrollbars=no, width=600, height=1028');
+		}
+	
+	}.bind(this));
+	
+ 	// 베스트 여행상품 랜덤 표시
+    var parent = $J("#shuffle");
+    var divs = parent.children();
+    while (divs.length) {
+        parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+    }
+
+//]]>
+</script>
+
+
+
+
+
+
+
+	<!-- footer -->
+	<footer id="krds-footer" style="min-width : 1200px">
+		<div class="foot-quick">
+			<div class="inner">
+<!--
+ 				<ul>
+					<li>
+						<button type="button" class="link open-modal" title="유관기관 바로가기 레이어" data-target="popFootLink">유관기관 바로가기</button>
+					</li>
+				</ul> 
+-->
+			</div>
+		</div>
+		<div class="inner">
+			<div class="f-logo sample">
+				<span class="sr-only">한국철도공사</span>
+			</div>
+			<div class="f-cnt">
+				<div class="f-info">
+					<p class="info-addr">(06367) 서울특별시 강남구 광평로 56길 12 희림빌딩</p>
+					<ul class="info-cs">
+						<li>
+							<strong class="key-info">대표전화<span>1588-7788 (유료, 평일 08시-20시) |</span>팩스<span>02-6484-4093</span></strong>
+						</li>  
+						<li>
+							<strong class="key-info">상호<span>한국철도공사</span></strong>
+						</li>
+						<li>
+							<strong class="key-info">사업자등록<span>314-82-10024 ㅣ</span>통신판매업신고<span>대전동구-0233호</span></strong>
+						</li>
+					</ul>
+				</div>
+
+<!--
+				<div class="f-link">
+					<div class="link-go">
+						<a href="#" class="krds-btn text">이용안내<i class="svg-icon ico-angle right"></i></a>
+						<a href="#" class="krds-btn text">찾아오시는 길<i class="svg-icon ico-angle right"></i></a>
+					</div>
+					<div class="link-sns">
+						<a href="#" class="krds-btn xlarge icon border" target="_blank" title="새 창 열기">
+							<span class="sr-only">인스타그램</span>
+							<i class="svg-icon ico-instagram"></i>
+						</a>
+						<a href="#" class="krds-btn xlarge icon border" target="_blank" title="새 창 열기">
+							<span class="sr-only">유튜브</span>
+							<i class="svg-icon ico-youtube"></i>
+						</a>
+						<a href="#" class="krds-btn xlarge icon border" target="_blank" title="새 창 열기">
+							<span class="sr-only">블로그</span>
+							<i class="svg-icon ico-blog"></i>
+						</a>
+					</div>
+				</div>
+-->
+			</div>
+			
+			<div class="f-btm">
+				<div class="f-btm-text">
+					<div class="f-menu">
+						<a href="https://www.srail.co.kr/cms/archive.do?pageId=KR9903000000" class="f-point">개인정보처리방침</a>
+						
+						<a href="/cms/archive.do?pageId=TK0501020000" class="">여객운송약관&middot;부속약관</a>
+					</div>
+				</div>
+				<div class="f-btm-logo">
+					<ul>
+						<li>
+							<a href="/cms/article/view.do?postNo=76&amp;pageId=TK0502000000">
+								<img src="/resources/img/pattern/sample/ic_f_brand.png" alt="Brand" />
+							</a>
+						</li>
+						<li>
+							<a href="/cms/article/view.do?postNo=91&amp;pageId=TK0502000000">
+								<img src="/resources/img/pattern/sample/ic_f_highest.png" alt="Highest Brand" />
+							</a>
+						</li>
+						<li>
+							<!-- 26.01.08 : 아직 푸터v2 사용안함, 추후 사용시 이미지 경로 참고용으로 주석처리하여 남겨놓음 -->
+							<!-- <img src="/resources/img/pattern/sample/ic_f_wa.png" alt="WA(웹접근성인증)" /> -->
+							<a href="http://www.wa.or.kr/board/list.asp?BoardID=0006" target="_blank" title="새창열림">
+								<img src="/images/ic_f_wa.png" alt="(사)한국장애인단체총연합회 한국정보접근성인증평가원 웹 접근성 우수사이트 인증마크(WA인증마크)" />
+							</a>
+						</li>
+						<li>
+							<a href="http://partners.srail.or.kr/login.do" target="_blank" title="새창열기">
+								<img src="/resources/img/pattern/sample/ic_sys_purvey.png" alt="전자조달" />
+							</a>
+						</li>
+						<li>
+							<a href="/cms/article/view.do?postNo=536&amp;pageId=TK0502000000">
+								<img src="/resources/img/pattern/sample/ismsp_footer.png" alt="ISMS-P" />
+							</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="/cms/article/view.do?postNo=359&amp;pageId=TK0502000000">
+								<img src="/resources/img/pattern/sample/eprivacy.png" alt="e-privacy인증" />
+							</a>
+						</li>
+						<li>
+							<a href="/cms/article/view.do?postNo=358&amp;pageId=TK0502000000">
+								<img src="/resources/img/pattern/sample/iso27001.png" alt="iso27001" />
+							</a>
+						</li>
+						<li>
+							<a href="/cms/article/view.do?postNo=365&amp;pageId=TK0502000000">
+								<img src="/resources/img/pattern/sample/ic_ISO-27701.png" alt="iso27701" />
+							</a>
+						</li>
+						<li>
+							<a href="/cms/article/view.do?postNo=393&amp;pageId=TK0502000000">
+								<img src="/resources/img/pattern/sample/ic_AAA.png" alt="IC_AAA" />
+							</a>
+						</li>
+					</ul>
+				</div>
+<!--
+				<div class="krds-identifier">
+					<span class="logo sample">
+						<span class="sr-only">대한민국정부</span>
+					</span>
+					<span class="ban-txt">이 누리집은 정부 누리집입니다.</span>
+				</div>
+-->
+			</div>
+        </div>
+	</footer>
+	<!-- //footer -->
+	<!-- modal-wrap -->
+	<div class="modal-wrap">
+		<!-- 모달 : 통합 검색 -->
+		<div id="popTotalSch" class="krds-modal fade" data-type="full" aria-labelledby="tit_total_sch">
+		<!-- modal-dialog -->
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<!-- modal title -->
+					<div class="modal-header sr-only">
+						<h2 id="tit_total_sch" class="modal-title">통합검색</h2>
+					</div>
+					<!-- //modal title -->
+					<!-- modal contents -->
+					<div class="modal-conts">
+					<!-- 통합검색 -->
+						<div class="pop-total-serch-wrap">
+						<!-- 통합검색 정보입력 영역 -->
+							<div class="search-total-top">
+								<!-- 검색어 타이틀 -->
+								<div class="search-tit">
+									<label for="search-total-input-id">검색어를 입력해주세요</label>
+									<a href="#" class="krds-btn medium text">검색에 어려움이 있으신가요?<i class="svg-icon ico-login-go"></i>
+									</a>
+								</div>
+					<!-- //검색어 타이틀 -->
+
+                    			<!-- 검색어 입력 폼 -->
+								<div class="sch-form-wrap vert">
+									<div class="sch-input">
+										<input type="text" class="krds-input xlarge" id="search-total-input-id" placeholder="검색어를 입력해주세요." />
+										<button type="button" class="krds-btn icon xlarge ico-search">
+											<span class="sr-only">검색</span>
+											<i class="svg-icon ico-sch"></i>
+										</button>
+									</div>
+									<button type="button" class="krds-btn medium text">
+										<i class="svg-icon ico-sch-plus"></i>
+										고급검색
+									</button>
+								</div>
+                    			<!-- //검색어 입력 폼 -->
+							</div>
+							<!-- //통합검색 정보입력 영역 -->
+							
+							<!-- 검색어 리스트 -->
+							<div class="search-text">
+							<!-- 검색어 입력 전 -->
+								<ul class="sch-info-list">
+									<li class="sch-info-item word-popular">
+										<h3 class="tit">인기검색어</h3>
+										<ol class="list">
+											<li>
+												<span class="ranking-txt">안전보건교육</span>
+												<span class="ranking-state up"><em class="sr-only">상승</em>1</span>
+											</li>
+											<li>
+												<span class="ranking-txt">산업재해조사표</span>
+												<span class="ranking-state same"><em class="sr-only">동일</em></span>
+											</li>
+											<li>
+												<span class="ranking-txt">퇴직금계산기</span>
+												<span class="ranking-state up"><em class="sr-only">상승</em>3</span>
+											</li>
+											<li>
+												<span class="ranking-txt">육아휴직급여</span>
+												<span class="ranking-state same"><em class="sr-only">동일</em></span>
+											</li>
+											<li>
+												<span class="ranking-txt">실업인정신청</span>
+												<span class="ranking-state same"><em class="sr-only">동일</em></span>
+											</li>
+											<li>
+												<span class="ranking-txt">국민내일배움</span>
+												<span class="ranking-state down"><em class="sr-only">하락</em>1</span>
+											</li>
+											<li>
+												<span class="ranking-txt">노사협의회</span>
+												<span class="ranking-state down"><em class="sr-only">하락</em>1</span>
+											</li>
+											<li>
+												<span class="ranking-txt">산업안전보건</span>
+												<span class="ranking-state same"><em class="sr-only">동일</em></span>
+											</li>
+											<li>
+												<span class="ranking-txt">국민내일배움카드신청</span>
+												<span class="ranking-state up"><em class="sr-only">상승</em>11</span>
+											</li>
+											<li>
+												<span class="ranking-txt">안전보건교육</span>
+												<span class="ranking-state same"><em class="sr-only">동일</em></span>
+											</li>
+										</ol>
+									</li>
+									<li class="sch-info-item word-lately">
+										<h3 class="tit">최근검색어</h3>
+										<ul class="list" aria-live="polite">
+											<li>
+												<span class="word-txt">안전보건교육</span>
+												<button type="button" class="krds-btn small icon">
+													<span class="sr-only">삭제</span>
+													<i class="svg-icon ico-delete-fill"></i>
+												</button>
+											</li>
+											<li>
+												<span class="word-txt">안전보건교육</span>
+												<button type="button" class="krds-btn small icon">
+													<span class="sr-only">삭제</span>
+													<i class="svg-icon ico-delete-fill"></i>
+												</button>
+											</li>
+											<li>
+												<span class="word-txt">안전보건교육</span>
+												<button type="button" class="krds-btn small icon">
+													<span class="sr-only">삭제</span>
+													<i class="svg-icon ico-delete-fill"></i>
+												</button>
+											</li>
+										</ul>
+										<button type="button" class="krds-btn medium text">최근검색어 전체 삭제<i class="svg-icon ico-delete-fill"></i>
+										</button>
+									</li>
+								</ul>
+								<!-- //검색어 입력 전 -->
+							</div>
+							<!-- //검색어 리스트 -->
+						</div>
+						<!-- //통합검색 -->
+					</div>
+					<!-- //modal contents -->
+					<!-- close button -->
+					<button type="button" class="krds-btn xlarge icon btn-close close-modal">
+						<span class="sr-only">닫기</span>
+						<i class="svg-icon ico-popup-close"></i>
+					</button>
+					<!-- //close button -->
+				</div>
+			</div>
+			<!-- //modal-dialog -->
+			<div class="modal-back"></div>
+		</div>
+        <!-- //모달 : 통합 검색 -->
+
+        <!-- 모달 : 통합 검색 type1-->
+		<div id="popTotalSchType1" class="krds-modal fade" data-type="full" aria-labelledby="tit_total_sch_type1">
+			<!-- modal-dialog -->
+			<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- modal title -->
+				<div class="modal-header sr-only">
+					<h2 id="tit_total_sch_type1" class="modal-title">통합검색</h2>
+				</div>
+				<!-- //modal title -->
+				<!-- modal contents -->
+				<div class="modal-conts">
+					<!-- 통합검색 -->
+					<div class="pop-total-serch-wrap">
+						<!-- 통합검색 정보입력 영역 -->
+						<div class="search-total-top">
+							<!-- 검색어 타이틀 -->
+							<div class="search-tit">
+								<label for="search-total-input-id-type1">검색어를 입력해주세요</label>
+									<a href="#" class="krds-btn medium text">검색에 어려움이 있으신가요?<i class="svg-icon ico-login-go"></i>
+									</a>
+							</div>
+							<!-- //검색어 타이틀 -->
+
+							<!-- 검색어 입력 폼 -->
+							<div class="sch-form-wrap vert">
+								<div class="sch-input">
+									<input type="text" class="krds-input xlarge" id="search-total-input-id-type1" placeholder="검색어 입력" value="퇴직" />
+									<button type="button" class="krds-btn icon xlarge ico-search">
+										<span class="sr-only">검색</span>
+										<i class="svg-icon ico-sch"></i>
+									</button>
+								</div>
+								<button type="button" class="krds-btn medium text"><i class="svg-icon ico-sch-plus"></i>고급검색
+								</button>
+							</div>
+							<!-- //검색어 입력 폼 -->
+						</div>
+						<!-- //통합검색 정보입력 영역 -->
+
+						<!-- 검색어 리스트 -->
+						<div class="search-text">
+							<!-- 검색어 입력 후 -->
+							<ul class="sch-keyword-list" aria-live="polite">
+								<li>
+									<div class="word-txt">
+										<p class="txt">나의<span class="text-bold">퇴직</span>금 계산해 보기</p>
+										<a href="https://labor.moel.go.kr/cmmt/calRtrmnt.do" class="krds-btn medium link" title="새창 열림" target="_blank">
+											<span class="underline">https://labor.moel.go.kr/cmmt/calRtrmnt.do</span>
+											<i class="svg-icon ico-go"></i>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div class="word-txt">
+										<p class="txt"><span class="text-bold">퇴직</span>금 계산기</p>
+									</div>
+								</li>
+								<li>
+									<div class="word-txt">
+										<p class="txt"><span class="text-bold">퇴직</span>금 중간정산</p>
+									</div>
+								</li>
+								<li>
+									<div class="word-txt">
+										<p class="txt"><span class="text-bold">퇴직</span>금 미지급</p>
+									</div>
+								</li>
+								<li>
+									<div class="word-txt">
+										<p class="txt">일용직<span class="text-bold">퇴직</span>금</p>
+									</div>
+								</li>
+								<li>
+									<div class="word-txt">
+										<p class="txt">육아휴직<span class="text-bold">퇴직</span>금</p>
+									</div>
+								</li>
+								<li>
+									<div class="word-txt">
+										<p class="txt">연차수당<span class="text-bold">퇴직</span>금</p>
+									</div>
+								</li>
+							</ul>
+							<!-- //검색어 입력 후 -->
+						</div>
+						<!-- //검색어 리스트 -->
+					</div>
+					<!-- //통합검색 -->
+				</div>
+				<!-- //modal contents -->
+				<!-- close button -->
+				<button type="button" class="krds-btn xlarge icon btn-close close-modal">
+					<span class="sr-only">닫기</span>
+					<i class="svg-icon ico-popup-close"></i>
+				</button>
+				<!-- //close button -->
+			</div>
+		</div>
+		<!-- //modal-dialog -->
+		<div class="modal-back"></div>
+	</div>
+	<!-- //모달 : 통합 검색 type1-->
+
+	<!-- 모달 : 소속기관 링크 -->
+	<section id="popFootLink" class="krds-modal fade" data-type="full" aria-labelledby="tit_foot_link">
+		<!-- modal-dialog -->
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- modal title -->
+				<div class="modal-header">
+					<h2 id="tit_foot_link" class="modal-title">유관기관 바로가기</h2>
+				</div>
+				<!-- //modal title -->
+				<!-- modal contents -->
+				<div class="modal-conts">
+				<!-- 유관기관 링크 -->
+					<ul class="pop-foot-links">
+						<li><a href="molit.go.kr" target="_blank">국토교통부</a></li>
+					</ul>
+				<!-- //유관기관 링크 -->
+				</div>
+				<!-- //modal contents -->
+				<!-- close button -->
+				<button type="button" class="krds-btn xlarge icon btn-close close-modal">
+					<span class="sr-only">닫기</span>
+					<i class="svg-icon ico-popup-close"></i>
+				</button>
+				<!-- //close button -->
+			</div>
+		</div>
+		<!-- //modal-dialog -->
+		<div class="modal-back"></div>
+	</section>
+	<!-- //모달 : 소속기관 링크 -->
+
+	<!-- modal 글자 / 화면 설정 -->
+	<section id="modal_adjust_display" class="krds-modal fade" aria-labelledby="tit_modal_adjust_display">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- modal title -->
+				<div class="modal-header">
+					<h2 id="tit_modal_adjust_display" class="modal-title">글자&middot;화면 표시 설정</h2>
+				</div>
+				<!-- //modal title -->
+				<!-- modal contents -->
+				<div class="modal-conts">
+					<div class="conts-area">
+						<!-- adjust_display -->
+						<div class="adjust_display">
+							<!-- 글자 / 화면 표시 설정 -->
+							<div class="fieldset adjust_scale">
+								<div class="form-group scale-options">
+									<h3>글자&middot;화면 표시 설정</h3>
+									<div class="form-conts">
+										<div class="krds-check-area chk-column">
+											<div class="krds-form-check">
+												<input type="radio" name="scale_level" id="scale_level_small" value="small" />
+												<label for="scale_level_small">작게</label>
+											</div>
+											<div class="krds-form-check">
+												<input type="radio" name="scale_level" id="scale_level_medium" value="medium" checked />
+												<label for="scale_level_medium">보통</label>
+											</div>
+											<div class="krds-form-check">
+												<input type="radio" name="scale_level" id="scale_level_large" value="large" />
+												<label for="scale_level_large">조금 크게</label>
+											</div>
+											<div class="krds-form-check">
+												<input type="radio" name="scale_level" id="scale_level_xlarge" value="xlarge" />
+												<label for="scale_level_xlarge">크게</label>
+											</div>
+											<div class="krds-form-check">
+												<input type="radio" name="scale_level" id="scale_level_xxlarge" value="xxlarge" />
+												<label for="scale_level_xxlarge">가장 크게</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 화면 표시 모드 -->
+							<div class="fieldset">
+								<div class="form-group view-mode-options">
+									<h3>화면 표시 모드</h3>
+									<div class="form-conts">
+										<div class="krds-check-area chk-column">
+											<div class="krds-form-check view-mode-light">
+												<input type="radio" name="view_mode" id="view_mode_light" value="light" checked />
+												<label for="view_mode_light">기본 (밝은 배경)</label>
+											</div>
+											<div class="krds-form-check view-mode-dark">
+												<input type="radio" name="view_mode" id="view_mode_dark" value="high-contrast" />
+												<label for="view_mode_dark">선명하게 (어두운 배경)</label>
+											</div>
+											<div class="krds-form-check view-mode-default">
+												<input type="radio" name="view_mode" id="view_mode_default" value="theme" />
+												<label for="view_mode_default">시스템 설정</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- //adjust_display -->
+					</div>
+				</div>
+				<!-- //modal contents -->
+				<!-- modal btn -->
+				<div class="modal-btn btn-wrap">
+					<button type="button" class="krds-btn medium tertiary close-modal" id="reset_display">초기화</button>
+					<button type="button" class="krds-btn medium primary close-modal">닫기</button>
+				</div>
+				<!-- //modal btn -->
+				<!-- close button -->
+				<button type="button" class="krds-btn medium icon btn-close close-modal">
+					<span class="sr-only">닫기</span>
+					<i class="svg-icon ico-popup-close"></i>
+				</button>
+				<!-- //close button -->
+			</div>
+		</div>
+		<div class="modal-back"></div>
+	</section>
+<!-- //modal 글자 / 화면 설정 -->
+</div>
+
+    </div><!-- //header.jsp의 div="wrap" 태그 안닫아줌 footer에서 닫음 -->
+
+
+
+
+<style>
+	.pc {
+	    display: none !important;
+	}
+	@media (min-width: 768px) {
+	.pc {
+	    display: block !important;
+	}
+	.mobile {
+	    display: none !important;
+	}
+	@media (max-width: 768px) {
+		.mobile {
+	    display: block !important;
+		}
+	}
+</style>
+
+    
+        <!-- 260615 이상희 추가(통합회원 프로세스) -->
+           <!-- 260708 이상희 수정 ('is-active'삭제)-->
+	    <div class="modal-overlay" id="ticketModal" aria-hidden="true">
+	      <!-- 260708 이상희 수정 ('is-active'삭제)-->
+          <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+	            <!-- 260708 이상희 수정 (button을 span 처리)-->
+	          <span class="modal-header-spacer" aria-hidden="true"></span>
+	          <!-- //260708 이상희 수정 (button을 span 처리)-->
+              <h2 id="modalTitle" class="ac">통합 회원 가입안내</h2>
+              <button type="button" class="modal-close" id="closeTicketModal" onclick="closeTicketModal()" aria-label="닫기">×</button>
+            </div>
+
+            <div class="modal-body">
+              <!-- 통합회원 안내 260707수정-->
+              <div class="modal-content">
+                <h2 class="al">철도 통합 회원제도 운영 안내</h2>
+
+                 <!-- 260708 이상희 수정 (줄바꿈 수정,'pc'클래스 추가,br 1개 삭제, span class="fs14" 추가)-->
+				<p class="fc-n500">
+				8월 3일부터 SRT앱과 코레일톡이 
+				<br class="mobile" />   
+				하나의 앱 [코레일+]으로 운영중이며,
+				<br class="mobile" />
+				<br class="pc" />
+				기존 SRT 운행노선의 열차 예매는 
+				<br class="mobile" />
+				9월 1일 운행하는 열차부터 
+				<br class="mobile" />
+				<br class="pc" />
+				[코레일+]를 통해 KTX 열차로
+				<br class="mobile" />
+				예매하실 수 있습니다.
+				<br />
+				<br />
+				향후 열차 이용에 불편이 없도록 
+				<br class="mobile" />
+				<br class="pc" />
+				통합회원 전환 및 [코레일+] 앱 설치를 
+				<br class="mobile" />
+				완료해주시기 바랍니다.
+				<br />
+				<br />
+				<span class="fs14">* 회원 전환은 개인정보 제3자 제공 동의 및 본인인증 절차를 거쳐 진행됩니다.</span>
+	            </p>
+	            <!-- //260708 이상희 수정 (줄바꿈 수정)-->
+
+                <div class="ac mgt30">
+                  <img src="/images/img_01.svg" alt="" style="width: 200px; height: 200px" />
+                </div>
+              </div>
+              <!-- 통합회원 안내 end-->
+              <div class="footerBtn">
+                <a href="javascript:void(0);" onclick="goApplyAfterModal();" class="ui-btn btn-gray" data-mini="true" data-inline="true">나중에 하기</a>
+               <!--  <a href="javascript:void(0);" onclick="goInfoAgreeModal();" class="ui-btn" data-mini="true" data-inline="true">통합회원 신청</a> -->
+               <!-- 20260825 정보제공동의 페이지 이동하지 말고 kcb 인증 팝업 띄우는 것으로 수정-->
+                 <a href="javascript:void(0);" onclick="goPhonePopup();" class="ui-btn" data-mini="true" data-inline="true">통합회원 신청</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 260615 이상희 추가(정보제공동의) -->
+        <div class="modal-overlay" id="infoAgreeModal" aria-hidden="true">
+          <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+               <!-- 260708 이상희 수정 (button을 span 처리)-->
+	          <span class="modal-header-spacer" aria-hidden="true"></span>
+	          <!-- //260708 이상희 수정 (button을 span 처리)-->
+              <h2 id="modalTitle" class="ac">정보제공 동의</h2>
+              <button type="button" class="modal-close" id="closeInfoAgreeModal" onclick="closeInfoAgreeModal()" aria-label="닫기">×</button>
+            </div>
+        <div class="modal-body">
+          <div class="modal-content modal-scroll">
+            <h2 class="al">아래 정보제공에 동의하시면 통합회원전환 사전신청을 할 수 있습니다.</h2>
+
+            <section class="mgt30">
+              <h3>개인정보 수집ㆍ이용 동의</h3>
+              <div class="boxType02 mgt24">
+                <ul>
+                  <li>
+                    개인정보의 수집·이용 목적
+                    <ul class="dotList04">
+                      <li>고속철도 기관 합병에 따른 통합회원 전환 사전 신청 및 중복 가입 확인</li>
+                    </ul>
+                  </li>
+                  <li>
+                    수집하는 개인정보의 항목(필수)
+                    <ul class="dotList04">
+                      <li>암호화된 동일인 식별정보(CI)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    개인정보의 보유 및 이용 기간
+                    <ul class="dotList04">
+                      <li><u class="fc-srl">회원 탈퇴 시까지</u></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!-- 20260707수정 -->
+              <!-- <p class="notice_desc">위와 같이 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 그러나, 동의를 거부할 경우 통합회원 전환 사전 신청이 불가합니다.</p> -->
+              <p class="notice_desc">다만, 개인정보 수집,이용에 대한 동의를 거부할 권리가 있으며, 
+                <!-- 260708 이상희 수정('pc'클래스 추가)-->
+                <br class="pc" />
+                <!-- // 260708 이상희 수정('pc'클래스 추가)-->
+              동의를 거부할 경우 통합회원 사전 전환이 불가합니다. 
+              </p>
+              <h4>
+                귀하께서는 개인정보 수집 · 이용에 대해 동의하십니까?
+                <!-- 260708 이상희 수정( <br /> 추가)-->
+                <br />
+                <!-- 260708 이상희 수정( <br /> 추가)--
+               <!-- 260702 이상희수정 (f12 클래스 삭제)-->
+                <span class="fc-spm">(미동의 시 통합회원 전환 사전신청 불가)</span>
+                <!-- //260702 이상희수정 (f12 클래스 삭제)-->
+              </h4>
+
+              <div class="checkBoxList">
+                <div class="ui-radio">
+                  <input type="radio" name="agree01" id="agree01Y" value="Y" data-role="none" />
+                  <label for="agree01Y" data-role="none">동의</label>
+                </div>
+
+                <div class="ui-radio">
+                  <input type="radio" name="agree01" id="agree01N" value="N" data-role="none" />
+                  <label for="agree01N" data-role="none">미동의</label>
+                </div>
+              </div>
+            </section>
+
+            <div class="hr2"></div>
+
+            <section>
+              <h3>개인정보의 제3자 제공에 대한 동의</h3>
+              <div class="boxType02 mgt24">
+                <ul>
+                  <li>
+                    개인정보의 제3자 제공 목적
+                    <ul class="dotList04">
+                      <li><u class="fc-srl">고속철도 기관 합병에 따른 통합회원 전환 사전 신청 및 중복 가입 확인</u></li>
+                    </ul>
+                  </li>
+                  <li>
+                    개인정보를 제공받는 자
+                    <ul class="dotList04">
+                      <li><u class="fc-srl">한국철도공사</u></li>
+                    </ul>
+                  </li>
+                  <li>
+                    제공하는 개인정보의 항목(필수)
+                    <ul class="dotList04">
+                      <li>성명, 생년월일, 성별, 전화번호(휴대전화), 암호화된 동일인 식별정보(CI)</li>
+                    </ul>
+                  </li>
+                  <li>
+                    개인정보를 제공 받는자의 개인정보 보유ㆍ이용 기간
+                    <ul class="dotList04">
+                      <li><u class="fc-srl">회원 탈퇴 시까지</u></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!-- 20260707수정 -->
+              <!-- <p class="notice_desc">위와 같이 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 그러나, 동의를 거부할 경우 통합회원 전환 사전 신청이 불가합니다.</p> -->
+              <p class="notice_desc">
+              다만, 개인정보 수집,이용에 대한 동의를 거부할 권리가 있으며, 
+               <!-- 260708 이상희 수정('pc'클래스 추가)-->
+                <br class="pc" />
+                <!-- // 260708 이상희 수정('pc'클래스 추가)-->
+                동의를 거부할 경우 통합회원 사전 전환이 불가합니다. 
+              </p>
+              <h4>
+                귀하께서는 개인정보 제3자 제공에 대해 동의하십니까?
+                <br />
+                <!-- 260702 이상희수정 (f12 클래스 삭제)-->
+                <span class="fc-spm">(미동의 시 통합회원 전환 사전신청 불가)</span>
+                <!-- //260702 이상희수정 (f12 클래스 삭제)-->
+              </h4>
+
+              <div class="checkBoxList">
+                <div class="ui-radio">
+                  <input type="radio" name="agree02" id="agree02Y" value="Y" data-role="none" />
+                  <label for="agree02Y" data-role="none">동의</label>
+                </div>
+
+                <div class="ui-radio">
+                  <input type="radio" name="agree02" id="agree02N" value="N" data-role="none" />
+                  <label for="agree02N" data-role="none">미동의</label>
+                </div>
+              </div>
+              <div class="boxType02 mgt24">
+                <ul>
+                  <li>
+                    개인정보의 제3자 제공 목적
+                    <ul class="dotList04">
+                      <li><u class="fc-srl">고속철도 기관 합병에 따른 통합회원 전환 사전 신청</u></li>
+                    </ul>
+                  </li>
+                  <li>
+                    개인정보를 제공받는 자
+                    <ul class="dotList04">
+                      <li><u class="fc-srl">한국철도공사</u></li>
+                    </ul>
+                  </li>
+                  <li>
+                    제공하는 개인정보의 항목(선택)
+                    <ul class="dotList04">
+                      <li>청소년, 기초생활수급자의 공공할인 신청정보 및 만료일자, SRT 이용내역</li>
+                    </ul>
+                  </li>
+                  <li>
+                    개인정보를 제공 받는자의 개인정보 보유ㆍ이용 기간
+                    <ul class="dotList04">
+                      <li><u class="fc-srl">회원 탈퇴 시까지</u></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <!-- 20260707수정 -->
+              <!-- <p class="notice_desc">위와 같이 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 그러나, 동의를 거부할 경우 통합회원 전환 사전 신청이 불가합니다.</p> -->
+              <p class="notice_desc">다만, 개인정보 수집,이용에 대한 동의를 거부할 권리가 있으며, 
+                 <!-- 260708 이상희 수정('pc'클래스 추가)-->
+                <br class="pc" />
+                <!-- // 260708 이상희 수정('pc'클래스 추가)-->
+              선택 항목에 동의를 거부할 경우 일부 서비스 이용에 제약이 있을 수 있습니다.</p>
+              <h4>
+                귀하께서는 개인정보 제3자 제공에 대해 동의하십니까?
+                  <br />
+                <!-- 260702 이상희수정 (f12 클래스 삭제)-->
+                <span class="fc-spm">(미동의 시 일부 서비스 이용 제약)</span>
+                <!-- //260702 이상희수정 (f12 클래스 삭제)-->
+              </h4>
+
+              <div class="checkBoxList">
+                <div class="ui-radio">
+                  <input type="radio" name="agree03" id="agree03Y" value="Y" data-role="none" />
+                  <label for="agree03Y" data-role="none">동의</label>
+                </div>
+
+                <div class="ui-radio">
+                  <input type="radio" name="agree03" id="agree03N" value="N" data-role="none" />
+                  <label for="agree03N" data-role="none">미동의</label>
+                </div>
+              </div>
+
+              <div class="boxType02 mgt24">
+                <ul>
+                  <li>
+                    민감정보의 제3자 제공 목적
+                    <ul class="dotList04">
+                      <li><u class="fc-srl">고속철도 기관 합병에 따른 통합회원 전환 사전 신청</u></li>
+                    </ul>
+                  </li>
+                  <li>
+                    민감정보를 제공받는 자
+                    <ul class="dotList04">
+                      <li><u class="fc-srl">한국철도공사</u></li>
+                    </ul>
+                  </li>
+                  <li>
+                    제공하는 민감정보의 항목(선택)
+                    <ul class="dotList04">
+                      <li><u class="fc-srl">임산부 신청정보 및 만료일자</u></li>
+                    </ul>
+                  </li>
+                  <li>
+                    민감정보를 제공 받는자의 개인정보 보유ㆍ이용 기간
+                    <ul class="dotList04">
+                      <li><u class="fc-srl">회원 탈퇴 시까지</u></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+               <!-- 20260707수정 -->
+              <!-- <p class="notice_desc">위와 같이 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 그러나, 동의를 거부할 경우 통합회원 전환 사전 신청이 불가합니다.</p> -->
+              <p class="notice_desc">다만, 개인정보 수집,이용에 대한 동의를 거부할 권리가 있으며, 
+                 <!-- 260708 이상희 수정('pc'클래스 추가)-->
+                <br class="pc" />
+                <!-- // 260708 이상희 수정('pc'클래스 추가)-->
+              선택 항목에 동의를 거부할 경우 일부 서비스 이용에 제약이 있을 수 있습니다. 
+              </p>
+              <h4>
+                귀하께서는 민감정보 제3자 제공에 대해 동의하십니까?
+                  <br />
+                <!-- 260702 이상희수정 (f12 클래스 삭제)-->
+                <span class="fc-spm">(미동의 시 일부 서비스 이용 제약)</span>
+                <!-- //260702 이상희수정 (f12 클래스 삭제)-->
+              </h4>
+
+              <div class="checkBoxList">
+                <div class="ui-radio">
+                  <input type="radio" name="agree04" id="agree04Y" value="Y" data-role="none" />
+                  <label for="agree04Y" data-role="none">동의</label>
+                </div>
+
+                <div class="ui-radio">
+                  <input type="radio" name="agree04" id="agree04N" value="N" data-role="none" />
+                  <label for="agree04N" data-role="none">미동의</label>
+                </div>
+              </div>
+
+              <div class="ui-checkbox all_agree">
+                <input class="checkbox" type="checkbox" name="all_agree" id="all_agreeY" data-role="none" />
+                    <label for="all_agreeY" class="ui-btn ui-corner-all ui-btn-icon-left ui-checkbox-off b" data-role="none">전체 동의하기</label>
+              </div>
+            </section>
+          </div>
+
+<!-- 
+            <div class="modal-body">
+              정보제공 동의
+              <div class="modal-content modal-scroll">
+                <h2 class="al">아래 정보제공에 동의하시면 통합회원 사전 전환을 신청할 수 있습니다.</h2>
+
+                <section>
+                  <h3>개인정보 수집ㆍ이용 동의</h3>
+                  <div class="boxType02 mgt24" style="border-radius: 6px">
+                    <ul>
+                      <li>
+                        개인정보의 수집·이용 목적
+                        <ul class="dotList04">
+                          <li>고속철도 기관 합병에 따른 통합회원 전환 사전 신청 및 중복 가입 확인</li>
+                        </ul>
+                      </li>
+                      <li>
+                        수집하는 개인정보의 항목
+                        <ul class="dotList04">
+                          <li>암호화된 동일인 식별정보(CI)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        개인정보의 보유 및 이용 기간
+                        <ul class="dotList04">
+                          <li><u class="fc-srl">회원 탈퇴 시까지</u></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <p class="notice_desc">위와 같이 개인정보 수집 · 이용에 대한 동의를 거부할 권리가 있습니다. 그러나, 동의를 거부할 경우 통합회원 전환 사전 신청이 불가합니다.</p>
+                  <h4>
+                    귀하께서는 개인정보 수집 · 이용에 대해 동의하십니까?
+                    <br />
+                    <span class="fs14 fc-spm">(미동의 시 통합회원 전환 사전신청 불가)</span>
+                  </h4>
+
+                  <div class="checkBoxList">
+                    <div class="ui-radio">
+                      <input type="radio" name="agree01" id="agree01Y" value="Y" data-role="none" />
+
+                      <label for="agree01Y" data-role="none">동의</label>
+                    </div>
+
+                    <div class="ui-radio">
+                      <input type="radio" name="agree01" id="agree01N" value="N" data-role="none" />
+
+                      <label for="agree01N" data-role="none">미동의</label>
+                    </div>
+                  </div>
+                </section>
+                <div class="hr2"></div>
+                <section>
+                  <h3>개인정보의 제3자 제공에 대한 동의</h3>
+                  <div class="boxType02 mgt24" style="border-radius: 6px">
+                    <ul>
+                      <li>
+                        개인정보의 제3자 제공 목적
+                        <ul class="dotList04">
+                          <li><u class="fc-srl">고속철도 기관 합병에 따른 통합회원 전환 사전 신청 및 중복 가입 확인</u></li>
+                        </ul>
+                      </li>
+                      <li>
+                        개인정보를 제공받는 자
+                        <ul class="dotList04">
+                          <li><u class="fc-srl">한국철도공사</u></li>
+                        </ul>
+                      </li>
+                      <li>
+                        제공하는 개인정보의 항목
+                        <ul class="dotList04">
+                          <li>성명, 생년월일, 성별, 전화번호(휴대전화), 암호화된 동일인 식별정보(CI)</li>
+                        </ul>
+                      </li>
+                      <li>
+                        개인정보를 제공 받는자의 개인정보 보유ㆍ이용 기간
+                        <ul class="dotList04">
+                          <li><u class="fc-srl">회원 탈퇴 시까지</u></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  <p class="notice_desc">위와 같이 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 그러나, 동의를 거부할 경우 통합회원 전환 사전 신청이 불가합니다.</p>
+                  <h4>
+                    귀하께서는 개인정보 제3자 제공에 대해 동의하십니까?
+                    <br />
+                    <span class="fs14 fc-spm">(미동의 시 통합회원 전환 사전신청 불가)</span>
+                  </h4>
+                  <div class="checkBoxList">
+                    <div class="ui-radio">
+                      <input type="radio" name="agree02" id="agree02Y" value="Y" data-role="none" />
+
+                      <label for="agree02Y" data-role="none">동의</label>
+                    </div>
+
+                    <div class="ui-radio">
+                      <input type="radio" name="agree02" id="agree02N" value="N" data-role="none" />
+
+                      <label for="agree02N" data-role="none">미동의</label>
+                    </div>
+                  </div>
+                  <div class="ui-checkbox all_agree">
+                    <input class="checkbox" type="checkbox" name="all_agree" id="all_agreeY" data-role="none" />
+                    <label for="all_agreeY" class="ui-btn ui-corner-all ui-btn-icon-left ui-checkbox-off b" data-role="none">모두 동의합니다.</label>
+                  </div>
+                </section>
+              </div> -->
+              <div class="footerBtn">
+                <a href="javascript:void(0);" onclick="goTicketModal()" class="ui-btn ui-corner-all btn-gray" data-mini="true" data-inline="true">이전</a>
+                <a href="javascript:void(0);" onclick="goApplyCompleteModal()" class="ui-btn ui-corner-all" data-mini="true" data-inline="true">다음</a>
+              </div>
+            </div>
+            <!-- //정보제공 동의 -->
+          </div>
+        </div>
+        
+         <!-- 260615 이상희 추가(통합회원 신청완료) -->
+<!--         <div class="modal-overlay" id="applyCompleteModal" aria-hidden="true">
+          <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+              <button type="button" class="" id="" aria-label=""></button>
+              <h2 id="modalTitle" class="ac">안내</h2>
+              <button type="button" class="modal-close" id="closeApplyCompleteModal" onclick="closeApplyCompleteModal()" aria-label="닫기">×</button>
+            </div>
+
+            <div class="modal-body">
+              통합회원 신청완료
+              <div class="modal-content">
+                <h2 class="al">통합회원 신청이 완료되었습니다.</h2>
+
+                <p class="fc-n500">
+                  통합회원신청이 완료되었습니다.
+                  <br />
+                  곧 출시될 통합앱에서 계속해서 서비스를 이용할 수 있습니다. 감사합니다.
+                </p>
+
+                <div class="ac mgt30">
+                  <img src="images/img_02.svg" alt="" style="width: 200px; height: 200px" />
+                </div>
+              </div>
+              //통합회원 신청완료
+              <div class="footerBtn">
+                <a href="#" onclick="" class="ui-btn" data-mini="true" data-inline="true">확인</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        
+        <!-- 260615 이상희 추가(통합회원 전환절차) -->
+         <div class="modal-overlay" id="applyAfterModal" aria-hidden="true">
+          <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+              <!-- 260708 이상희 수정 (button을 span 처리)-->
+	          <span class="modal-header-spacer" aria-hidden="true"></span>
+	          <!-- //260708 이상희 수정 (button을 span 처리)-->
+              <h2 id="modalTitle" class="ac">안내</h2>
+              <button type="button" class="modal-close" id="closeApplyAfterModal" onclick="closeApplyAfterModal()" aria-label="닫기">×</button>
+            </div>
+
+            <div class="modal-body">
+              <div class="modal-content">
+                <h2 class="al">SRT앱 운영종료 예정 안내</h2>
+
+                <!-- <p class="al fc-n500"> -->
+                <p class="fc-n500">
+                  SRT앱과 코레일톡 서비스가 하나의 
+                  <br class="mobile" />      
+                      앱(코레일+)으로 운영됨에 따라 
+                  <!-- 260708 이상희 수정("SRT앱 메인화면 하단의" 삭제)-->
+                  <br class="mobile" />
+                  <br class="mobile" />      
+                  <br class="pc" />   
+                  SRT앱을 통한 서비스 제공이 
+                  <br class="mobile" />   
+                      종료될 예정입니다.
+                  <br class="mobile" />
+                  <br class="mobile" />      
+                  <br class="pc" />   
+                      원활한 예매 서비스 이용을 위해 
+                  <br class="mobile" />   
+                      통합회원 전환 및 코레일+ 앱 설치를 
+                  <br class="mobile" />
+                  <br class="pc" />     
+                      완료해 주시기 바랍니다.
+                </p>
+
+ <!--                <div class="notice-box">
+                  <ul class="notice-list">
+                    <li>
+                      <p>
+                        <strong></strong>
+                        <span>통합회원 가입 시 고객님의 SRT 열차이용실적 등은 새로운 통합계정으로 자동 이관됩니다.</span>
+                      </p>
+                    </li>
+ 
+                    <li>
+                      <p>
+                        <strong></strong>
+                        <span>
+                         통합회원으로 이관되지 않은 회원의 개인정보는 회사 내부 방침에 따라 휴면회원 전환 이후 1년 경과 시 안전하게 파기되며, 계약 또는 철회 등에 관한 거래 기록은 상법에 따라 5년 동안
+                          보관됩니다. 해당 관련 문의는 고객센터로 연락 부탁드립니다. 
+                        </span>
+                      </p>
+                    </li>
+
+                  </ul>
+                </div> -->
+              </div>
+
+              <div class="footerBtn">
+                <a href="javascript:void(0);" onclick="closeApplyAfterModalWithCookie();" class="ui-btn" data-mini="true" data-inline="true">확인</a>
+              </div>
+            </div>
+          </div>
+        </div>
+<!-- 	<div id="webViewdialog" title="코레일열차예약" style="display:none;">
+		<iframe id="korailWebView" name="KORAIL_WEB_VIEW" frameborder="0" width="1170" height="920" style="background-color:#FFFFFF; overflow:hidden;" src="about:blank" ></iframe>
+	</div> -->
+	
+	
+	        <!-- 260708 차정민 추가(웹뷰 프로세스) -->
+<!--         <div class="modal-overlay" id="webViewdialog" aria-hidden="true">
+          <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header">
+              <button type="button" class="" id="" aria-label=""></button>
+              <h2 id="modalTitle" class="ac">통합회원 전환</h2>
+              <button type="button" class="modal-close" id="closeKorailWebviewModal" onclick="closeKorailWebviewModal()" aria-label="닫기">×</button>
+            </div>
+
+            <div class="modal-body">
+              <div class="modal-content">
+           		<iframe id="korailWebView" name="KORAIL_WEB_VIEW" frameborder="0" height="700" style="background-color:#FFFFFF; overflow:hidden;" src="about:blank" ></iframe>
+              </div>
+              <div class="footerBtn">
+                <a href="javascript:void(0);" onclick="goApplyAfterModal();" class="ui-btn btn-gray" data-mini="true" data-inline="true">나중에 하기</a>
+                <a href="javascript:void(0);" onclick="goInfoAgreeModal();" class="ui-btn" data-mini="true" data-inline="true">통합회원 신청</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        
+<!--        <div class="modal-overlay" id="webViewdialog" title="코레일열차예약" style="display:none;">
+		<iframe id="korailWebView" name="KORAIL_WEB_VIEW" frameborder="0" width="1170" height="920" style="background-color:#FFFFFF; overflow:hidden;" src="about:blank" ></iframe>
+	</div> -->
+	
+	
+	
+<script>
+
+var custMgNo = "";
+var mbCrdNo = "";
+
+var infoAgreePayload = {
+		agree03 : "Y",
+		agree04 : "Y"
+};
+
+
+function blockModal(){
+	var nowTime = new Date();
+	var yy = nowTime.getFullYear();
+	var tmm = nowTime.getMonth()+1;
+	var mm = tmm < 10 ? '0'+tmm:tmm;
+	var tdd = nowTime.getDate();
+	var dd = tdd < 10 ? '0'+tdd:tdd;
+	var today = yy+mm+dd; 
+	//var tt = nowTime.getHours();
+	//var tm = nowTime.getMinutes();
+	
+	if(today < '20260705'){
+		return true;
+	}
+	
+	return false;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+	var intgFlg = "";
+	
+	 // 260629 이상희 수정(서브페이지에서 링크시 메인 모달팝업 자동 표출
+    var params = new URLSearchParams(window.location.search);
+    var shouldOpenModal = params.get("openTicketModal") === "Y";
+    // 260629 이상희 수정(서브페이지에서 링크시 메인 모달팝업 자동 표출 <여기 까지
+	
+    
+    // 쿠키 applyAfter 가 존재하지 않는 경우(나중에하기(닫기)버튼을 누르지 않은 경우)에만 모달 노출
+    var isApplyAfterCookieMissing = typeof(Common.getCookie('applyAfter')) === "undefined";
+    
+    
+    var isQuickmenuMbrInteg = typeof(Common.getCookie('quickmenuMbrInteg')) !== "undefined"; 
+   
+    
+    
+    console.log("통합여부", intgFlg);
+    
+    //조건1 : 통합회원여부 플래그가 N이고 applyAfter 쿠키가 없는 경우
+    var isNonIntegratedWithoutCookie = intgFlg === "N" && isApplyAfterCookieMissing;
+    
+    //조건2 : 서브페이지에서 링크를 통해 메인 모달 팝업을 여는 상태이고, applyAfter 쿠기가 없는 경우
+    var isShouldOpenWithoutCookie = shouldOpenModal && isApplyAfterCookieMissing;
+    
+    
+    //조건 3 : 쿠키 finalMbrintegcookie 가 존재하는 경우 모달 노출
+    var isMbrintegcookieCookieMissing = typeof(Common.getCookie('finalMbrintegcookie')) !== "undefined";
+    
+    //일반로그인시
+    if(isNonIntegratedWithoutCookie) {	
+    	openTicketModal();
+    }
+    
+    //퀵메뉴에서 호출시
+    if(isQuickmenuMbrInteg) {
+		Common.setCookie('quickmenuMbrInteg','',-1);
+		openTicketModal();  
+    }
+    
+    //메인에서 호출시
+    if(isMbrintegcookieCookieMissing) {
+        	openTicketModal();  		
+    }
+
+	var modal = document.getElementById("infoAgreeModal");
+
+    var agreeNames = ["agree01", "agree02", "agree03", "agree04"];
+
+    var allAgree = modal.querySelector("#all_agreeY");
+    var allAgreeLabel = modal.querySelector('label[for="all_agreeY"]');
+
+    if (!allAgree || !allAgreeLabel) return;
+
+    function getAgreeInput(name, value) {
+      return modal.querySelector('input[name="' + name + '"][value="' + value + '"]');
+    }
+
+    function updateAllAgreeLabel() {
+      allAgreeLabel.classList.toggle("ui-checkbox-on", allAgree.checked);
+      allAgreeLabel.classList.toggle("ui-checkbox-off", !allAgree.checked);
+    }
+
+    function isAllRequiredAgreed() {
+      return agreeNames.every(function (name) {
+        var agreeY = getAgreeInput(name, "Y");
+        return agreeY && agreeY.checked;
+      });
+    }
+
+    function updateAllAgreeState() {
+      allAgree.checked = isAllRequiredAgreed();
+      updateAllAgreeLabel();
+    }
+
+    function setAgreeGroup(name, value) {
+      var agreeY = getAgreeInput(name, "Y");
+      var agreeN = getAgreeInput(name, "N");
+
+      if (agreeY) agreeY.checked = value === "Y";
+      if (agreeN) agreeN.checked = value === "N";
+    }
+
+    function clearAgreeGroup(name) {
+      var agreeY = getAgreeInput(name, "Y");
+      var agreeN = getAgreeInput(name, "N");
+
+      if (agreeY) agreeY.checked = false;
+      if (agreeN) agreeN.checked = false;
+    }
+
+    function setAllAgree(isChecked) {
+      allAgree.checked = isChecked;
+
+      agreeNames.forEach(function (name) {
+        if (isChecked) {
+          setAgreeGroup(name, "Y");
+        } else {
+          clearAgreeGroup(name);
+        }
+      });
+
+      updateAllAgreeLabel();
+    }
+
+    allAgree.addEventListener("change", function () {
+      setAllAgree(allAgree.checked);
+    });
+
+    allAgreeLabel.addEventListener("click", function (event) {
+      event.preventDefault();
+      setAllAgree(!allAgree.checked);
+    });
+
+    agreeNames.forEach(function (name) {
+      var inputs = modal.querySelectorAll('input[name="' + name + '"]');
+
+      inputs.forEach(function (input) {
+        input.addEventListener("change", updateAllAgreeState);
+
+        var label = modal.querySelector('label[for="' + input.id + '"]');
+
+        if (label) {
+          label.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            input.checked = true;
+            updateAllAgreeState();
+          });
+        }
+      });
+    });
+
+    updateAllAgreeState();
+  });
+    
+    
+  // 260708 이상희 추가(모달을 화면에 표시하는 공통 함수)
+  function showModal(id) {
+    var modal = document.getElementById(id);
+    if (!modal) return;
+
+    // 모달이 body 바로 아래에 있지 않으면 body 아래로 이동
+    // 부모 요소의 transform, overflow, min-width 등의 영향을 피하기 위한 처리
+    if (modal.parentNode !== document.body) {
+      document.body.appendChild(modal);
+    }
+
+    modal.classList.add("is-active");
+    modal.setAttribute("aria-hidden", "false");
+
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+  }
+
+  // 260708 이상희 추가(모달을 닫는 공통 함수)
+  function hideModal(id) {
+    var modal = document.getElementById(id);
+    if (!modal) return;
+
+    modal.classList.remove("is-active");
+    modal.setAttribute("aria-hidden", "true");
+
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+  }    
+    
+
+//통합회원전환 모달창 띄움
+function openTicketModal() {
+
+	if(custMgNo === null || custMgNo === "") {
+		var msg = "통합회원 전환 안내\n";
+		msg += "SRT를 이용해 주시는 회원님께 진심으로 감사드립니다.\n";
+		msg += "통합회원 전환은 고객님의 정보 확인을 위해\n";
+		msg += "로그인 및 본인인증 절차가 필요합니다.\n";
+		msg += "통합회원 연동을 위해 수집되는 정보는\n";
+		msg += "안전하게 보호되어 처리됩니다.\n\n";
+		msg += "통합회원 전환을 위해 로그인 페이지로 이동합니다.";
+ 
+/*  
+		var msg = "<center><b>통합회원 전환 안내</b> <br>";
+		msg += "SRT를 이용해 주시는 회원님께 <br>진심으로 감사드립니다. <br>";
+		msg += "통합회원 전환은 고객님의 정보 확인을 위해 <br/>";
+		msg += "<b>로그인 및 본인인증 절차가 필요</b>합니다. <br>";
+		msg += "통합회원 연동을 위해 수집되는 정보는<br>";
+		msg += "안전하게 보호되어 처리됩니다.<br><br></center>";
+		msg += "<b>통합회원 전환을 위해 로그인 페이지로 이동합니다.</b>";
+*/
+		alert(msg);
+		location.href = '/cmc/01/selectLoginForm.do?pageId=TK0701000000';
+		Common.setCookie('selectLoginMbrInteg','',1);
+				
+		//로그인 시에만 접근 가능
+	} else {
+        // 260708 이상희 수정
+        showModal("ticketModal");
+        setDeleteMbrintegcookie();
+	}
+}
+
+//통합회원전환 모달창 닫기
+function closeTicketModal() {
+	//setApplyAfter()
+	//setDeleteMbrintegcookie();
+    // 260708 이상희 수정
+    hideModal("ticketModal");
+}
+
+//정보제공동의 모달창 띄움
+function openInfoAgreeModal() {
+    // 260708 이상희 수정
+    showModal("infoAgreeModal");
+}
+
+//정보제공동의 모달창 닫기
+function closeInfoAgreeModal() {
+	//setApplyAfter()
+	//setDeleteMbrintegcookie();
+    // 260708 이상희 수정
+    hideModal("infoAgreeModal");
+}
+
+/* function openApplyCompleteModal() {
+	document.getElementById("applyCompleteModal").classList.add("is-active");
+} */
+
+/* function closeApplyCompleteModal() {
+	setApplyAfter()
+	document.getElementById("applyCompleteModal").classList.remove("is-active");
+} */
+
+//나중에하기 안내 띄움 
+function openApplyAfterModal() {
+    // 260708 이상희 수정
+    showModal("applyAfterModal");
+}
+
+//나중에하기 안내 닫기
+function closeApplyAfterModal() {
+	//setApplyAfter();
+	//setDeleteMbrintegcookie();
+    // 260708 이상희 수정
+    hideModal("applyAfterModal");
+}
+
+//applyAfterYn 값 쿠키에 1일 동안 보관
+function setApplyAfter() {
+	Common.setCookie('applyAfter','',1); //2026-08-13 60일에서 1일로 변경
+}
+
+//mbrintegcookie 쿠키 삭제
+function setDeleteMbrintegcookie() {
+	//Common.deleteCookie("mbrintegcookie");
+	Common.setCookie('mbrintegcookie','',-1);
+	Common.setCookie('finalMbrintegcookie','',-1);
+}
+
+//나중에하기 쿠키 저장 버튼
+function closeApplyAfterModalWithCookie() {
+	setApplyAfter();
+	//document.getElementById("ticketModal").classList.remove("is-active"); //통합회원안내 창은 닫음
+	//document.getElementById("applyAfterModal").classList.remove("is-active"); //통합회원안내 창은 닫음
+	hideModal("applyAfterModal");
+}
+
+//코레일 웹뷰 닫기 
+/* function closeKorailWebviewModal() {
+
+	document.getElementById("webViewdialog").classList.remove("is-active");
+} */
+
+//통합회원 안내로 이동
+function goTicketModal() {
+	closeInfoAgreeModal();
+	openTicketModal();
+}
+
+//정보제공동의로 이동
+function goInfoAgreeModal() {
+	closeTicketModal();
+	openInfoAgreeModal();
+	
+}
+
+//kbc인증 팝업으로 이동 (20260825 추가)
+function goPhonePopup() {
+	//정보제공동의
+	var agree03 = "Y"; //document.querySelector('#infoAgreeModal input[name="agree03"]:checked')?.value || "N";
+	var agree04 = "Y"; //document.querySelector('#infoAgreeModal input[name="agree04"]:checked')?.value || "N";
+
+	
+	//정보제공동의 값 추가
+	infoAgreePayload.agree03 = agree03;
+	infoAgreePayload.agree04 = agree04;
+	
+	closeTicketModal();
+	phonePopup();
+	
+}
+
+//정보제공동의 후 웹뷰 전환
+function goApplyCompleteModal() {	
+	//정보제공동의
+	var agree03 = "Y"; //document.querySelector('#infoAgreeModal input[name="agree03"]:checked')?.value || "N";
+	var agree04 = "Y"; //document.querySelector('#infoAgreeModal input[name="agree04"]:checked')?.value || "N";
+
+	
+	//정보제공동의 값 추가
+	infoAgreePayload.agree03 = agree03;
+	infoAgreePayload.agree04 = agree04;
+	
+	var agreeNames = ["agree01", "agree02", "agree03", "agree04"];
+	var agreeNames2 = ["agree01", "agree02"];
+	var isAllAgreed = agreeNames2.every(function(name) {
+		var agreeY = document.querySelector('#infoAgreeModal input[name="' + name + '"][value="Y"]');
+		return agreeY && agreeY.checked;
+	});
+	
+	/* if(!isAllAgreed) {
+		alert("필수 항목은 모두 동의해야합니다.");
+		return;
+	}
+	 */
+	
+	new Ajax.Request('/mbrInteg/updateUnityAgre.do', {	
+		asynchronous : false,
+		type : "POST",
+		parameters: infoAgreePayload,
+		onSuccess : function (res) {	
+			try {
+				console.log("updateUnityAgre ::: 정보제공동의 api 호출 성공!");
+	/* 			var unityAgreeJson = res.responseJSON;
+				if(typeof unityAgreeJson === "string") {
+					unityAgreeJson = JSON.parse(unityAgreeJson);
+				}
+
+				if(unityAgreeJson && unityAgreeJson.msgCd === "0000") {//정상처리되었을때			
+					//정보제공동의 창 닫기
+					//closeInfoAgreeModal();
+						
+				} */
+				
+			} catch(err) {
+				console.log('error', err);
+			}
+		
+		}
+	});
+	
+	//정보제공동의 창 닫기
+	closeInfoAgreeModal();
+	
+	//kcb본인인증 or 통합회원전환 웹뷰 호출
+	phonePopup();	
+	
+
+};
+
+	//phone_popup2_mbrInteg -> phone_popup3_mbrInteg -> 해당 함수에서 리스너 호출
+	window.addEventListener("message", function(event) {
+		if(event.data && event.data.type === "OACX_AUTH_SUCCESS") {
+			callMbrInteg();
+		} 
+	});
+	
+	//공지사항 팝업에서 호출 
+	window.addEventListener("message", function(event) {
+		console.log('NOTICE_POPUP test');
+		if(event.data && event.data.type === "NOTICE_POPUP") {
+			openTicketModal();
+		} 
+	});
+
+	function phonePopup(){
+		console.log("휴대폰인증");
+		Common.openWin('/kcb/phone/phone_popup2.jsp?RQST_CAUS_CD=03&teenY=M', 'kcb', 500, 550); //통합회원전환여부 teenYn = M
+	}
+
+	//통합회원웹뷰 2026-06-23
+	function callMbrInteg() {
+		//정보제공동의
+		var agree03 = "Y"; //document.querySelector('#infoAgreeModal input[name="agree03"]:checked')?.value || "N";
+		var agree04 = "Y"; //document.querySelector('#infoAgreeModal input[name="agree04"]:checked')?.value || "N";
+		
+		//정보제공동의 값 추가
+		infoAgreePayload.agree03 = agree03;
+		infoAgreePayload.agree04 = agree04;
+		
+		new Ajax.Request('/mbrInteg/save.do', {	
+			asynchronous : false,
+			type : "POST",
+			parameters: infoAgreePayload,
+			onSuccess : function (res) {		
+				try{
+
+					let devKorail = "https://dev5.letskorail.com/ebizweb/integrate/bridge.do?";
+					let prodKorail = "https://www.korail.com/ebizweb/integrate/bridge.do?";
+													
+					var mbrIntegJson = res.responseJSON;
+					
+					if(typeof mbrIntegJson === "string") {
+						mbrIntegJson = JSON.parse(mbrIntegJson);
+					}
+	
+					let korailparam = {
+							encCi: mbrIntegJson.encCi,  //암호화Ci
+							encMbCrdNo: mbrIntegJson.encMbCrdNo,  //암호화SR회원번호
+							encCustNm: mbrIntegJson.encCustNm,  //암호화SR회원번호
+							encBrth: mbrIntegJson.encBrth,  //암호화생일
+							encTelNo: mbrIntegJson.encTelNo,  //암호화전화번호
+							encAplClsDt1 : mbrIntegJson.encAplClsDt1, //암호화 기초생활 적용종료일자1
+							encAplClsDt2 : mbrIntegJson.encAplClsDt2, //암호화 임산부 적용종료일자2
+							encYouthFlg : mbrIntegJson.encYouthFlg, //암호화 청소년드림 인증여부
+							encCustRank : mbrIntegJson.encCustRank, // 암호화 고객 등급
+							encTicketTrnsferAgree : mbrIntegJson.encTicketTransferAgree // 3번항목 동의 인 경우 값 
+					};
+	
+				   var query = new URLSearchParams(korailparam).toString();
+/* 				    console.log("urlKorail ::: " + prodKorail);
+					console.log("query ::: " + query);
+					console.log("url :::" + prodKorail+query); */
+					kcbPopUP(prodKorail, korailparam);
+//					showdialog(prodKorail+query); // 웹뷰 다이알로그 호출
+//					showdialogPost(prodKorail, korailparam);
+											
+				}catch(e){
+					console.log('error', e);
+				}
+				
+			},
+			onFailure: function(res) {
+				console.log('error', res);
+				alert("본인인증 정보 또는 로그인 정보가 일치하지 않습니다. \n다시 시도해 주세요.");
+				closeKcbPopup(); //kcb팝업 닫기
+			}
+		});
+	}
+	
+	function closeKcbPopup() {
+		try {
+			if(window.name === 'kcb') {
+				self.close();
+				return;
+			}
+			
+			if(window.open("", "kcb")) {
+				window.open("", "kcb").close();
+			}
+			
+		} catch (e) {
+			
+			console.log("closeKcbPopup error", e);
+			
+		}
+	}
+	
+	
+	 function kcbPopUP(actionUrl, paramObj) {
+		
+			var form = document.createElement("form");
+			
+			form.method = "POST";
+			form.action = actionUrl;
+			form.target = 'kcb';
+			form.style.display = "none";
+			
+			for (var key in paramObj) {
+				if(paramObj.hasOwnProperty(key)) {
+					addHiddenInput(form, key, paramObj[key]);
+				}
+			}
+			
+			document.body.appendChild(form);
+			form.submit();
+			
+			setTimeout(function() {
+				if(form.parentNode) {
+					form.parentNode.removeChild(form)
+				}
+			},1000);
+		}	
+
+/*  function openPopUP(actionUrl, paramObj) {
+	var popUpName = "코레일";
+	
+	var popup = window.open(
+			"",
+			popUpName,
+			"width=1260, height=800, scrollbars=yes, resizable=yes"
+		);
+	
+	if(!popup) {
+		alert("팝업이 차단되었습니다. 팝업 차단을 해제해 주세요.");
+		return;
+	}
+	
+	var form = document.createElement("form");
+	
+	form.method = "POST";
+	form.action = actionUrl;
+	form.target = popUpName;
+	form.style.display = "none";
+	
+	for (var key in paramObj) {
+		if(paramObj.hasOwnProperty(key)) {
+			addHiddenInput(form, key, paramObj[key]);
+		}
+	}
+	
+	document.body.appendChild(form);
+	form.submit();
+	
+	setTimeout(function() {
+		if(form.parentNode) {
+			form.parentNode.removeChild(form)
+		}
+	},1000);
+	popup.focus();
+}
+ */
+
+function addHiddenInput(form, name, value) {
+	var input = document.createElement("input");
+	input.type = "hidden";
+	input.name = name;
+	input.value = value == null ? "" : value;
+	form.appendChild(input);
+}
+
+
+/*
+* 코레일 웹뷰 다이알로그 Post 호출
+*/
+/*  function showdialogPost(actionUrl, korailparam){
+	const dialog = document.getElementById("webViewdialog");
+	dialog.classList.add("is-active");
+	
+	console.log('actionUrl', actionUrl);
+	console.log('korailparam', korailparam);
+	const korailFrame = document.getElementById("korailWebView");
+	//korailFrame.src = "about:blank";
+	//korailFrame.src = calledUrl;
+	var form = document.createElement("form");
+	
+	form.method = "POST";
+	form.action = actionUrl;
+	form.target = "KORAIL_WEB_VIEW";
+	form.style.display = "none";
+	
+	for (var key in korailparam) {
+		if(korailparam.hasOwnProperty(key)) {
+			addHiddenInput(form, key, korailparam[key]);
+		}
+	}
+	
+	document.body.appendChild(form);
+	form.submit();
+	
+	setTimeout(function() {
+		if(form.parentNode) {
+			form.parentNode.removeChild(form)
+		}
+	},1000);
+
+	
+	dialog.scrollTop = 0;
+}  */
+
+
+
+/*
+* 코레일 웹뷰 다이알로그 호출
+*/
+/* function showdialog(calledUrl){
+	const korailFrame = document.getElementById("korailWebView");
+	korailFrame.src = "about:blank";
+	korailFrame.src = calledUrl;
+	korailFrame.onload = () => {
+		const interval = setInterval(()=>{
+			document.getElementById("webViewdialog").scrollTop = 0;					
+		}, 100);
+		
+		setTimeout(()=>{
+			clearInterval(interval);
+		}, 2000);
+	};
+	$J( function(){
+		$J('#webViewdialog').dialog({
+			modal:true,
+			width:1260,
+			height: 800,
+			buttons:{
+				닫기 : function(){
+					korailFrame.src = "about:blank";						
+					$J('#webViewdialog').dialog("close");
+				}
+			},
+			open : function() {
+				$J(this).parent().css({
+					position : "fixed",
+					height : "auto",
+					top : "130px",
+					"left" : "50%",
+					"margin-left" : "-43rem",
+					display : "block",
+					"z-index" : "203" 
+				});
+				$J(this).css({
+					height : "clamp(520px, calc(100dvh - 240px), 947px)"
+				});
+				document.getElementById("webViewdialog").scrollTop = 0;
+				$J(".ui-widget-overlay").css("z-index", "201");
+				
+			}
+		}).prev(".ui-dialog-titlebar").css("background","#6f135e").css("color","#fff");
+	});
+	
+	document.getElementById("webViewdialog").scrollTop = 0;
+} */
+ 
+function goApplyAfterModal() {
+	closeTicketModal();
+	openApplyAfterModal();
+}
+
+
+
+</script>
+  </body>
+</html>
+<!-- 통합회원웹뷰 -->

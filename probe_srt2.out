@@ -1,0 +1,4 @@
+schedule page -> 200 final https://etk.srail.kr/hpg/hra/01/selectScheduleList.do?pageId=TK0101010000 len 163597 ct text/html; charset=utf-8
+num forms: 1
+--- form 0: action=/hpg/hra/01/selectScheduleList.do?pageId=TK0101010000 method=post
+   fields: ['key', 'dptRsStnCd', 'arvRsStnCd', 'stlbTrnClsfCd', 'psgNum', 'seatAttCd', 'isRequest', 'srchDvNm', 'input_midium wx170', 'input_midium wx170', 'ymd checkForm', 'dptTm checkForm', 'checkbox checkForm', 'checkbox checkForm', 'checkbox checkForm', 'checkForm', 'checkForm', 'checkForm', 'checkForm', 'checkForm', 'checkForm', 'checkForm', 'checkForm checkbox', 'checkbox checkForm', 'checkbox checkForm', 'checkbox checkForm', 'checkbox checkForm', 'checkbox checkForm', 'btn_large wx200 btn_burgundy_dark2 val_m corner inquery_btn']

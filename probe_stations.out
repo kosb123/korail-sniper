@@ -1,0 +1,32 @@
+stations found: 52
+
+=== baseURL-ish ===
+
+=== url: strings with /api or v1 or v2 ===
+  /v2/user/me
+
+=== .do endpoints containing research/reserve/trn/stn ===
+  /classes/com.korail.mobile.addService.reserve.do
+  /classes/com.korail.mobile.addService.reserveList.do
+  /classes/com.korail.mobile.research.TResidualSeatsResearch.do
+  /classes/com.korail.mobile.research.TrainResearch
+  /classes/com.korail.mobile.research.assignScheduleView.do
+  /classes/com.korail.mobile.research.cmtrInfo.do
+  /classes/com.korail.mobile.research.custTripInfo.do
+  /classes/com.korail.mobile.research.dcntCrdInfo.do
+  /classes/com.korail.mobile.research.dcntCrdScheduleView.do
+  /classes/com.korail.mobile.research.mergeSeatsC.do
+  /classes/com.korail.mobile.research.tripChgOgtk.do
+  /classes/com.korail.mobile.reservation.ReservationDetailView
+  /classes/com.korail.mobile.reservation.ReservationView
+  /classes/com.korail.mobile.reservation.dcntCrdExtn.do
+  /classes/com.korail.mobile.reservation.reservationChange.do
+  /classes/com.korail.mobile.reservation.seatAssign.do
+  /classes/com.korail.mobile.reservation.tripChgPrsC.do
+  /classes/com.korail.mobile.reservationCancel.ReservationCancel
+  /classes/com.korail.mobile.reservationCancel.ReservationCancelChk
+  /classes/com.korail.mobile.reservationWait.ReservationWait
+  /classes/com.korail.mobile.seatMovie.ScheduleView
+  /classes/com.korail.mobile.seatMovie.ScheduleViewSpecial
+  /classes/com.korail.mobile.trn.fresScar.do
+  /classes/com.korail.mobile.trn.prcFare.do

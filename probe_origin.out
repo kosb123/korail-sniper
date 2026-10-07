@@ -1,0 +1,33 @@
+GET /ticket -> 200 final url: https://www.korail.com/ticket len: 8412
+script: https://cdn.korail.com/dyna/dp.helper.js
+script: /dynaPath.do
+script: https://cdn.korail.com/public/js/common/jquery-3.7.1.min.js
+script: https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js
+script: https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js
+script: https://cdn.korail.com/public/netfunnel-statics/agents/client/javascript/netfunnel-javascript-agent.js
+script: https://cdn.korail.com/public/netfunnel-statics/netfunnel_skin.js
+script: https://cert.mobile-ok.com/resources/js/index.js
+script: https://cdn.korail.com/oacx/esign/oacx-vendor.js
+script: https://cdn.korail.com/oacx/esign/oacx-ux.js
+script: https://cdn.korail.com/bundle/bundle.5b79b7a7ab4cbca53b24.js?v=1.0.221
+link: https://cdn.korail.com/kofavicon.ico
+url: https://cdn.korail.com/dyna/dp.helper.js
+url: https://cdn.korail.com/nonexistent-test-file.js
+url: https://cdn.korail.com/kofavicon.ico
+url: https://cdn.korail.com/public/loading.gif
+url: https://www.korail.com
+url: https://cdn.korail.com/public/js/common/jquery-3.7.1.min.js
+url: https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js
+url: https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js
+url: https://cdn.korail.com/public/netfunnel-statics/agents/client/javascript/netfunnel-javascript-agent.js
+url: https://nf.letskorail.com
+url: https://cdn.korail.com/public/netfunnel-statics/netfunnel_skin.js
+url: https://cert.mobile-ok.com/resources/js/index.js
+url: https://cdn.korail.com/oacx/esign/oacx-vendor.js
+url: https://cdn.korail.com/oacx/esign/oacx-ux.js
+url: https://cdn.korail.com/bundle/bundle.5b79b7a7ab4cbca53b24.js?v=1.0.221
+www.korail.com /com/propDataSource.do -> 200 
+www.korail.com /ebizcross/getUUID.do -> 200 {"strResult":"SUCC","mutMrkVrfCd":"20261007102552500JgSpNUawK4a8R"}
+m.korail.com ERR ConnectionError HTTPSConnectionPool(host='m.korail.com', port=443): Max retries exceeded with url: / (Caused by Name
+ticket.korail.com ERR ConnectionError HTTPSConnectionPool(host='ticket.korail.com', port=443): Max retries exceeded with url: / (Caused by
+ebiz.korail.com ERR ConnectionError HTTPSConnectionPool(host='ebiz.korail.com', port=443): Max retries exceeded with url: / (Caused by N

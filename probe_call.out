@@ -1,0 +1,63 @@
+stations: 52
+  0001 Seoul
+  0104 Yongsan
+  0002 Yeongdeungpo
+  0551 Suseo
+  0501 Gwangmyeong
+  0003 Suwon
+  0004 Pyeongtaek
+  0502 CheonanAsan
+  0005 Cheonan
+  0007 Jochiwon
+  0010 Daejeon
+  0025 Seodaejeon
+  0012 Gimcheon
+  0013 Gumi
+  0507 Gimcheon Gumi
+  0023 Daegu
+  0015 Dongdaegu
+  0506 Seodaegu
+  0515 Pohang
+  0017 Miryang
+  0019 Gupo
+  0020 Busan
+  0508 Gyeongju
+  0125 Taehwagang
+  0509 Ulsan
+  0297 Osong
+  0059 Masan
+  0512 ChangwonJungang
+  0024 Gyeongsan
+  0027 Nonsan
+  0030 Iksan
+  0033 Jeongeup
+  0036 Gwangjusongjeong
+  0041 Mokpo
+  0045 Jeonju
+  0051 Suncheon
+  0053 Yeosu-Expo
+  0083 Daecheon
+  0090 Cheongnyangni
+  0093 Jecheon
+  0113 Donghae
+  0115 Gangneung
+  0390 Haengsin
+  0153 Chuncheon
+  0152 Namchuncheon
+  0190 Bujeon
+  0009 Sintanjin
+  0011 Yeongdong
+  0014 Waegwan
+  0092 Wonju
+  0262 Jeongdongjin
+  0081 Hongseong
+
+--- TResidualSeatsResearch @ 39109 ---
+T_PAST_USELIST:{url:"/ebizprd/EbizPrdTicketPr13500w_pr13582.do",method:r.POST,successCode:a.OK},MYPAGE_INQUIRY_PAST_USELIST:{url:"/ebizweb/mypage/ticket-history/pastUsedList",method:r.GET,successCode:a.OK},MYPAGE_PAST_USELIST_DETAIL:{url:"/ebizweb/mypage/ticket-history/pastUsedList/detail",method:r.POST,successCode:a.OK},PASS_RESERVATION:{url:"/classes/com.korail.mobile.pass.passOtrReserve",method:r.POST,successCode:a.OK},TRAIN_SEARCH_RESULT_LIST:{url:"/classes/com.korail.mobile.seatMovie.ScheduleView",method:r.POST,successCode:a.OK},TRAIN_RESEARCH:{url:"/classes/com.korail.mobile.research.TrainResearch",method:r.POST,successCode:a.OK},SEATSRESEARCH:{url:"/classes/com.korail.mobile.research.TResidualSeatsResearch.do",method:r.POST,successCode:a.OK},BUSSEATSRESEARCH:{url:"/classes/com.korail.mobile.lms.TResidualSeatsResearch.do",method:r.POST,successCode:a.OK},MY_TICKET_LIST:{url:"/classes/com.korail.mobile.myTicket.MyTicketList",method:r.POST,successCode:a.OK},TRAIN_TICKET_VIEW:{url:"/
+
+--- TrainResearch @ 39006 ---
+CKET_RECEIPT:{url:"/ebizweb/mypage/ticket-history/receipt",method:r.GET,successCode:a.OK},MYPAGE_REQUEST_PAST_USELIST:{url:"/ebizprd/EbizPrdTicketPr13500w_pr13582.do",method:r.POST,successCode:a.OK},MYPAGE_INQUIRY_PAST_USELIST:{url:"/ebizweb/mypage/ticket-history/pastUsedList",method:r.GET,successCode:a.OK},MYPAGE_PAST_USELIST_DETAIL:{url:"/ebizweb/mypage/ticket-history/pastUsedList/detail",method:r.POST,successCode:a.OK},PASS_RESERVATION:{url:"/classes/com.korail.mobile.pass.passOtrReserve",method:r.POST,successCode:a.OK},TRAIN_SEARCH_RESULT_LIST:{url:"/classes/com.korail.mobile.seatMovie.ScheduleView",method:r.POST,successCode:a.OK},TRAIN_RESEARCH:{url:"/classes/com.korail.mobile.research.TrainResearch",method:r.POST,successCode:a.OK},SEATSRESEARCH:{url:"/classes/com.korail.mobile.research.TResidualSeatsResearch.do",method:r.POST,successCode:a.OK},BUSSEATSRESEARCH:{url:"/classes/com.korail.mobile.lms.TResidualSeatsResearch.do",method:r.POST,successCode:a.OK},MY_TICKET_LIST:{url:"/cla
+
+--- mergeSeatsC @ 37939 ---
+rdUpdProc.do",method:r.POST,successCode:a.OK},UPDATE_DORMANT:{url:"/ebizmk/member/mkDormantUpdate.do",method:r.POST,successCode:a.OK},COM_WITHDRAW_CONFIRM:{url:"/ebizweb/common/withdraw/password-confirm",method:r.POST,successCode:a.OK},COM_WITHDRAW:{url:"/ebizweb/common/withdraw",method:r.POST,successCode:a.OK},RESERVATION_VIEW:{url:"/classes/com.korail.mobile.reservation.ReservationView",method:r.GET,successCode:a.OK},TICKET_RESERVATION:{url:"/classes/com.korail.mobile.certification.TicketReservation",method:r.POST,successCode:a.OK},FREE_SEAT_SEARCH:{url:"/classes/com.korail.mobile.trn.fresScar.do",method:r.POST,successCode:a.OK},MERGE_SEATS_SEARCH:{url:"/classes/com.korail.mobile.research.mergeSeatsC.do",method:r.POST,successCode:a.OK},TICKET_NONMEMBER_RESERVATION:{url:"/classes/com.korail.mobile.nonMember.NonMemTicket",method:r.POST,successCode:a.OK},TOUR_GOODS_NONMEMBER_LOGIN:{url:"/ebizweb/common/NonMemberComProc",method:r.POST,successCode:a.OK},NONMEMBER_MY_TOUR_GOODS:{url:"/ebiz
+

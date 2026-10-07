@@ -1,0 +1,10 @@
+resid Device= BH 200 {"h_msg_cd":"WRT100105","h_msg_txt":"WRT100105KO","strResult":"FAIL"}
+resid Device= AD 200 {"h_msg_cd":"WRT100105","h_msg_txt":"WRT100105KO","strResult":"FAIL"}
+resid Device= IOS 200 {"h_msg_cd":"ERR299907","h_msg_txt":"사용불가한 창구/Device입니다.","strResult":"FAIL"}
+resid Device= BE 200 {"h_msg_cd":"WRT100105","h_msg_txt":"WRT100105KO","strResult":"FAIL"}
+resid Device= BH999999999 200 {"h_msg_cd":"ERR299907","h_msg_txt":"사용불가한 창구/Device입니다.","strResult":"FAIL"}
+scdlQry 200 {"lgtmShtmDvCd":null,"fllwPgExt":null,"trainList":null,"h_msg_cd":"WRG200004","h_msg_txt":"입력값오류(출발역,도착역,경유역,지정역)","msgTxt":"입력값오류(출발역,도착역,경유역,지정역)","msgCd":"WRG200004","strResult":"FAIL"}
+scdlQry 200 {"lgtmShtmDvCd":null,"fllwPgExt":null,"trainList":null,"h_msg_cd":"WRG200004","h_msg_txt":"입력값오류(출발역,도착역,경유역,지정역)","msgTxt":"입력값오류(출발역,도착역,경유역,지정역)","msgCd":"WRG200004","strResult":"FAIL"}
+TrainSchedule 200 {   "h_msg_cd" : "WRG000001",   "strResult" : "FAIL",   "h_msg_txt" : "필수입력항목에러" } 
+ScheduleView(exact payload) 500 len 1822 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko"> <head> 
+https://m.korail.com ERR HTTPSConnectionPool(host='m.korail.com', port=443): Max retries exceeded with url: /ticket/main (Caused by NameResolutionError("HTTPSConnection(host='m.korail.com', port=443): Failed to resolve 'm.korail.com' ([Errno 11001] getaddrinfo failed)"))

@@ -1,0 +1,25 @@
+reservation url: https://www.korail.com/ticket/reservation | title: 코레일 승차권예매
+FIELDS:
+  {'id': 'langChangeButton', 'name': '', 'type': 'submit', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': 'Language', 'vis': True}
+  {'id': '', 'name': '', 'type': 'button', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '전체 메뉴 열기', 'vis': True}
+  {'id': 'relatedSiteButton', 'name': '', 'type': 'submit', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '관련 사이트', 'vis': True}
+  {'id': '', 'name': '', 'type': 'submit', 'tag': 'BUTTON', 'ph': '', 'val': '', 'txt': '', 'vis': True}
+captured: 18
+200 https://www.korail.com/ticket/reservation | text/html
+200 https://www.korail.com/dynaPath.do | application/javascript;charset
+200 https://www.korail.com/src/assets/common/img/icon__common/ico_global.svg | image/svg+xml
+200 https://www.korail.com/src/assets/common/img/icon__common/ham_icon.svg | image/svg+xml
+200 https://www.korail.com/src/assets/common/img/icon__arrows/chevron__down--white.svg | image/svg+xml
+200 https://www.korail.com/src/assets/common/img/footer_isms.svg | image/svg+xml
+200 https://www.korail.com/src/assets/common/img/logos/ticket/type=ticket.svg | image/svg+xml
+200 https://www.korail.com/ebizweb/common/loginCheck?Device=BH&Version=999999999 | text/html;charset=utf-8
+200 https://www.korail.com/com/macro.do?Device=BH&Version=999999999 | text/html);charset=utf-8
+200 https://www.korail.com/dynaPath/a7IM92LGFZZTOX8OJOZUFP4SNGDa0WQDQPLBaKCSJ6LB8ZB54G/FMPHOLHTLGLEGQErG7Fd | text/html;charset=UTF-8
+200 https://www.korail.com/file/cubedata/CACHE/ticketMainBanner.cache?t=29855647 | text/html
+200 https://www.korail.com/file/cubedata/CACHE/ticketMiddleSlide.cache?t=29855647 | text/html
+200 https://www.korail.com/file/cubedata/CACHE/ticketTopNotice.cache?t=29855647 | text/html
+200 https://www.korail.com/file/cubedata/CACHE/ticketNotice.cache?t=29855647 | text/html
+200 https://www.korail.com/file/cubedata/CACHE/ticketMainSlide.cache?t=29855647 | text/html
+200 https://www.korail.com/src/assets/common/img/icon__arrows/chevron-circle__down--black.svg | image/svg+xml
+200 https://www.korail.com/file/cubedata/CACHE/kor_multiLingual.cache?t=29855647 | text/html
+200 https://www.korail.com/com/userMainEmerNotice.do?siteCode=ticket&Device=BH&Version=999999999 | text/html);charset=utf-8

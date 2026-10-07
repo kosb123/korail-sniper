@@ -1,0 +1,28 @@
+https://etk.srail.kr/ -> 200 final https://etk.srail.kr/main.do len 133301 ct text/html; charset=utf-8
+  set-cookie: 
+   script: ../resources/js/plugin/swiper-bundle.min.js
+   script: /resources/js/component/ui-script.js
+   script: /resources/js/pattern/pattern.js
+   script: /js/Common.js
+   script: /js/jquery/jquery-1.11.3.min.js
+   script: /js/jquery/plugin/jquery-ui/1.12.1/jquery-ui.js
+   script: /js/jquery.bxslider.js
+   script: /js/js.js?20251127
+   script: /js/prototype/prototype.1.7.2.js
+   script: /js/scriptaculous/1.9.0/scriptaculous.js?load=builder,effects
+   script: /js/Common.js
+   script: /js/Navi.js
+   script: /js/sweetalert2.js
+   script: /js/swiper-bundle.min.js
+   script: /dynaPath.do
+   script: /js/IFrame.js
+   script: /js/netfunnel/netfunnel-pr.1.0.js
+   script: /js/netfunnel/skin/sr.1.0.js
+   script: /js/IFrame.js
+   script: /js/netfunnel/netfunnel-pr.1.0.js
+   script: /js/netfunnel/skin/sr.1.0.js
+   form action: /hpg/hra/01/selectScheduleList.do?pageId=TK0101010000
+https://etk.srail.kr/resv -> 404 final https://etk.srail.kr/resv len 17581 ct text/html; charset=utf-8
+  set-cookie: 
+https://etk.srail.kr/seatSearch.do -> 404 final https://etk.srail.kr/seatSearch.do len 17581 ct text/html; charset=utf-8
+  set-cookie: 

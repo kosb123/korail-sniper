@@ -1,0 +1,570 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="format-detection" content="telephone=no, address=no, email=no" />
+	<meta name="viewport" content="width=device-width, user-scalable=yes" />
+	<meta name="description" content="수서고속철도, SRT, 수서~부산(경부선), ~목포(호남선), 승차권 예매, 운행정보 안내" />
+	<meta name="naver-site-verification" content="0a893b6cf32c1efffb45bae4d7f442b5b74f7f84" />
+	<title>노선 선택 | 국민철도 SR</title>
+	<link rel="apple-touch-icon-precomposed" href="/apple-touch-icon-precomposed.png" />
+	<link rel="shortcut icon" href="/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="/css/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="/css/swiper-bundle.min.css" />
+
+	<link rel="stylesheet" type="text/css" href="/css/layout.css" />
+
+	<link rel="stylesheet" type="text/css" href="/css/ticket.css" />
+
+	<link rel="stylesheet" type="text/css" href="/css/contents.css" />
+
+	<!--[if IE 7]><link rel="stylesheet" type="text/css" href="/css/skin/etk_kr/ie7.css" /><![endif]-->
+	<!--[if IE 8]><link rel="stylesheet" type="text/css" href="/css/skin/etk_kr/ie8.css" /><![endif]-->
+	<!--[if IE 9]><link rel="stylesheet" type="text/css" href="/css/skin/etk_kr/ie9.css" /><![endif]-->
+	
+	
+
+
+
+
+
+
+
+<script type="text/javascript" src="/js/Common.js"></script>
+<script>
+var cfg = {
+		contextPath : '',
+		isLogin : false
+	};
+	
+function getCookieInCommonSystem(cName){
+	var cookieVal = "";
+    if(document.cookie.indexOf(cName) != -1){
+        document.cookie.split(";").forEach((arg)=>{
+            if(arg.indexOf(cName) != -1) cookieVal = arg.trim().replaceAll(cName+"=","");
+        });
+    }
+	return cookieVal;
+}
+	
+async function showAlerts(alerts){
+	for (const alert of alerts){
+		const result = await Swal.fire({
+			icon: alert.icon,
+			title: alert.title,
+			html: alert.html,
+			showCancelButton:alert.showCancelButton,
+			confirmButtonColor:'#572b4c',
+			cancelButtonColor:'#666',
+			cancelButtonText:alert.cancelButtonText,
+			confirmButtonText:alert.confirmButtonText,
+			allowOutsideClick:false,
+			customClass:alert.customClass
+		});
+		
+		if(result.isConfirmed && alert.onConfirm){
+			alert.onConfirm();
+		}
+		
+		if(result.isDismissed && alert.onCancel){
+			alert.onCancel();
+		}
+	}	
+}
+
+const alerts = []
+console.log(alerts)
+
+
+
+
+
+
+	
+function blockTicket(){
+	var nowTime = new Date();
+	var yy = nowTime.getFullYear();
+	var tmm = nowTime.getMonth()+1;
+	var mm = tmm < 20 ? '0'+tmm:tmm;
+	var tdd = nowTime.getDate();
+	var dd = tdd < 20 ? '0'+tdd:tdd;
+	var today = yy+mm+dd; 
+	var tt = nowTime.getHours();
+	var tm = nowTime.getMinutes();
+	
+	if(today == '20210402' && tt == 2 && (tm < 20 && tm >= 0)){
+		if(location.href.indexOf("selectScheduleList")!='-1'){					//일반
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}else if(location.href.indexOf("selectShuttleScheduleList")!='-1'){		//환승
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}else if(location.href.indexOf("selectGroupScheduleList")!='-1'){		//단체
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}else if(location.href.indexOf("selectConditionGoodsScheduleList")!='-1'){		//활인
+			alert("결제 시스템 점검으로 인해\n승차권 예약발매 서비스가 잠시 중단됩니다.\n(2021.04.01 02:00 ~ 02:20)");
+			location.href="/main.do";
+		}
+	}
+}
+</script>
+	<script type="text/javascript">
+	//<![CDATA[
+		var MAIN_CONTEXT_PATH = '';
+		var WWW_DOMAIN = 'https://www.srail.co.kr';
+		var cfg = {
+			contextPath : '',
+			isLogin : false
+		};
+		/*
+		switch (location.hostname) {
+			case 'testetkp.srail.co.kr' :
+				document.domain = 'srail.co.kr';
+				break;
+			case 'devetk.srail.co.kr' :
+				document.domain = 'srail.co.kr';
+				break;
+			case 'devetk.srail.kr' :
+				document.domain = 'srail.kr';
+				break;
+			case 'etk.srail.co.kr' :
+				document.domain = 'srail.co.kr';
+				break;
+			case 'etk.srail.kr' :
+				document.domain = 'srail.kr';
+				break;
+			default :
+				document.domain = 'srail.kr';
+		} 
+		*/
+		//document.domain = 'srail.kr';
+	//]]>
+	
+	</script>
+	<script type="text/javascript" src="/js/jquery/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="/js/jquery/plugin/jquery-ui/1.12.1/jquery-ui.js"></script>	
+	<script type="text/javascript" src="/js/jquery.bxslider.js"></script>
+	<script type="text/javascript">var $J = $.noConflict();</script>
+	<script type="text/javascript" src="/js/js.js?201812100809"></script>
+	<script type="text/javascript" src="/js/prototype/prototype.1.7.2.js"></script>
+	<script type="text/javascript" src="/js/scriptaculous/1.9.0/scriptaculous.js?load=builder,effects"></script>
+	<script type="text/javascript" src="/js/Common.js"></script>
+	<script type="text/javascript" src="/js/Navi.js"></script>
+	<script type="text/javascript" src="/js/sweetalert2.js"></script>
+	<script type="text/javascript" src="/js/swiper-bundle.min.js"></script>
+	<script src="/dynaPath.do"></script>
+	
+	<script type="text/javascript">
+	//애플리케이션에서 관리하고 있는 사용자 IP 지정, 없다면 아래와 같이 활용 가능
+
+	
+	</script>
+
+</head>
+
+<body class="">
+
+
+
+<div id="wrap" class="etk-popup">
+	<h1>노선 선택</h1>
+	<div class="contents etk-map">
+
+
+	
+	
+		<div class="tab">
+			<ul>
+				<li style="width: 20%;" class="first on"	id="srtLine1Btn"><a href="#none" id="srtLine1Btn2" title="선택됨" style="padding:5px;cursor:pointer" onclick="changeLineTab('1')" tabindex="0">경부선</a></li>
+				<li style="width: 20%;" class=""			id="srtLine2Btn"><a href="#none" id="srtLine2Btn2" style="padding:5px;cursor:pointer" onclick="changeLineTab('2')" tabindex="0">호남선</a></li>
+				<li style="width: 20%;" class="" 			id="srtLine3Btn"><a href="#none" id="srtLine3Btn2" style="padding:5px;cursor:pointer" onclick="changeLineTab('3')" tabindex="0">전라선</a></li>
+				<li style="width: 20%;" class="" 			id="srtLine4Btn"><a href="#none" id="srtLine4Btn2" style="padding:5px;cursor:pointer" onclick="changeLineTab('4')" tabindex="0">경전선</a></li>
+				<li style="width: 20%;" class="" 			id="srtLine5Btn"><a href="#none" id="srtLine5Btn2" style="padding:5px;cursor:pointer" onclick="changeLineTab('5')" tabindex="0">동해선</a></li>
+			</ul>
+		</div>
+		<div class="gap50"></div>
+		<div class="map1" id="srtLine1" >
+			<ul>
+				<li>경부고속선
+					<ul>
+						<li><a href="#none" onclick="selectStnCd(this, '0001', '서울'); return false;" class="map-12">서울</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0501', '광명'); return false;" class="map-13">광명</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0551', '수서'); return false;" class="map-01">수서</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0552', '동탄'); return false;" class="map-02">동탄</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0553', '평택지제'); return false;" class="map-03">평택지제</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0502', '천안아산'); return false;" class="map-04">천안아산</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0297', '오송'); return false;" class="map-05">오송</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0010', '대전'); return false;" class="map-06">대전</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0507', '김천구미'); return false;" class="map-07">김천구미</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0506', '서대구'); return false;" class="map-19">서대구</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0015', '동대구'); return false;" class="map-08">동대구</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0017', '밀양'); return false;" class="map-14">밀양</a></li>
+		                <li><a href="#none" onclick="selectStnCd(this, '0224', '물금');return false;" class="map-15">물금</a></li>
+		                <li><a href="#none" onclick="selectStnCd(this, '0019', '구포');return false; "class="map-16">구포</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0508', '경주'); return false;" class="map-09">경주</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0509', '울산(통도사)'); return false;" class="map-10">울산(통도사)</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0020', '부산'); return false;" class="map-11">부산</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+			<div class="button-area">
+				<input type="button" value="선택" onclick="changeStnCd();">
+			</div>
+		</div>
+		
+		<div class="map2" id="srtLine2" style="display: none;">
+			<ul>
+				<li>호남고속선
+					<ul>
+						<li><a href="#none" onclick="selectStnCd(this, '0551', '수서'); return false;" class="map-01">수서</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0552', '동탄'); return false;" class="map-02">동탄</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0553', '평택지제'); return false;" class="map-03">평택지제</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0502', '천안아산'); return false;" class="map-04">천안아산</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0297', '오송'); return false;" class="map-05">오송</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0514', '공주'); return false;" class="map-12">공주</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0030', '익산'); return false;" class="map-14">익산</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0033', '정읍'); return false;" class="map-15">정읍</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0036', '광주송정'); return false;" class="map-16">광주송정</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0037', '나주'); return false;" class="map-17">나주</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0041', '목포'); return false;" class="map-18">목포</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="button-area">
+				<input type="button" value="선택" onclick="changeStnCd();">
+			</div>
+		</div>
+		
+		<div class="map3" id="srtLine3" style="display: none;">
+			<ul>
+				<li>전라선
+					<ul>
+						<li><a href="#none" onclick="selectStnCd(this, '0551', '수서'); return false;" class="map-01">수서</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0552', '동탄'); return false;" class="map-02">동탄</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0553', '평택지제'); return false;" class="map-03">평택지제</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0502', '천안아산'); return false;" class="map-04">천안아산</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0297', '오송'); return false;" class="map-05">오송</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0514', '공주'); return false;" class="map-12">공주</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0030', '익산'); return false;" class="map-14">익산</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0045', '전주'); return false;" class="map-20">전주</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0048', '남원'); return false;" class="map-21">남원</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0049', '곡성'); return false;" class="map-22">곡성</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0050', '구례구'); return false;" class="map-23">구례구</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0051', '순천'); return false;" class="map-24">순천</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0139', '여천'); return false;" class="map-25">여천</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0053', '여수EXPO'); return false;" class="map-26">여수EXPO</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="button-area">
+				<input type="button" value="선택" onclick="changeStnCd();">
+			</div>
+		</div>
+		
+		<div class="map4" id="srtLine4" style="display: none;">
+			<ul>
+				<li>경전선
+					<ul>
+						<li><a href="#none" onclick="selectStnCd(this, '0551', '수서'); return false;" class="map-01">수서</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0552', '동탄'); return false;" class="map-02">동탄</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0553', '평택지제'); return false;" class="map-03">평택지제</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0502', '천안아산'); return false;" class="map-04">천안아산</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0297', '오송'); return false;" class="map-05">오송</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0010', '대전'); return false;" class="map-06">대전</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0507', '김천구미'); return false;" class="map-07">김천구미</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0506', '서대구'); return false;" class="map-19">서대구</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0015', '동대구'); return false;" class="map-08">동대구</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0017', '밀양'); return false;" class="map-27">밀양</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0056', '진영'); return false;" class="map-28">진영</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0512', '창원중앙'); return false;" class="map-29">창원중앙</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0057', '창원'); return false;" class="map-30">창원</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0059', '마산'); return false;" class="map-31">마산</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0063', '진주'); return false;" class="map-32">진주</a></li>
+					</ul>
+				</li>
+				
+			</ul>
+			<div class="button-area">
+				<input type="button" value="선택" onclick="changeStnCd();">
+			</div>
+		</div>
+		
+		<div class="map5" id="srtLine5" style="display: none;">
+			<ul>
+				<li>동해선
+					<ul>
+						<li><a href="#none" onclick="selectStnCd(this, '0551', '수서'); return false;" class="map-01">수서</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0552', '동탄'); return false;" class="map-02">동탄</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0553', '평택지제'); return false;" class="map-03">평택지제</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0502', '천안아산'); return false;" class="map-04">천안아산</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0297', '오송'); return false;" class="map-05">오송</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0010', '대전'); return false;" class="map-06">대전</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0507', '김천구미'); return false;" class="map-07">김천구미</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0506', '서대구'); return false;" class="map-19">서대구</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0015', '동대구'); return false;" class="map-08">동대구</a></li>
+						<li><a href="#none" onclick="selectStnCd(this, '0515', '포항'); return false;" class="map-33">포항</a></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="button-area">
+				<input type="button" value="선택" onclick="changeStnCd();"> 
+			</div>
+		</div>
+		
+	
+
+	</div>
+	<a href="#none" onclick="return (function () {
+		if (parent.g_IFrame) {
+			parent.g_IFrame.close();
+			return false;
+		}
+		
+		window.close();
+		return false;
+	}.bind(this))(event)" class="close">닫기</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+	var SYNC_TITLE = false;
+	var select = {dptRsStnCd : '', dptRsStnCdNm : '', arvRsStnCd : '', arvRsStnCdNm : ''};
+	var target = parent.g_IFrame ? parent : opener;
+
+	
+	
+	var button = $$('div.button-area')[0];
+	
+	function selectStnCd(object, stnCd, stnCdNm) {
+		//if(stnCd == '0508'){
+		//	Common.bsAlert('d','경주시 결정사항에 따라 신경주역 역명이<br>12월 28일 부터 [경주역]으로 변경됩니다.<br>이용 혼선을 방지하고자 경주(신경주)로<br>일정기간 안내하고 있으니,<br>열차이용에 참고하시기 바랍니다.','info',null,'안내사항')
+		//}
+		
+		switch ('') {
+			case 'dpt' :
+				if (select.dptRsStnCd == stnCd) {
+					select.dptRsStnCd = '';
+					select.dptRsStnCdNm = '';
+					select.arvRsStnCd = '';
+					select.arvRsStnCdNm = '';
+					
+					if ($$('em.dpt')[0]) {
+						$$('em.dpt')[0].remove();
+					}
+					
+					if ($$('em.arv')[0]) {
+						$$('em.arv')[0].remove();
+					}
+					
+					document.querySelectorAll('.button-area').forEach(function(arg){
+					    //arg.addClassName('on');
+					    arg.removeClassName('on');
+					});
+					return;
+				} else if (select.dptRsStnCd != '' && select.arvRsStnCd == '') {
+					select.arvRsStnCd = stnCd;
+					select.arvRsStnCdNm = stnCdNm;
+					
+					if ($$('em.arv')[0]) {
+						$$('em.arv')[0].remove();
+					}
+					
+					object.insert('<em class="arv">도착</em>');
+					return;
+				}
+				
+				if ($$('em.dpt')[0]) {
+					$$('em.dpt')[0].remove();
+				}
+				
+				if ($$('em.arv')[0]) {
+					$$('em.arv')[0].remove();
+				}
+				
+				select.dptRsStnCd = stnCd;
+				select.dptRsStnCdNm = stnCdNm;
+				select.arvRsStnCd = '';
+				select.arvRsStnCdNm = '';
+				object.insert('<em class="dpt">출발</em>');
+				document.querySelectorAll('.button-area').forEach(function(arg){
+				    arg.addClassName('on');
+				    //arg.removeClassName('on');
+				});
+				break;
+			case 'arv' :
+				if (select.arvRsStnCd == stnCd) {
+					select.dptRsStnCd = '';
+					select.dptRsStnCdNm = '';
+					select.arvRsStnCd = '';
+					select.arvRsStnCdNm = '';
+					
+					if ($$('em.dpt')[0]) {
+						$$('em.dpt')[0].remove();
+					}
+					
+					if ($$('em.arv')[0]) {
+						$$('em.arv')[0].remove();
+					}
+					
+					document.querySelectorAll('.button-area').forEach(function(arg){
+					    arg.addClassName('on');
+					    //arg.removeClassName('on');
+					});
+					return;
+				} else if (select.arvRsStnCd != '' && select.dptRsStnCd == '') {
+					select.dptRsStnCd = stnCd;
+					select.dptRsStnCdNm = stnCdNm;
+					
+					if ($$('em.dpt')[0]) {
+						$$('em.dpt')[0].remove();
+					}
+					
+					object.insert('<em class="dpt">출발</em>');
+					return;
+				}
+				
+				if ($$('em.dpt')[0]) {
+					$$('em.dpt')[0].remove();
+				}
+				
+				if ($$('em.arv')[0]) {
+					$$('em.arv')[0].remove();
+				}
+				
+				select.dptRsStnCd = '';
+				select.dptRsStnCdNm = '';
+				select.arvRsStnCd = stnCd;
+				select.arvRsStnCdNm = stnCdNm;
+				object.insert('<em class="arv">도착</em>');
+				document.querySelectorAll('.button-area').forEach(function(arg){
+				    arg.addClassName('on');
+				    //arg.removeClassName('on');
+				});
+				break;
+			default :
+				window.alert('유효하지 않은 요청 유형입니다.');
+		}
+	}
+	
+	function changeStnCd() {
+		if (select.dptRsStnCd != '' && select.arvRsStnCd == '' && select.dptRsStnCd == target.$('search-form').arvRsStnCd.value) {
+			window.alert('출발역이 도착역과 동일합니다.');
+			return;
+		} else if (select.arvRsStnCd != '' && select.dptRsStnCd == '' && select.arvRsStnCd == target.$('search-form').dptRsStnCd.value) {
+			window.alert('도착역이 출발역과 동일합니다.');
+			return;
+		}
+		
+		if (select.dptRsStnCd != '') {
+			target.$('search-form').dptRsStnCd.value = select.dptRsStnCd;
+			target.$('search-form').dptRsStnCdNm.value = select.dptRsStnCdNm;
+		}
+		
+		if (select.arvRsStnCd != '') {
+			target.$('search-form').arvRsStnCd.value = select.arvRsStnCd;
+			target.$('search-form').arvRsStnCdNm.value = select.arvRsStnCdNm;
+		}
+		
+		if (target.$('search-list')) {
+			target.$('search-list').remove();
+		}
+		
+		if (parent.g_IFrame) {
+			//parent.g_IFrame.close();
+			//return;
+			parent.$('_LAYER_').remove();
+			parent.$('_OVERS_').remove();
+		}
+		
+		window.close();
+	}
+	
+
+	
+	function firstTabOn() {
+		document.getElementById("firstTab").tabIndex = 0;
+		document.getElementById("firstTab").focus();
+		document.getElementById("firstTab").title="선택됨";
+		document.getElementById("secondTab").title="";
+	}
+	
+	function secondTabOn() {
+		document.getElementById("secondTab").tabIndex = 0;
+		document.getElementById("secondTab").focus();
+		document.getElementById("firstTab").title="";
+		document.getElementById("secondTab").title="선택됨";
+	}
+	
+	
+	firstTabOn();
+	
+	
+	
+
+	function changeLineTab(arg){
+		$J('#srtLine'+arg).show();
+		$J('#srtLine'+arg+'Btn').addClass('on')
+		$J('#srtLine'+arg+'Btn2').prop('title', "선택됨");
+		for(var i=1;i<=5;i++){
+			if(arg != i){
+				$J('#srtLine'+i).hide();
+				$J('#srtLine'+i+'Btn').removeClass('on');
+				$J('#srtLine'+i+'Btn2').prop('title', "");
+			}
+		}
+	}
+
+//]]>
+</script>
+
+
+
+
+
+
+
+<div id="cover-spin"></div>
+</div>
+<script type="text/javascript" src="/cms/js/makePCookie.js"></script>
+</body>
+</html>
+

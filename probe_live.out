@@ -1,0 +1,57 @@
+station_data.json: 200 79402
+total stations: 281
+sample: {"stn_cd": "0530", "stn_nm": "가남", "longitude": "127.5340237", "latitude": "37.1969049", "group": "1", "popupMessage": "", "popupType": "0", "area": "", "stop": ""}
+FOUND: 서울 0001 {"stn_cd": "0001", "stn_nm": "서울", "longitude": "126.9708191", "latitude": "37.551856", "group": "7", "major": "1", "popupMessage": "", "popupType": "0", "area": "0", "stop": "1"}
+FOUND: 수서 0551 {"stn_cd": "0551", "stn_nm": "수서", "longitude": "127.101194", "latitude": "37.487911", "group": "7", "popupMessage": "", "popupType": "0", "area": "0", "stop": "0"}
+FOUND: 오송 0297 {"stn_cd": "0297", "stn_nm": "오송", "longitude": "127.3285501", "latitude": "36.6211321", "group": "8", "major": "9", "popupMessage": "", "popupType": "2", "area": "3", "stop": "1"}
+FOUND: 용산 0104 {"stn_cd": "0104", "stn_nm": "용산", "longitude": "126.9647728", "latitude": "37.5299439", "group": "8", "major": "2", "popupMessage": "", "popupType": "0", "area": "0", "stop": "1"}
+FOUND: 증평 0071 {"stn_cd": "0071", "stn_nm": "증평", "longitude": "127.5831795", "latitude": "36.7781212", "group": "9", "popupMessage": "", "popupType": "0", "area": "3", "stop": "2"}
+FOUND: 천안아산 0502 {"stn_cd": "0502", "stn_nm": "천안아산", "longitude": "127.1045608", "latitude": "36.7946071", "group": "10", "major": "7", "popupMessage": "", "popupType": "0", "area": "4", "stop": "0"}
+FOUND: 청량리 0090 {"stn_cd": "0090", "stn_nm": "청량리", "longitude": "127.048979", "latitude": "37.581387", "group": "10", "major": "33", "popupMessage": "", "popupType": "0", "area": "0", "stop": "1"}
+FOUND: 평택지제 0553 {"stn_cd": "0553", "stn_nm": "평택지제", "longitude": "127.071386", "latitude": "37.020241", "group": "13", "popupMessage": "", "popupType": "0", "area": "1", "stop": "2"}
+saved station_codes.json
+wanted: {'서울': '0001', '수서': '0551', '오송': '0297', '용산': '0104', '증평': '0071', '천안아산': '0502', '청량리': '0090', '평택지제': '0553'}
+ScheduleView: 500 1822
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>코레일 승차권예매</title>
+	<link rel='stylesheet' type='text/css' href='/resource/common/css/404.css'>
+</head>
+<body>
+<div class="error_content">
+	<p class="error_desc"><img src="/src/assets/common/img/ticketlogo2.png" alt="페이지를 찾을 수 없습니다."/></p>
+	<p class="error_desc2">방문하시려는 페이지의 주소가 잘못 입력되었거나,<br/>
+		페이지의 주소가 변경 혹은 삭제되어 요청하신 페이지를 찾을 수 없습니다.<br/>
+		입력하신 주소가 정확한지 다시 한번 확인해 주시기 바랍니다.
+	</p>
+	<p class="error_desc3">관련 문의사항은 <a href="/ticket/guest/csc/korailcs" target="_blank">고객센터</a>에 알려주시면 친절히 안내해드리겠습니다. 감사합니다.</p>
+	<p class="btn"><a href="javascript:history.back()"><img src="/resource/common/img/btn_prevpage.gif" width="115" height="35" alt="이전 페이지로"/></a></p>
+	<dl class="error_list_type">
+		<dt>사이트 바로가기</dt>
+		<dd><a href="/">바로가기</a></dd>
+		<dt>승차권예약</dt>
+		<dd><a href="/ticket/main">바로가기</a></dd>
+		<dt>기차여행</dt>
+		<dd><a href="/tour/main">바로가기</a></dd>
+		<dt>기업전용</dt>
+		<dd><a href="/biz/main">바로가기</a></dd>
+		<dt>다국어</dt>
+		<dd><a href="/global/eng/main">바로가기</a></dd>
+	</dl>
+</div>
+
+<script language="JavaScript">
+(function () {
+    if (location.pathname === '/ebizprd/EbizPrdPassRailroIntroW_hc11901.do') // 내일로
+        location.replace('/tour/freeTravel/railro/passIntro');
+    else if (location.pathname === '/ebizcom/cs/guide/discount/discount01.do') // 할인제도 안내
+        location.replace('/ticket/discountSystem/child');
+    else if (location.pathname === '/english' || location.pathname.indexOf('/ebizbf') === 0 ) // 다국어
+        location.replace('/global');
+})();
+</script>
+
+</body>
+</html>

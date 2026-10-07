@@ -1,0 +1,424 @@
+[
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/ticket/main",
+  "ct": "text/html"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://cdn.korail.com/dyna/dp.helper.js",
+  "ct": "application/javascript"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://cdn.korail.com/public/js/common/jquery-3.7.1.min.js",
+  "ct": "application/javascript"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://cdn.korail.com/public/netfunnel-statics/agents/client/javascript/netfunnel-javascript-agent.js",
+  "ct": "application/javascript"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://cdn.korail.com/public/netfunnel-statics/netfunnel_skin.js",
+  "ct": "application/javascript"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/dynaPath.do",
+  "ct": "application/javascript;charset=utf-8"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://cdn.korail.com/oacx/esign/oacx-vendor.js",
+  "ct": "application/javascript"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://cdn.korail.com/dyna/CQhpAS4W5rbU79Vhz4TklqkMvr0gmom6.js",
+  "ct": "application/javascript"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://cdn.korail.com/oacx/esign/oacx-ux.js",
+  "ct": "application/javascript"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/dynaPath/ZOBPZeOOGa1OOdHKQ2ZMdS6PPXcZ5VJcIMCUZBLPAYR8WZAS3N/HJWGGCHTJH9W9CyFogA",
+  "data": "_gx=ceadahgjehjckijhbdhgicajgdkebeigadjhadedbjijbgljjjhggcegafgjdjcdfjgghfjijedfdjeddcbiaeggeeiibifhbhijiekibcldbjhiaijhdjfdecieihhdkgcjfehebhdeickdajlegebclhkdjidjdiecfckhaiceghhgeihglffjffadkgkdgiiedcljekbheiicaifgcjdjijbhdigdfggjahkhdkgdcibgdicgidgcccfekfdfagkhaklggcjfcgkfleeeijcdkjhhdikjbdejljaikgkifheggheejebfahgjhjkhbegiahckljkffcageelfccaekihdehejbijjadhfkfbecfdgghaelbgcffgickdelgghlfkgeibkeejekdbijcbdeghhhhgjeegjhdbhdcjejgkeedehdjdkhikedfefadgihfdgafckbdhfahbeffhdakeilhegefciidfelhekjdeghehdaglidedjgehelbjfjjjfceegbidjbkhgbkijcjkeckkefgehiedffhecihfdjdadeheilgcjhhailgfjbjbijddcdffidkcj"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/dynaPath/ZOBPZeOOGa1OOdHKQ2ZMdS6PPXcZ5VJcIMCUZBLPAYR8WZAS3N/HJWGGCHTJH9W9CyFogA",
+  "ct": "text/html;charset=UTF-8"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/ebizweb/common/devIpCheck",
+  "ct": "text/html;charset=utf-8"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/CACHE/ticketTopNotice.cache?t=29855667",
+  "ct": "text/html"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/CACHE/ticketNotice.cache?t=29855667",
+  "ct": "text/html"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/CACHE/ticketMainSlide.cache?t=29855667",
+  "ct": "text/html"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/CACHE/ticketMiddleSlide.cache?t=29855667",
+  "ct": "text/html"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/CACHE/ticketMainBanner.cache?t=29855667",
+  "ct": "text/html"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/ticket_jsonData.json?t=29855667",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/public/st_info/station_data.json?t=1791340035250",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/ebizweb/common/loginCheck?Device=BH&Version=999999999",
+  "ct": "text/html;charset=utf-8"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/com/macro.do?Device=BH&Version=999999999",
+  "ct": "text/html);charset=utf-8"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/com/userSaleproduct.do?mode=list&Device=BH&Version=999999999",
+  "ct": "application/json; charset=UTF-8"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/COMMON/slides/f202305111Yga.jpg",
+  "ct": "image/jpeg"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/COMMON/slides/f20230511Dq2y.jpg",
+  "ct": "image/jpeg"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/COMMON/popup/f20260602WJ8h.jpg",
+  "ct": "image/jpeg"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/COMMON/slides/f202305111jm0.jpg",
+  "ct": "image/jpeg"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/COMMON/slides/f20230511ubAF.jpg",
+  "ct": "image/jpeg"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/com/userMainEmerNotice.do?siteCode=ticket&Device=BH&Version=999999999",
+  "ct": "text/html);charset=utf-8"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/file/cubedata/CACHE/kor_multiLingual.cache?t=29855667",
+  "ct": "text/html"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/ebizweb/common/loginCheck?Device=BH&Version=999999999",
+  "ct": "text/html;charset=utf-8"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "data": "------WebKitFormBoundarylT1NDrkY4RRvlHpm\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundarylT1NDrkY4RRvlHpm\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundarylT1NDrkY4RRvlHpm--\r\n"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt",
+  "data": "------WebKitFormBoundaryH6WU35hCAphPQ3nn\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundaryH6WU35hCAphPQ3nn\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundaryH6WU35hCAphPQ3nn--\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/public/st_info/st.json?t=1791340039377",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/public/st_info/bt-www.json?t=1791340039378",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/public/st_info/st.json?t=1791340039382",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt",
+  "ct": "application/json"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.runDt",
+  "data": "------WebKitFormBoundary8stgCHBf3tvJqxBf\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundary8stgCHBf3tvJqxBf\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundary8stgCHBf3tvJqxBf--\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.runDt",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/public/st_info/st.json?t=1791340039429",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://nf.letskorail.com/ts.wseq?opcode=5101&sid=service_1&aid=act_7",
+  "ct": "text/html"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/web_s/ZOBPZeOOGa1OOdHKQ2ZMdS6PPXcZ5VJcIMCUZBLPAYR8WZAS3N/HOOGL7GLFGLB97KFeAW?_gx=lbiebjfjagiicjkeckihhcggkfkcjdedbjfgfdkghgfegcbhjclchgghlgciaiiddcfeacckggigagckkggdcciibjlgkhlhlebebddkjdjdhebeifleeibfgeadfcekcihcbkhgccghbhbigcfibhcebkdddelicgccihiddickiijibdbcjgigfejehhajcilbeklcedkfkfdgjhhhdhlgkjlebkhjkgcdjeadaficlgkeliccefjidjjdkhgclfihfilgdfbegeehkfgigcdhehhhbgiiljcjeficeckgakeiiigfljgeahfjfifihilcghgdeggiakafgddcjekclcjibggibcbdbhbjfjchijkfgcdceflcfgdjlcbeakhfgecggchidejfekggfikjeegedkbilddghdhcdcdddgidfigfhjjhhdchdgiiffejfcgjckbcedkgchgckcahldidfedjjcbkdfgjgfdccfdfchgjgdliaihglefgaihdfgjjlchigjhfdfdkdkeclfegehkcgiggbhkidhhjidfedkckbihfdkjfhdcdiflgdkbelhhidgfccdbjbklfahlbecldejjdlfhgbgicehfglbihiiaglcbkkhajdkjgfjhebdlhadgegfhhahfgjhihkdcijihgefijbggfliadlclekjbdbjjgdihdcgfieihhfhiegfggjhehckjchghfaidchdaeadejlhejegaihfekigkgiggeceajegadekajkfkjfcjejeejggkdacddgcjejekiafecdkjjifljjghhfejdidggddlbbcdfbdcdbgccgjahgebfkhiibgehceaeigeelhjgkhgdfdbebicdegaigjfikjkdagbjkjldjcakbikgidkdededhcigbhfcgckdfcehcedihhldfflbbdakgcgcfghffefhjhggdfajjfcklgdedjbkajkgajhjbhjdlhaifcldiheifjecfejefdbkgiidefgfgihhbdgfcidiccccfdggekbikikgbcbeijbhkjgcjgfgakfdjfcgcfifccbekcaeljgichhhfhfhcegigcidaifddgjdbfhhcdbkejdhehhfidbkfgichdgjhjljfeijhfhchhgigilhjhbfdkhfbhbeegbdbeidbckdicfibgaegcjfkighdgakihicdfdegheehjbfiheeeelgieehkhegkfleiccgjhbkbifhgikjdfbkjhajidhhlfgflicjkedkbefgkcfhbkbgcidibjhcfikcjhifgdbfkdjhcjfeaehjkhljkfijfjkejcjcckkdfikhdheeldhfbdfjdhdibdidaefdjgakdjjijjjdlhadbekhddcgbdbeheleciddgcggbhajgihjkdlcgdejfhhfhidgbiehgifclcgflfdhdhhhefeekdacgdhikifdhgaceebhijecfcahbcgggiaijehgieldigeeaefhbddekckjagbkdhhdeecdkebgef",
+  "data": "------WebKitFormBoundaryAJLOSixJxfEFOCbY\r\nContent-Disposition: form-data; name=\"searchType\"\r\n\r\nGENERAL\r\n------WebKitFormBoundaryAJLOSixJxfEFOCbY\r\nContent-Disposition: form-data; name=\"txtGoStart\"\r\n\r\n서울\r\n------WebKitFormBoundaryAJLOSixJxfEFOCbY\r\nContent-Disposition: form-data; name=\"txtGoEnd\"\r\n\r\n부산\r\n------WebKitFormBoundaryAJLOSixJxfEFOCbY\r\nContent-Disposition: form-data; name=\"txtTrnGpCd\"\r\n\r\n109\r\n------WebKitFormBoundaryAJLOSixJxfEFOCbY\r\nContent-Disposition: form-data; name=\"radJobId\"\r\n\r\n1\r\n------WebKitFormBoundaryAJLOSixJxfEFOCbY\r\nContent-Disposition: form-data; name=\"adjStnScdlOfrFlg\"\r\n\r\nN\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 500,
+  "url": "https://www.korail.com/web_s/ZOBPZeOOGa1OOdHKQ2ZMdS6PPXcZ5VJcIMCUZBLPAYR8WZAS3N/HOOGL7GLFGLB97KFeAW?_gx=lbiebjfjagiicjkeckihhcggkfkcjdedbjfgfdkghgfegcbhjclchgghlgciaiiddcfeacckggigagckkggdcciibjlgkhlhlebebddkjdjdhebeifleeibfgeadfcekcihcbkhgccghbhbigcfibhcebkdddelicgccihiddickiijibdbcjgigfejehhajcilbeklcedkfkfdgjhhhdhlgkjlebkhjkgcdjeadaficlgkeliccefjidjjdkhgclfihfilgdfbegeehkfgigcdhehhhbgiiljcjeficeckgakeiiigfljgeahfjfifihilcghgdeggiakafgddcjekclcjibggibcbdbhbjfjchijkfgcdceflcfgdjlcbeakhfgecggchidejfekggfikjeegedkbilddghdhcdcdddgidfigfhjjhhdchdgiiffejfcgjckbcedkgchgckcahldidfedjjcbkdfgjgfdccfdfchgjgdliaihglefgaihdfgjjlchigjhfdfdkdkeclfegehkcgiggbhkidhhjidfedkckbihfdkjfhdcdiflgdkbelhhidgfccdbjbklfahlbecldejjdlfhgbgicehfglbihiiaglcbkkhajdkjgfjhebdlhadgegfhhahfgjhihkdcijihgefijbggfliadlclekjbdbjjgdihdcgfieihhfhiegfggjhehckjchghfaidchdaeadejlhejegaihfekigkgiggeceajegadekajkfkjfcjejeejggkdacddgcjejekiafecdkjjifljjghhfejdidggddlbbcdfbdcdbgccgjahgebfkhiibgehceaeigeelhjgkhgdfdbebicdegaigjfikjkdagbjkjldjcakbikgidkdededhcigbhfcgckdfcehcedihhldfflbbdakgcgcfghffefhjhggdfajjfcklgdedjbkajkgajhjbhjdlhaifcldiheifjecfejefdbkgiidefgfgihhbdgfcidiccccfdggekbikikgbcbeijbhkjgcjgfgakfdjfcgcfifccbekcaeljgichhhfhfhcegigcidaifddgjdbfhhcdbkejdhehhfidbkfgichdgjhjljfeijhfhchhgigilhjhbfdkhfbhbeegbdbeidbckdicfibgaegcjfkighdgakihicdfdegheehjbfiheeeelgieehkhegkfleiccgjhbkbifhgikjdfbkjhajidhhlfgflicjkedkbefgkcfhbkbgcidibjhcfikcjhifgdbfkdjhcjfeaehjkhljkfijfjkejcjcckkdfikhdheeldhfbdfjdhdibdidaefdjgakdjjijjjdlhadbekhddcgbdbeheleciddgcggbhajgihjkdlcgdejfhhfhidgbiehgifclcgflfdhdhhhefeekdacgdhikifdhgaceebhijecfcahbcgggiaijehgieldigeeaefhbddekckjagbkdhhdeecdkebgef",
+  "ct": "text/html;charset=UTF-8"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "data": "------WebKitFormBoundarygx5hm7Wh6rLQEqkk\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundarygx5hm7Wh6rLQEqkk\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundarygx5hm7Wh6rLQEqkk--\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "ct": "application/json"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "data": "------WebKitFormBoundaryqJznRlkyYL4mbFt7\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundaryqJznRlkyYL4mbFt7\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundaryqJznRlkyYL4mbFt7--\r\n"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt",
+  "data": "------WebKitFormBoundary6leNJiAjBUaFnCCW\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundary6leNJiAjBUaFnCCW\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundary6leNJiAjBUaFnCCW--\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/public/st_info/bt-www.json?t=1791340051264",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/public/st_info/st.json?t=1791340051263",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt",
+  "ct": "application/json"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.runDt",
+  "data": "------WebKitFormBoundaryPLA18DgN8qw6rBp0\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundaryPLA18DgN8qw6rBp0\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundaryPLA18DgN8qw6rBp0--\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://nf.letskorail.com/ts.wseq?opcode=5002&key=D3D75E76265B963095453D5EF4D47F278E98A338D2D80495F7E0E53A015887B94149F74E37734FA221EB996622F0896971E16360C462C7EC5EED4840F8CFFFE3EBEE1D4F3B94888CAEFDACCC15F9CE55B94C51FAF640433F40E6F1EF7640999DC3C725B79EBBE2997A3097582D6CF2AA2C302C312C302C302C30&sticky=nf3",
+  "ct": "text/html"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/web_s/ZOBPZeOOGa1OOdHKQ2ZMdS6PPXcZ5VJcIMCUZBLPAYR8WZAS3N/FMIH9RHJPGUUHOS9BvltNn?_gx=kfgeeekfddfgfdjjkjbfdeigcefhchkfhiaeahgfdekdcklejeccahcighbdleecfflhlfljhfijgfjfgfeidecehhbcfdbdeddehdhglefhajijiiaigfdcgghckdhcliijbkifbkckejhfjgldjjgdicdfbgahfjccbdhgidifghbjhjhhfjlcfcifffiedglicfcehiddciffjiffddaelblijfhebfdkdeegcgffjcjebiakcgddhhigjckcifahcccfkilfggkfhchgbibdfdcikgccbiciifhjgfdkjgjdlbldgdaccfecdfchcebdejdkafihdidgdejhhgjgfgejhhckfjehfhahdgcgkfbjbfbkkjigkigebhhchddhfdkddhjjheckhjkddgkdbedjeicfbiaehjedbjghihlfadiibclgdeehhjdkigegbjgfkdldggkjeeichdckdhlidgkiehlihflflibglflidkgjcgahjidddfkdeebjfijgidfgbkcflbfjbigjicfjhdfckibidhfcaebedkhfjikghhcccfkfakceaeeidhbdjjgiligcdcekekdcackcgegchcegjgkdhebjeifieeakijgdcebjjfbiffhcfhljajbhfdchkecgdiegjfegaehhegfjhfkfcjkffiihfjljhcfdidcijjdjhgghjjdiejgjdiediiahldhhaccjfjidgclfjiicljgceilfgfkeejjckdjicfdcjjcfecajbhghihajbckebdfhlfhgljfjaiicdilfigbgkfhddekefdeghfbhcdeiljkfjjlfedcedecgajlhffjdhglejgbhgdifdegifgcdfgfcbcfcdejjajehjigjjebeiihfdjlfbfafceihgieilcljkcehiebkdjfhdglefhlfhcfcliihkcliejfifflhjiigajggdgcjkjbifccihfhfgdhdfflgejhecgeikhagfhejbghjeebekjbeegjhfigckgbilchichaicicieekdcddedfbflhcdbdkhdhkdadjddckgjjjcadlbbjeefjejdkdfbglbjfldcicilifgidakbjjjjhlgkcjeiigciidfajbhjjgchefigjakefijgghgdfchgjfiggieihdgahdfhdlbbfligclbfdjikighbjdkghafgggcjjhgcfccbgehkijflbbfldadcfafchifdhgdhjjhlddgigfeijdfhhjgldfjbejcidfghikehdaihibckebjcdejhccflhajlcegfeifjdidgdidfhkhcfhcggfcedhefclfighcjeiclgdjdgkdkdbihjfjheldcijdhfdgjddjjjjgligfjehebflfaihclghiegihkfjdgffccjbefckhiddfagdfkcedlgfghccgfhdegheffgaehdlihjbjekjdefkiaedcbcifdhcejgdidjadfddjfcdjlbiicgbdffakhfkiegidfebdkegcdcbcbegdhjejkekiiekggifcdjakiihidkadciafcjkgbhbidfifbflbkfhfdilcfhgebgigbchclh",
+  "data": "------WebKitFormBoundaryNkLMo9iLecdwKefC\r\nContent-Disposition: form-data; name=\"searchType\"\r\n\r\nGENERAL\r\n------WebKitFormBoundaryNkLMo9iLecdwKefC\r\nContent-Disposition: form-data; name=\"txtGoStart\"\r\n\r\n서울\r\n------WebKitFormBoundaryNkLMo9iLecdwKefC\r\nContent-Disposition: form-data; name=\"txtGoEnd\"\r\n\r\n부산\r\n------WebKitFormBoundaryNkLMo9iLecdwKefC\r\nContent-Disposition: form-data; name=\"txtTrnGpCd\"\r\n\r\n109\r\n------WebKitFormBoundaryNkLMo9iLecdwKefC\r\nContent-Disposition: form-data; name=\"radJobId\"\r\n\r\n1\r\n------WebKitFormBoundaryNkLMo9iLecdwKefC\r\nContent-Disposition: form-data; name=\"adjStnScdlOfrFlg\"\r\n\r\nN\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.runDt",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/public/st_info/st.json?t=1791340051339",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 500,
+  "url": "https://www.korail.com/web_s/ZOBPZeOOGa1OOdHKQ2ZMdS6PPXcZ5VJcIMCUZBLPAYR8WZAS3N/FMIH9RHJPGUUHOS9BvltNn?_gx=kfgeeekfddfgfdjjkjbfdeigcefhchkfhiaeahgfdekdcklejeccahcighbdleecfflhlfljhfijgfjfgfeidecehhbcfdbdeddehdhglefhajijiiaigfdcgghckdhcliijbkifbkckejhfjgldjjgdicdfbgahfjccbdhgidifghbjhjhhfjlcfcifffiedglicfcehiddciffjiffddaelblijfhebfdkdeegcgffjcjebiakcgddhhigjckcifahcccfkilfggkfhchgbibdfdcikgccbiciifhjgfdkjgjdlbldgdaccfecdfchcebdejdkafihdidgdejhhgjgfgejhhckfjehfhahdgcgkfbjbfbkkjigkigebhhchddhfdkddhjjheckhjkddgkdbedjeicfbiaehjedbjghihlfadiibclgdeehhjdkigegbjgfkdldggkjeeichdckdhlidgkiehlihflflibglflidkgjcgahjidddfkdeebjfijgidfgbkcflbfjbigjicfjhdfckibidhfcaebedkhfjikghhcccfkfakceaeeidhbdjjgiligcdcekekdcackcgegchcegjgkdhebjeifieeakijgdcebjjfbiffhcfhljajbhfdchkecgdiegjfegaehhegfjhfkfcjkffiihfjljhcfdidcijjdjhgghjjdiejgjdiediiahldhhaccjfjidgclfjiicljgceilfgfkeejjckdjicfdcjjcfecajbhghihajbckebdfhlfhgljfjaiicdilfigbgkfhddekefdeghfbhcdeiljkfjjlfedcedecgajlhffjdhglejgbhgdifdegifgcdfgfcbcfcdejjajehjigjjebeiihfdjlfbfafceihgieilcljkcehiebkdjfhdglefhlfhcfcliihkcliejfifflhjiigajggdgcjkjbifccihfhfgdhdfflgejhecgeikhagfhejbghjeebekjbeegjhfigckgbilchichaicicieekdcddedfbflhcdbdkhdhkdadjddckgjjjcadlbbjeefjejdkdfbglbjfldcicilifgidakbjjjjhlgkcjeiigciidfajbhjjgchefigjakefijgghgdfchgjfiggieihdgahdfhdlbbfligclbfdjikighbjdkghafgggcjjhgcfccbgehkijflbbfldadcfafchifdhgdhjjhlddgigfeijdfhhjgldfjbejcidfghikehdaihibckebjcdejhccflhajlcegfeifjdidgdidfhkhcfhcggfcedhefclfighcjeiclgdjdgkdkdbihjfjheldcijdhfdgjddjjjjgligfjehebflfaihclghiegihkfjdgffccjbefckhiddfagdfkcedlgfghccgfhdegheffgaehdlihjbjekjdefkiaedcbcifdhcejgdidjadfddjfcdjlbiicgbdffakhfkiegidfebdkegcdcbcbegdhjejkekiiekggifcdjakiihidkadciafcjkgbhbidfifbflbkfhfdilcfhgebgigbchclh",
+  "ct": "text/html;charset=UTF-8"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "data": "------WebKitFormBoundarynt8pPOErXwCWzEWe\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundarynt8pPOErXwCWzEWe\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundarynt8pPOErXwCWzEWe--\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "ct": "application/json"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "data": "------WebKitFormBoundaryISZ6CYMlTgsxVEek\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundaryISZ6CYMlTgsxVEek\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundaryISZ6CYMlTgsxVEek--\r\n"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt",
+  "data": "------WebKitFormBoundary06v4K9sIK7ewq64q\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundary06v4K9sIK7ewq64q\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundary06v4K9sIK7ewq64q--\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/public/st_info/bt-www.json?t=1791340052087",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/public/st_info/st.json?t=1791340052087",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://nf.letskorail.com/ts.wseq?opcode=5002&key=AD328E94580FAD20C0EA99D543CBAA71B0F0422DC8D85707CEC1CC23523EE5B4138C1ACA9542E91A21BF516A714651D8EAB3E3F5F72522A090C713590953BEDDEBEE1D4F3B94888CAEFDACCC15F9CE55B94C51FAF640433F40E6F1EF7640999DF3AAC7DB457AE805373B40272EBD5D5D2C302C312C302C302C30&sticky=nf3",
+  "ct": "text/html"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/web_s/ZOBPZeOOGa1OOdHKQ2ZMdS6PPXcZ5VJcIMCUZBLPAYR8WZAS3N/FMIGL9GGGHJTHER99zXKI7?_gx=jiehljcfhjagicgejjbigeahlejcjedieedfieiffjbcagacbhiifeeebkijkjdggcjdhildbecibhajfidjbglfkjecldkcijidbgghgckjafafbckekdljdeadlhakehfgadgjfjbfbclekclcbfadaiigfdhffjejkjlgiibkdkcfgghjckheddffdfbflfdjjelhcjckkieglgdjajhigflhlhgjfiijcebfieigjeeelhhgcfafacchegfcjfgdjjdhdglfgigdbjaihcdkkfkigjigbgijbgidafkiljecddaifhidadkgbjifbccjgggfhifgfceibebibebhdgdhccfjkediehegjiedjjjjdkidicfecfffeifikjaikhejacehlhegedfhacechiecadljkfjglggjbedfldbefjgdiglfcfcehjbgiehfjedfkibiefgeigjhhjehgjfiehffbkbiejdkbhbclcbcjfecbjjdkdhihhjffjcjliegggcjiikibeldiecjaihehdhgdeigeiffgjlhigjggjefchfjhcacfjhdbiidfibehhkhadedfdekhfigbccegclcciaebicgahfdckkfaeddkibfhdgekdkgcjljffgebekiecjjbfchiffhbgcjlgfglieibflbckfjccdjdkjhgijfagihiighejgfkhjebkfebckgiiekciijlhgjhffikfahaifgfgafjifcehbjgiielheigdhechekkhjclbbcdcijgjidedbkcfljkdedbcekbjhikgckejdfeedilhhjkgfdejjjegekfchhgjbjgfceefjdgebiljakbelieccibgcccjggkdacajkikgbchifdgdielddhaijjgccdehheihbdakliciihdhkccdlikibcdgfiaebiljekhflghdlfackikhdcdjdjakekihbdhdhcjdedeelhbhhhcechlfadchecaiefacihlggifibececikchdkgdcigacehfegcjiicbijighdkfcecbgkckifcbgcjfdeciggfhdkegjadcgljdgdidgiildhhfgkejghdejhhhgcebiejhfekgiaekckjfhkjdkjhccegjhjiifijdhbkijhiejliijdiekacggdfkggjeechlbhdfechheahdifdjhceajgfjhaibffgbegckhghhjlckjjhlgchdjkfakkekggckdbecgekdfjjhcjilihcadkcjgcjhdfckfaedcchajbkdjhechggfifhhcheagihihgibdcfageebjgddheidjldihfekdhcdeafkhhfeebcbcbjdgicgdhfjdbefjceckadigcklhekehheliiggjcddhcikgdhkechgclfcdcikhagliickhachibjfdchekgegfdhlicecibgchcjbjfiggcjihfdcjchidghjfiihj",
+  "data": "------WebKitFormBoundarygQA8mpmRh0kpPRAF\r\nContent-Disposition: form-data; name=\"searchType\"\r\n\r\nGENERAL\r\n------WebKitFormBoundarygQA8mpmRh0kpPRAF\r\nContent-Disposition: form-data; name=\"txtGoStart\"\r\n\r\n서울\r\n------WebKitFormBoundarygQA8mpmRh0kpPRAF\r\nContent-Disposition: form-data; name=\"txtGoEnd\"\r\n\r\n부산\r\n------WebKitFormBoundarygQA8mpmRh0kpPRAF\r\nContent-Disposition: form-data; name=\"txtTrnGpCd\"\r\n\r\n109\r\n------WebKitFormBoundarygQA8mpmRh0kpPRAF\r\nContent-Disposition: form-data; name=\"radJobId\"\r\n\r\n1\r\n------WebKitFormBoundarygQA8mpmRh0kpPRAF\r\nContent-Disposition: form-data; name=\"adjStnScdlOfrFlg\"\r\n\r\nN\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.clearRunDt",
+  "ct": "application/json"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.runDt",
+  "data": "------WebKitFormBoundaryx8CDt8G8pAfCARKv\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundaryx8CDt8G8pAfCARKv\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundaryx8CDt8G8pAfCARKv--\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/classes/com.korail.mobile.schedule.runDt",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/public/st_info/st.json?t=1791340052173",
+  "ct": "application/json"
+ },
+ {
+  "side": "RES",
+  "st": 500,
+  "url": "https://www.korail.com/web_s/ZOBPZeOOGa1OOdHKQ2ZMdS6PPXcZ5VJcIMCUZBLPAYR8WZAS3N/FMIGL9GGGHJTHER99zXKI7?_gx=jiehljcfhjagicgejjbigeahlejcjedieedfieiffjbcagacbhiifeeebkijkjdggcjdhildbecibhajfidjbglfkjecldkcijidbgghgckjafafbckekdljdeadlhakehfgadgjfjbfbclekclcbfadaiigfdhffjejkjlgiibkdkcfgghjckheddffdfbflfdjjelhcjckkieglgdjajhigflhlhgjfiijcebfieigjeeelhhgcfafacchegfcjfgdjjdhdglfgigdbjaihcdkkfkigjigbgijbgidafkiljecddaifhidadkgbjifbccjgggfhifgfceibebibebhdgdhccfjkediehegjiedjjjjdkidicfecfffeifikjaikhejacehlhegedfhacechiecadljkfjglggjbedfldbefjgdiglfcfcehjbgiehfjedfkibiefgeigjhhjehgjfiehffbkbiejdkbhbclcbcjfecbjjdkdhihhjffjcjliegggcjiikibeldiecjaihehdhgdeigeiffgjlhigjggjefchfjhcacfjhdbiidfibehhkhadedfdekhfigbccegclcciaebicgahfdckkfaeddkibfhdgekdkgcjljffgebekiecjjbfchiffhbgcjlgfglieibflbckfjccdjdkjhgijfagihiighejgfkhjebkfebckgiiekciijlhgjhffikfahaifgfgafjifcehbjgiielheigdhechekkhjclbbcdcijgjidedbkcfljkdedbcekbjhikgckejdfeedilhhjkgfdejjjegekfchhgjbjgfceefjdgebiljakbelieccibgcccjggkdacajkikgbchifdgdielddhaijjgccdehheihbdakliciihdhkccdlikibcdgfiaebiljekhflghdlfackikhdcdjdjakekihbdhdhcjdedeelhbhhhcechlfadchecaiefacihlggifibececikchdkgdcigacehfegcjiicbijighdkfcecbgkckifcbgcjfdeciggfhdkegjadcgljdgdidgiildhhfgkejghdejhhhgcebiejhfekgiaekckjfhkjdkjhccegjhjiifijdhbkijhiejliijdiekacggdfkggjeechlbhdfechheahdifdjhceajgfjhaibffgbegckhghhjlckjjhlgchdjkfakkekggckdbecgekdfjjhcjilihcadkcjgcjhdfckfaedcchajbkdjhechggfifhhcheagihihgibdcfageebjgddheidjldihfekdhcdeafkhhfeebcbcbjdgicgdhfjdbefjceckadigcklhekehheliiggjcddhcikgdhkechgclfcdcikhagliickhachibjfdchekgegfdhlicecibgchcjbjfiggcjihfdcjchidghjfiihj",
+  "ct": "text/html;charset=UTF-8"
+ },
+ {
+  "side": "REQ",
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "data": "------WebKitFormBoundaryX8d5e6SeUBvtABWx\r\nContent-Disposition: form-data; name=\"Device\"\r\n\r\nBH\r\n------WebKitFormBoundaryX8d5e6SeUBvtABWx\r\nContent-Disposition: form-data; name=\"Version\"\r\n\r\n999999999\r\n------WebKitFormBoundaryX8d5e6SeUBvtABWx--\r\n"
+ },
+ {
+  "side": "RES",
+  "st": 200,
+  "url": "https://www.korail.com/ebizweb/biz/loginCheck",
+  "ct": "application/json"
+ }
+]
