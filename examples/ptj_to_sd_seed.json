@@ -1,0 +1,42 @@
+{
+  "trains": [
+    {
+      "runDt": "20261009",
+      "trnNo": "123",
+      "trnClsfCd": "10",
+      "trnGpCd": "01",
+      "dptRsStnCd": "0553",
+      "arvRsStnCd": "0071",
+      "dptStnRunOrdr": "0",
+      "arvStnRunOrdr": "5",
+      "trnClsfNm": "KTX",
+      "dptTm": "080000",
+      "arvTm": "090000",
+      "totPsgCnt": "1000",
+      "srcarNo": "01",
+      "langCode": "ko",
+      "gdNo": "12345",
+      "psrmClCd": "1",
+      "seatAttCd": "015"
+    },
+    {
+      "runDt": "20261009",
+      "trnNo": "456",
+      "trnClsfCd": "10",
+      "trnGpCd": "01",
+      "dptRsStnCd": "0553",
+      "arvRsStnCd": "0071",
+      "dptStnRunOrdr": "0",
+      "arvStnRunOrdr": "5",
+      "trnClsfNm": "ITX-새마을",
+      "dptTm": "093000",
+      "arvTm": "103000",
+      "totPsgCnt": "800",
+      "srcarNo": "01",
+      "langCode": "ko",
+      "gdNo": "12345",
+      "psrmClCd": "1",
+      "seatAttCd": "015"
+    }
+  ]
+}

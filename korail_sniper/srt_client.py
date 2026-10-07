@@ -16,6 +16,7 @@ except ImportError:
 
 from .constants import SRT_STATIONS, TRAIN_NAMES, SeatType, USER_AGENTS
 from .netfunnel import NetFunnelHelper
+from .utils import retry
 
 EMAIL_REGEX = re.compile(r"[^@]+@[^@]+\.[^@]+")
 PHONE_REGEX = re.compile(r"(\d{3})-?(\d{3,4})-?(\d{4})")
@@ -140,6 +141,7 @@ class SRTClient:
         if self.verbose:
             print(f"[SRT] {msg}")
 
+    @retry(max_attempts=3, initial_delay=1.0, backoff_factor=2.0, exceptions=(SRTLoginError,))
     def login(self, user_id: Optional[str] = None, password: Optional[str] = None) -> bool:
         uid = user_id or self.user_id
         pwd = password or self.password
@@ -184,6 +186,7 @@ class SRTClient:
         except Exception as e:
             raise SRTLoginError(f"SRT 로그인 오류: {e}")
 
+    @retry(max_attempts=3, initial_delay=1.0, backoff_factor=2.0, exceptions=(SRTError,))
     def search_trains(
         self,
         dep: str,
@@ -236,6 +239,7 @@ class SRTClient:
             self._log(f"Search parse error: {e}")
             return []
 
+    @retry(max_attempts=3, initial_delay=1.0, backoff_factor=2.0, exceptions=(SRTError,))
     def reserve(
         self,
         train: SRTTrain,

@@ -4,8 +4,8 @@
 The current Korail web search endpoint is WAF-protected. To avoid repeated
 search requests, this client accepts a one-time schedule seed exported from a
 normal browser session, then checks availability only for those known trains.
-"""
 
+"""
 import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -13,6 +13,7 @@ from typing import Any, Dict, List, Optional
 import requests
 
 from .constants import USER_AGENTS
+from .utils import retry
 
 KORAIL_BASE = "https://www.korail.com"
 SEAT_ENDPOINT = f"{KORAIL_BASE}/classes/com.korail.mobile.research.TResidualSeatsResearch.do"
@@ -88,6 +89,7 @@ class KorailClient:
             raise KorailError("시드 파일은 열차 목록(JSON 배열 또는 {trains: [...]})이어야 합니다.")
         return [KorailTrain(entry) for entry in entries]
 
+    @retry(max_attempts=3, initial_delay=1.0, backoff_factor=2.0, exceptions=(KorailError,))
     def check_seats(self, train: KorailTrain) -> Dict[str, Any]:
         """Check a known train. Does not initiate booking or payment."""
         r = self._session.post(SEAT_ENDPOINT, data=train.seat_query_data(), timeout=10)
