@@ -1,0 +1,42 @@
+{
+  "trains": [
+    {
+      "runDt": "20240101",
+      "trnNo": "101",
+      "trnClsfCd": "10",
+      "trnGpCd": "01",
+      "dptRsStnCd": "0001",
+      "arvRsStnCd": "0020",
+      "dptStnRunOrdr": "0",
+      "arvStnRunOrdr": "15",
+      "trnClsfNm": "KTX",
+      "dptTm": "060000",
+      "arvTm": "090000",
+      "totPsgCnt": "1000",
+      "srcarNo": "01",
+      "langCode": "ko",
+      "gdNo": "12345",
+      "psrmClCd": "1",
+      "seatAttCd": "015"
+    },
+    {
+      "runDt": "20240101",
+      "trnNo": "102",
+      "trnClsfCd": "10",
+      "trnGpCd": "01",
+      "dptRsStnCd": "0001",
+      "arvRsStnCd": "0020",
+      "dptStnRunOrdr": "0",
+      "arvStnRunOrdr": "15",
+      "trnClsfNm": "KTX",
+      "dptTm": "070000",
+      "arvTm": "100000",
+      "totPsgCnt": "1000",
+      "srcarNo": "01",
+      "langCode": "ko",
+      "gdNo": "12345",
+      "psrmClCd": "1",
+      "seatAttCd": "015"
+    }
+  ]
+}
