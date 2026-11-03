@@ -3,3 +3,4 @@ full_cycle.log
 full_cycle_result.json
 .venv/
 __pycache__/
+sniper.log
