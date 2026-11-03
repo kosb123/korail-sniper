@@ -288,3 +288,54 @@ class SRTClient:
             if isinstance(e, SRTError):
                 raise
             raise SRTError(f"예약 응답 오류: {e}")
+
+    @retry(max_attempts=3, initial_delay=1.0, backoff_factor=2.0, exceptions=(SRTError,))
+    def get_my_reservations(self) -> Dict:
+        """Fetch my reservation list. Returns the raw response dict."""
+        if not self.is_logged_in:
+            self.login()
+        r = self._session.post(API_ENDPOINTS["reserve_info"], data={}, timeout=10)
+        self._log(f"Reserve info response: {r.text[:200]}")
+        try:
+            return json.loads(r.text)
+        except Exception as e:
+            raise SRTError(f"예약조회 응답 오류: {e} :: {r.text[:150]}")
+
+    @retry(max_attempts=2, initial_delay=1.0, backoff_factor=2.0, exceptions=(SRTError,))
+    def cancel(self, reservation_number: str, train: Optional[SRTTrain] = None) -> Dict:
+        """Cancel a reservation by PNR. ponytail: param set inferred from reserve
+        payload shape, not yet verified against the live API — first real call
+        confirms or corrects it."""
+        if not self.is_logged_in:
+            self.login()
+
+        data = {
+            "pnrNo": reservation_number,
+        }
+        if train is not None:
+            data.update({
+                "stlbTrnClsfCd": train.train_code,
+                "trnNo": train.train_number,
+                "dptDt": train.dep_date,
+                "dptTm": train.dep_time,
+                "dptRsStnCd": train.dep_station_code,
+                "arvRsStnCd": train.arr_station_code,
+                "dptStnRunOrdr": train.dep_order,
+                "arvStnRunOrdr": train.arr_order,
+            })
+
+        r = self._session.post(API_ENDPOINTS["cancel"], data=data, timeout=10)
+        self._log(f"Cancel response: {r.text[:200]}")
+        try:
+            j = json.loads(r.text)
+        except Exception:
+            raise SRTError(f"취소 응답 해석 실패: {r.text[:150]}")
+        out = j.get("outDataSets", {}).get("dsOutput1")
+        if out and isinstance(out, list):
+            first = out[0]
+            if first.get("strResult") == "FAIL":
+                raise SRTError(f"취소 실패: {first.get('msgTxt') or j.get('msgTxt')}")
+            return first
+        if j.get("strResult") == "FAIL":
+            raise SRTError(f"취소 실패: {j.get('msgTxt')}")
+        return j

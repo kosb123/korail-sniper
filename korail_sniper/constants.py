@@ -155,6 +155,7 @@ class TrainType(str, Enum):
 
 TRAIN_NAMES = {
     "00": "KTX",
+    "0A": "SRT",  # live app API code for SRT trains (observed 2026-11-03)
     "02": "무궁화호",
     "03": "통근열차",
     "04": "누리로",
